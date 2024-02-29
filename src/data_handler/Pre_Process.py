@@ -9,9 +9,10 @@ class KHATTDataPreprocessor:
     def load_images_from_folder(self, folder_path):
         images = []
         for filename in os.listdir(folder_path):
-            if filename.endswith('.tif') or filename.endswith(".tif"):
+            if filename.endswith('.tif') or filename.endswith(".tiff"):
                 img_path = os.path.join(folder_path, filename)
-                img = cv2.imread(img_path, cv2.IMREAD_GRAYSCALE)
+                print(img_path)
+                img = cv2.imread(img_path, cv2.IMREAD_UNCHANGED)
                 if img is not None:
                     images.append(img)
         return images
@@ -35,8 +36,10 @@ if __name__ == "__main__":
     # Construct full paths
     # file_path = os.path.join(BASE_LOCAL_DIR, r"KHATT_v1.0")
     # train_folder = os.path.join(file_path, r"LineImages_v1.0\FixedTextLineImages\Train")
-    train_folder =r"C:\Users\tomer\סמסטר א\פרויקט גמר\מאגרי נתונים\KHATT_v1.0\LineImages_v1.0\FixedTextLineImages\Train"
-    # Assuming KHATTDataPreprocessor is defined elsewhere
+    train_folder =r"C:\\Users\tomer\\סמסטר א\\פרויקט גמר\\מאגרי נתונים\\KHATT_v1.0\\LineImages_v1.0\\FixedTextLineImages\\Train"
+    # current folder os.getcwd()
+    train_folder = os.getcwd()
+    train_folder = r"C:\Users\tomer\OneDrive\Desktop\Final_Project\KHATT_v1.0\LineImages_v1.0\\FixedTextLineImages\\Train"
     preprocessor = KHATTDataPreprocessor()
     preprocessed_train_images = preprocessor.preprocess_folder(train_folder)
     print(f"Preprocessed {len(preprocessed_train_images)} images from {train_folder}")
