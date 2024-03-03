@@ -4,6 +4,7 @@ from src.models.vgg19 import Vgg19
 from src.models.xception import XceptionModel
 from src.data_handler.data_loader import DataLoader
 
+
 VGG16 = "vgg16"
 VGG19 = "vgg19"
 XCEPTION = "xception"
@@ -39,7 +40,7 @@ class Engine:
 
 
 if __name__ == "__main__":
-    image_shape = (500, 500)
+    image_shape = (400, 400)
 
     train = "//...//...//"
     test = "//...//...//"
