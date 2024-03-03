@@ -7,11 +7,11 @@ from sklearn.metrics import accuracy_score, precision_score, recall_score
 class Vgg16:
 
     def __init__(self, weights: str = "imagenet", include_top: bool = True, input_shape: Tuple = (0, 0)):
-        self.model = VGG16(weights=weights, include_top=include_top, input_shape=input_shape)
+        self.model = VGG16(weights=None, include_top=False, input_shape=input_shape)
 
     def run_model(self, train_data: List, train_labels: List):
         self.model.compile(loss='categorical_crossentropy',
-                           optimizer=Adam(lr=0.001),
+                           optimizer=Adam(learning_rate=0.001),
                            metrics=['accuracy'])
 
         self.model.fit(train_data, train_labels,

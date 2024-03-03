@@ -1,4 +1,7 @@
 from typing import Tuple, Literal
+
+import cv2
+
 from src.models.vgg16 import Vgg16
 from src.models.vgg19 import Vgg19
 from src.models.xception import XceptionModel
@@ -73,7 +76,8 @@ class Engine:
 
 
     def run_model(self):
-        self.model.run_model(self.proc_train_images, self.proc_train_labels)
+        # self.model.run_model(self.proc_train_images, self.proc_train_labels)
+        self.model.run_model([cv2.resize(im.image_data, (400, 400)) for im in self.proc_train_images], self.proc_train_labels)
         # self.model.evaluation(self.test_images, self.test_labels)
 
 
@@ -82,7 +86,7 @@ if __name__ == "__main__":
     csv_label_path = "data\\AgeSplit.csv"
     ds = DataSplitter(csv_label_path)  # returns object with 'train', 'test', 'val' attributes
 
-    image_shape = (400, 400)
+    image_shape = (400, 400, 3)
     engine = Engine(image_shape)
 
     engine.set_train_labels(ds.train)
@@ -91,10 +95,14 @@ if __name__ == "__main__":
     engine.set_test_data_path(f"{os.getcwd()}\\data\\test")
     engine.set_train_data_path(f"{os.getcwd()}\\data\\train")
 
+    print("Started loading images...")
     engine.load_images('train', 'File', 'Age')
 
+    print("Finished loading images...")
+    model = XCEPTION
+    engine.choose_model(model)
 
-    # engine.choose_model(XCEPTION)
-
-    # engine.run_model()
+    print(f"Chosen model: {model}")
+    print("Running model...")
+    engine.run_model()
 

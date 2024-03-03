@@ -11,7 +11,7 @@ class Vgg19:
 
     def run_model(self, train_data: List, train_labels: List):
         self.model.compile(loss='categorical_crossentropy',
-                           optimizer=Adam(lr=0.001),
+                           optimizer=Adam(learning_rate=0.001),
                            metrics=['accuracy'])
 
         self.model.fit(train_data, train_labels,
