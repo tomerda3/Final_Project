@@ -43,3 +43,4 @@ class DataLoader:
                     labels.append(row['Label'])
 
         return labels
+
