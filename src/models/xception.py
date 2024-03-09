@@ -1,9 +1,12 @@
 from typing import Tuple, List
+
+import numpy as np
 from keras.optimizers import Adam
 from keras.applications import Xception
 from sklearn.metrics import accuracy_score, precision_score, recall_score
 from keras import layers
-import tensorflow as tf
+from keras.utils import to_categorical
+import keras
 
 
 class XceptionModel:
@@ -20,7 +23,7 @@ class XceptionModel:
         # Rest of the Xception model
         x = Xception(weights=weights, include_top=include_top)(x)
 
-        self.model = tf.keras.Model(inputs=inputs, outputs=x)
+        self.model = keras.Model(inputs=inputs, outputs=x)
 
     def run_model(self, train_data: List, train_labels: List):
         self.model.compile(loss='categorical_crossentropy',
@@ -29,7 +32,9 @@ class XceptionModel:
 
         # print(self.model.summary())
 
-        self.model.fit(x=train_data, y=train_labels,
+        fittable_labels = to_categorical(train_labels, num_classes=1000)  # change model to end with 4 classes
+
+        self.model.fit(x=np.array(train_data), y=fittable_labels,
                        epochs=10,
                        batch_size=32)
 
