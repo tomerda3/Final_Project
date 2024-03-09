@@ -76,9 +76,6 @@ class Engine:
 
 
     def run_model(self):
-        # self.model.run_model(self.proc_train_images, self.proc_train_labels)
-        # line above should replace line below after pre-processing
-
         # temporal and experimental preprocess:
         images = [cv2.resize(im.image_data, (400, 400)) for im in self.proc_train_images]
         for row in images:
@@ -86,6 +83,8 @@ class Engine:
                 row[i] = row[i] / 255
 
         self.model.run_model(images, self.proc_train_labels)
+        # line above should be replaced by line below after pre-processing
+        # self.model.run_model(self.proc_train_images, self.proc_train_labels)
         self.model.evaluation(self.test_images, self.test_labels)
 
 
