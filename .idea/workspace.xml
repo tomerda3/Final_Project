@@ -5,8 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="79925ffe-40dc-4e95-b7a9-483ace359046" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/data_handler/pre_proc.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data_handler/Pre_Process.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/data_handler/Pre_Process_OLD.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data_handler/data_loader.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/data_handler/data_loader.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/engine.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/xception.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/xception.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,10 +39,11 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../לימודי הנדסת תוכנה/שנה ב/סמסטר ב/כריית נתונים/_project/209526995_313185936/code" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RunManager" selected="Python.engine">
-    <configuration name="Pre_Process" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="Pre_Process_OLD" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Final_Project" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -51,7 +56,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/data_handler/Pre_Process.py" />
+      <option name="SCRIPT_NAME" value="D:\Users\Maayan\Documents\GitHub\Final_Project\src\data_handler\Pre_Process_OLD.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -84,7 +89,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.engine" />
-        <item itemvalue="Python.Pre_Process" />
+        <item itemvalue="Python.Pre_Process_OLD" />
       </list>
     </recent_temporary>
   </component>

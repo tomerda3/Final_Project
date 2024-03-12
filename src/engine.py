@@ -1,14 +1,12 @@
+import os
+
 from typing import Tuple, Literal
-
-import cv2
-
 from src.models.vgg16 import Vgg16
 from src.models.vgg19 import Vgg19
 from src.models.xception import XceptionModel
 from src.data_handler.data_loader import DataLoader
 from src.data_handler.data_splitter import DataSplitter
-import os
-
+from src.data_handler.pre_proc import PreProcess
 
 VGG16 = "vgg16"
 VGG19 = "vgg19"
@@ -24,11 +22,8 @@ class Engine:
         self.test_data_path = None
         self.train_labels = None
         self.test_labels = None
-        self.data = None
-        self.proc_train_labels = None
-        self.proc_train_images = None
-        self.proc_test_labels = None
-        self.proc_test_images = None
+        self.train_images = None
+        self.test_images = None
 
     def set_train_labels(self, df):
         self.train_labels = df
@@ -64,32 +59,26 @@ class Engine:
             dataframe = self.train_labels
 
         data_loader = DataLoader(dataframe, data_type, data_path, name_col, label_col)
+        images, labels = data_loader.load_data()
 
-        # TODO preprocess data
-
-        proc_images, proc_labels = data_loader.load_data()
+        # Preprocessing images
+        preproc = PreProcess(self.image_shape)
+        proc_images = preproc.resize_images(images)
+        proc_labels = preproc.arrange_labels_indexing_from_0(labels)
 
         if data_type == "train":
-            self.proc_train_images, self.proc_train_labels = proc_images, proc_labels
+            self.train_images, self.train_labels = proc_images, proc_labels
         elif data_type == "test":
-            self.proc_test_images, self.proc_test_labels = proc_images, proc_labels
-
+            self.test_images, self.test_labels = proc_images, proc_labels
 
     def run_model(self):
-        # temporal and experimental preprocess:
-        images = [cv2.resize(im.image_data, (400, 400)) for im in self.proc_train_images]
-        for row in images:
-            for i in range(len(row)):
-                row[i] = row[i] / 255
-
-        self.model.run_model(images, self.proc_train_labels)
-        # line above should be replaced by line below after pre-processing
-        # self.model.run_model(self.proc_train_images, self.proc_train_labels)
+        print("Running model...")
+        self.model.run_model(self.train_images, self.train_labels)
+        print("Evaluating model...")
         self.model.evaluation(self.test_images, self.test_labels)
 
 
 if __name__ == "__main__":
-
     csv_label_path = "data\\AgeSplit.csv"
     ds = DataSplitter(csv_label_path)  # returns object with 'train', 'test', 'val' attributes
 
@@ -104,12 +93,11 @@ if __name__ == "__main__":
 
     print("Started loading images...")
     engine.load_images('train', 'File', 'Age')
+    engine.load_images('test', 'File', 'Age')
 
     print("Finished loading images...")
     model = XCEPTION
     engine.choose_model(model)
 
     print(f"Chosen model: {model}")
-    print("Running model...")
     engine.run_model()
-

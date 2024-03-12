@@ -5,6 +5,7 @@ import pandas as pd
 from typing import List, Any
 from pydantic import BaseModel
 from typing import Literal
+from tqdm import tqdm
 
 
 class Image(BaseModel):
@@ -33,11 +34,11 @@ class DataLoader:
         labels = []
 
         ################################ VV SHOULD BE DELETED vv ##################################
-        for file_name in files:
-            if testing:
-                cnt += 1
-                if cnt == 100:
-                    break
+        for file_name in tqdm(files, total=len(files)):
+            # if testing:
+            #     cnt += 1
+            #     if cnt == 100:
+            #         break
         ################################ ^^ SHOULD BE DELETED ^^ ##################################
 
             image = cv2.imread(f"{self.path}/{file_name}")
@@ -56,4 +57,3 @@ class DataLoader:
             if os.path.isfile(os.path.join(self.path, file)):
                 file_names.append(file)
         return file_names
-
