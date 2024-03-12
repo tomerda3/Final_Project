@@ -13,7 +13,6 @@ NUM_OF_CLASSES = 4
 
 class XceptionModel:
 
-    # TODO: Freeze base model
     def __init__(self, weights: str = "imagenet", include_top: bool = True, input_shape: Tuple = (0, 0)):
         inputs = layers.Input(shape=(input_shape[0], input_shape[1], 3))
         optimal_layer = layers.Resizing(299, 299)(inputs)
@@ -38,12 +37,10 @@ class XceptionModel:
         freezed_model_train_data, freezed_model_fittable_labels = train_data[:data_cut], fittable_labels[:data_cut]
         unfreezed_model_train_data, unfreezed_model_fittable_labels = train_data[data_cut:], fittable_labels[data_cut:]
 
-
         self.model.fit(x=freezed_model_train_data, y=freezed_model_fittable_labels,
                        epochs=10,
                        batch_size=32)
 
-        # TODO: Unfreeze base model
         for layer in self.model.layers:
             layer.trainable = True
 
@@ -63,3 +60,6 @@ class XceptionModel:
         print("Accuracy:", accuracy)
         print("Precision:", precision)
         print("Recall:", recall)
+
+        print("Predictions: ", predictions)
+        print("Real labels: ", test_labels)

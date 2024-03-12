@@ -65,6 +65,7 @@ class Engine:
         preproc = PreProcess(self.image_shape)
         proc_images = preproc.resize_images(images)
         proc_labels = preproc.arrange_labels_indexing_from_0(labels)
+        # proc_labels = labels
 
         if data_type == "train":
             self.train_images, self.train_labels = proc_images, proc_labels
