@@ -100,11 +100,11 @@ def get_bundled_engine(base_dir, data_dir, train_dir, test_dir, labels_file, ima
     return engine
 
 
-def load_pickle_engine():
-    # TODO: LOAD PICKLE ENGINE FROM DISC
+def save_engine():
+    # TODO: SAVE ENGINE TO DISC USING PICKLE
     pass
 
 
-def save_pickle_engine():
-    # TODO: SAVE PICKLE ENGINE TO DISC
+def load_engine():
+    # TODO: LOAD ENGINE FROM DISC USING PICKLE
     pass
