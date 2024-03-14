@@ -1,4 +1,4 @@
-import os
+# import os
 
 from typing import Tuple, Literal
 from src.models.vgg16 import Vgg16
@@ -7,6 +7,7 @@ from src.models.xception import XceptionModel
 from src.data_handler.data_loader import DataLoader
 from src.data_handler.data_splitter import DataSplitter
 from src.data_handler.pre_proc import PreProcess
+from pathlib import Path
 
 VGG16 = "vgg16"
 VGG19 = "vgg19"
@@ -80,7 +81,13 @@ class Engine:
 
 
 if __name__ == "__main__":
-    csv_label_path = "data\\AgeSplit.csv"
+    # csv_label_path = "data\\AgeSplit.csv"
+    base_dir = Path.cwd()
+    data_dir = "data"
+    labels_file = "AgeSplit.csv"
+    csv_label_path = str(base_dir / data_dir / labels_file)
+    # csv_label_path = str(Path(data_dir) / labels_file)
+
     ds = DataSplitter(csv_label_path)  # returns object with 'train', 'test', 'val' attributes
 
     image_shape = (400, 400, 3)
@@ -89,8 +96,19 @@ if __name__ == "__main__":
     engine.set_train_labels(ds.train)
     engine.set_test_labels(ds.test)
 
-    engine.set_test_data_path(f"{os.getcwd()}\\data\\test")
-    engine.set_train_data_path(f"{os.getcwd()}\\data\\train")
+    base_dir = Path.cwd()
+    data_dir = "data"
+    train_dir = "train"
+    test_dir = "test"
+    data_path = base_dir / data_dir
+    train_path = data_path / train_dir
+    test_path = data_path / test_dir
+
+    engine.set_test_data_path(str(test_path))
+    engine.set_train_data_path(str(train_path))
+
+    # engine.set_test_data_path(f"{os.getcwd()}\\data\\test")
+    # engine.set_train_data_path(f"{os.getcwd()}\\data\\train")
 
     print("Started loading images...")
     engine.load_images('train', 'File', 'Age')

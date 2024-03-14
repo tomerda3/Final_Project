@@ -11,6 +11,7 @@ import keras
 
 NUM_OF_CLASSES = 4
 
+
 class XceptionModel:
 
     def __init__(self, weights: str = "imagenet", include_top: bool = True, input_shape: Tuple = (0, 0)):
@@ -24,7 +25,6 @@ class XceptionModel:
         output_layer = Dense(units=NUM_OF_CLASSES, activation='softmax')(bridge_layer_to_output)
         self.model = keras.Model(inputs=inputs, outputs=output_layer)
 
-
     def run_model(self, train_data, train_labels: List):
         self.model.compile(loss='categorical_crossentropy',
                            optimizer=Adam(learning_rate=0.001),
@@ -37,6 +37,7 @@ class XceptionModel:
         freezed_model_train_data, freezed_model_fittable_labels = train_data[:data_cut], fittable_labels[:data_cut]
         unfreezed_model_train_data, unfreezed_model_fittable_labels = train_data[data_cut:], fittable_labels[data_cut:]
 
+        print("Training the model excluding base layers...")
         self.model.fit(x=freezed_model_train_data, y=freezed_model_fittable_labels,
                        epochs=10,
                        batch_size=32)
@@ -44,10 +45,10 @@ class XceptionModel:
         for layer in self.model.layers:
             layer.trainable = True
 
+        print("Training the model including base layers...")
         self.model.fit(x=unfreezed_model_train_data, y=unfreezed_model_fittable_labels,
                        epochs=10,
                        batch_size=32)
-
 
     def evaluation(self, test_data, test_labels):
         probabilities = self.model.predict(test_data)

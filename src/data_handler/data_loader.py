@@ -1,7 +1,7 @@
 import os
-import cv2
 import pandas as pd
-
+from pathlib import Path
+import cv2
 from typing import List, Any
 from pydantic import BaseModel
 from typing import Literal
@@ -22,7 +22,7 @@ class DataLoader:
         self.name_col = name_col
         self.label_col = label_col
 
-    def load_data(self) -> List[Image]:
+    def load_data(self):
         ################################ VV SHOULD BE DELETED vv ##################################
         testing = True
         if testing:
@@ -33,15 +33,16 @@ class DataLoader:
         images = []
         labels = []
 
-        ################################ VV SHOULD BE DELETED vv ##################################
         for file_name in tqdm(files, total=len(files)):
+        ################################ VV SHOULD BE DELETED vv ##################################
             # if testing:
             #     cnt += 1
             #     if cnt == 100:
             #         break
         ################################ ^^ SHOULD BE DELETED ^^ ##################################
 
-            image = cv2.imread(f"{self.path}/{file_name}")
+            # image = cv2.imread(f"{self.path}/{file_name}")
+            image = cv2.imread(str(Path(self.path) / file_name))
 
             im = Image(image_name=file_name, image_data=image, data_type=self.type)
             lbl = self.df[self.df[self.name_col] == file_name][self.label_col].values[0]
