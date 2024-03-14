@@ -1,13 +1,10 @@
-# import os
-
 from typing import Tuple, Literal
 from src.models.vgg16 import Vgg16
 from src.models.vgg19 import Vgg19
 from src.models.xception import XceptionModel
 from src.data_handler.data_loader import DataLoader
-from src.data_handler.data_splitter import DataSplitter
+from src.data_handler.label_splitter import LabelSplitter
 from src.data_handler.pre_proc import PreProcess
-from pathlib import Path
 
 VGG16 = "vgg16"
 VGG19 = "vgg19"
@@ -52,6 +49,7 @@ class Engine:
     def load_images(self, data_type: Literal["test", "train"], name_col: str, label_col: str):
         data_path, dataframe = "", ""
 
+        print(f"Loading {data_type} images...")
         if data_type == "test":
             data_path = self.test_data_path
             dataframe = self.test_labels
@@ -66,59 +64,47 @@ class Engine:
         preproc = PreProcess(self.image_shape)
         proc_images = preproc.resize_images(images)
         proc_labels = preproc.arrange_labels_indexing_from_0(labels)
-        # proc_labels = labels
 
         if data_type == "train":
             self.train_images, self.train_labels = proc_images, proc_labels
         elif data_type == "test":
             self.test_images, self.test_labels = proc_images, proc_labels
 
-    def run_model(self):
-        print("Running model...")
-        self.model.run_model(self.train_images, self.train_labels)
+    def train_model(self):
+        print("Training model...")
+        self.model.train_model(self.train_images, self.train_labels)
+
+    def test_model(self):
         print("Evaluating model...")
         self.model.evaluation(self.test_images, self.test_labels)
 
 
-if __name__ == "__main__":
-    # csv_label_path = "data\\AgeSplit.csv"
-    base_dir = Path.cwd()
-    data_dir = "data"
-    labels_file = "AgeSplit.csv"
-    csv_label_path = str(base_dir / data_dir / labels_file)
-    # csv_label_path = str(Path(data_dir) / labels_file)
+def get_bundled_engine(base_dir, data_dir, train_dir, test_dir, labels_file, image_shape):
 
-    ds = DataSplitter(csv_label_path)  # returns object with 'train', 'test', 'val' attributes
-
-    image_shape = (400, 400, 3)
-    engine = Engine(image_shape)
-
-    engine.set_train_labels(ds.train)
-    engine.set_test_labels(ds.test)
-
-    base_dir = Path.cwd()
-    data_dir = "data"
-    train_dir = "train"
-    test_dir = "test"
+    # Setting file system
     data_path = base_dir / data_dir
     train_path = data_path / train_dir
     test_path = data_path / test_dir
+    csv_label_path = str(base_dir / data_dir / labels_file)
 
+    # Initializing engine
+    engine = Engine(image_shape)
+
+    # Setting engine labels & paths
+    get_labels = LabelSplitter(csv_label_path)  # returns object with 'train', 'test', 'val' attributes
+    engine.set_train_labels(get_labels.train)
+    engine.set_test_labels(get_labels.test)
     engine.set_test_data_path(str(test_path))
     engine.set_train_data_path(str(train_path))
 
-    # engine.set_test_data_path(f"{os.getcwd()}\\data\\test")
-    # engine.set_train_data_path(f"{os.getcwd()}\\data\\train")
+    return engine
 
-    print("Started loading images...")
-    print("Loading train images...")
-    engine.load_images('train', 'File', 'Age')
-    print("Loading test images...")
-    engine.load_images('test', 'File', 'Age')
 
-    print("Finished loading images...")
-    model = XCEPTION
-    engine.choose_model(model)
+def load_pickle_engine():
+    # TODO: LOAD PICKLE ENGINE FROM DISC
+    pass
 
-    print(f"Chosen model: {model}")
-    engine.run_model()
+
+def save_pickle_engine():
+    # TODO: SAVE PICKLE ENGINE TO DISC
+    pass

@@ -23,25 +23,12 @@ class DataLoader:
         self.label_col = label_col
 
     def load_data(self):
-        ################################ VV SHOULD BE DELETED vv ##################################
-        testing = True
-        if testing:
-            cnt = 0
-        ################################ ^^ SHOULD BE DELETED ^^ ##################################
 
         files = self._get_files_name()
         images = []
         labels = []
 
         for file_name in tqdm(files, total=len(files)):
-        ################################ VV SHOULD BE DELETED vv ##################################
-            # if testing:
-            #     cnt += 1
-            #     if cnt == 100:
-            #         break
-        ################################ ^^ SHOULD BE DELETED ^^ ##################################
-
-            # image = cv2.imread(f"{self.path}/{file_name}")
             image = cv2.imread(str(Path(self.path) / file_name))
 
             im = Image(image_name=file_name, image_data=image, data_type=self.type)

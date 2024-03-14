@@ -1,7 +1,7 @@
 import pandas as pd
 
 
-class DataSplitter:
+class LabelSplitter:
     def __init__(self, directory_path: str, set_name: str = 'Set'):
         self.directory_path = directory_path
         df = pd.read_csv(self.directory_path)
