@@ -111,7 +111,9 @@ if __name__ == "__main__":
     # engine.set_train_data_path(f"{os.getcwd()}\\data\\train")
 
     print("Started loading images...")
+    print("Loading train images...")
     engine.load_images('train', 'File', 'Age')
+    print("Loading test images...")
     engine.load_images('test', 'File', 'Age')
 
     print("Finished loading images...")
