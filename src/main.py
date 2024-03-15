@@ -7,8 +7,6 @@ XCEPTION = "xception"
 
 if __name__ == "__main__":
 
-    model = XCEPTION
-
     # Creating a new engine
     engine = get_bundled_engine(
         base_dir=Path.cwd() / "data",
@@ -19,11 +17,11 @@ if __name__ == "__main__":
     )
 
     # Loading images to engine
-    engine.load_images('train', 'File', 'Age')
-    engine.load_images('test', 'File', 'Age')
+    engine.load_images(data_type='train', name_col='File', label_col='Age')
+    engine.load_images(data_type='test', name_col='File', label_col='Age')
 
     # Setting engine model
-    engine.choose_model(model)
+    engine.choose_model(XCEPTION)
 
     # Training model
     engine.train_model()
