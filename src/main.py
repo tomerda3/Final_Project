@@ -1,4 +1,4 @@
-import engine
+from engine import *
 from pathlib import Path
 
 VGG16 = "vgg16"
@@ -10,24 +10,23 @@ if __name__ == "__main__":
     model = XCEPTION
 
     # Creating a new engine
-    e = engine.get_bundled_engine(
-        base_dir=Path.cwd(),
-        data_dir="data",
-        train_dir="train",
-        test_dir="test",
+    engine = get_bundled_engine(
+        base_dir=Path.cwd() / "data",
+        train_images_folder="train",
+        test_images_folder="test",
         labels_file="AgeSplit.csv",
         image_shape=(400, 400, 3)
     )
 
     # Loading images to engine
-    e.load_images('train', 'File', 'Age')
-    e.load_images('test', 'File', 'Age')
+    engine.load_images('train', 'File', 'Age')
+    engine.load_images('test', 'File', 'Age')
 
     # Setting engine model
-    e.choose_model(model)
+    engine.choose_model(model)
 
     # Training model
-    e.train_model()
+    engine.train_model()
 
     # Test model
-    e.test_model()
+    engine.test_model()

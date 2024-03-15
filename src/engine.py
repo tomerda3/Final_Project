@@ -78,14 +78,21 @@ class Engine:
         print("Evaluating model...")
         self.model.evaluation(self.test_images, self.test_labels)
 
+    def save_model(self):
+        # TODO: SAVE MODEL TO DISC USING PICKLE
+        pass
 
-def get_bundled_engine(base_dir, data_dir, train_dir, test_dir, labels_file, image_shape):
+    def load_model(self):
+        # TODO: LOAD MODEL FROM DISC USING PICKLE
+        pass
+
+
+def get_bundled_engine(base_dir, train_images_folder, test_images_folder, labels_file, image_shape):
 
     # Setting file system
-    data_path = base_dir / data_dir
-    train_path = data_path / train_dir
-    test_path = data_path / test_dir
-    csv_label_path = str(base_dir / data_dir / labels_file)
+    train_path = base_dir / train_images_folder
+    test_path = base_dir / test_images_folder
+    csv_label_path = str(base_dir / labels_file)
 
     # Initializing engine
     engine = Engine(image_shape)
@@ -98,13 +105,3 @@ def get_bundled_engine(base_dir, data_dir, train_dir, test_dir, labels_file, ima
     engine.set_train_data_path(str(train_path))
 
     return engine
-
-
-def save_engine():
-    # TODO: SAVE ENGINE TO DISC USING PICKLE
-    pass
-
-
-def load_engine():
-    # TODO: LOAD ENGINE FROM DISC USING PICKLE
-    pass
