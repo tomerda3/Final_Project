@@ -28,14 +28,24 @@ class DataLoader:
         images = []
         labels = []
 
+        #@TODO : Experimentation should be done to find the best part size and overlap
+        part_size = 256
+        # Overlap - it is recommended to have a 25%-30% overlap from the part size
+        overlap = 32
+
         for file_name in tqdm(files, total=len(files)):
             image = cv2.imread(str(Path(self.path) / file_name))
 
-            im = Image(image_name=file_name, image_data=image, data_type=self.type)
-            lbl = self.df[self.df[self.name_col] == file_name][self.label_col].values[0]
+            for y in range(0, image.shape[0], part_size - overlap):
+                for x in range(0, image.shape[1], part_size - overlap):
+                    # Extract the current part
+                    image_segment = image[y:y + part_size, x:x + part_size]
 
-            images.append(im)
-            labels.append(lbl)
+                    im = Image(image_name=f"{file_name}_{y}_{x}", image_data=image_segment, data_type=self.type)
+                    lbl = self.df[self.df[self.name_col] == file_name][self.label_col].values[0]
+
+                    images.append(im)
+                    labels.append(lbl)
 
         return images, labels
 
