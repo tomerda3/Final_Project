@@ -17,8 +17,8 @@ if __name__ == "__main__":
     )
 
     # Loading images to engine
-    engine.load_images(data_type='train', name_col='File', label_col='Age')
-    engine.load_images(data_type='test', name_col='File', label_col='Age')
+    engine.load_images(data_type='train', image_filename_col='File', label_col='Age')
+    engine.load_images(data_type='test', image_filename_col='File', label_col='Age')
 
     # Setting engine model
     engine.choose_model(XCEPTION)

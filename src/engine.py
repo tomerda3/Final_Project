@@ -46,7 +46,7 @@ class Engine:
             print(f"No model found with the name={model}")
             raise KeyError
 
-    def load_images(self, data_type: Literal["test", "train"], name_col: str, label_col: str):
+    def load_images(self, data_type: Literal["test", "train"], image_filename_col: str, label_col: str):
         data_path, dataframe = "", ""
 
         print(f"Loading {data_type} images...")
@@ -57,7 +57,7 @@ class Engine:
             data_path = self.train_data_path
             dataframe = self.train_labels
 
-        data_loader = DataLoader(dataframe, data_type, data_path, name_col, label_col)
+        data_loader = DataLoader(dataframe, data_type, data_path, image_filename_col, label_col)
         images, labels = data_loader.load_data()
 
         # Preprocessing images
