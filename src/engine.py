@@ -6,6 +6,7 @@ from src.data_handler.data_loader import DataLoader
 from src.data_handler.label_splitter import LabelSplitter
 from src.data_handler.pre_proc import PreProcess
 from models.model_names import *
+import cv2
 
 
 class Engine:
@@ -57,10 +58,19 @@ class Engine:
         data_loader = DataLoader(dataframe, data_type, data_path, image_filename_col, label_col)
         images, labels = data_loader.load_data()
 
+        print(f"Preprocessing {data_type} images...")
         # Preprocessing images
-        preproc = PreProcess(self.image_shape)
-        proc_labels = preproc.arrange_labels_indexing_from_0(labels)
-        proc_images = preproc.resize_images(images)  # TODO: replace with segmentation
+        preprocessor = PreProcess(self.image_shape)
+        proc_labels = preprocessor.arrange_labels_indexing_from_0(labels)
+        grayscale_images = preprocessor.grayscale_images(images)
+        reverse_binarize_images = preprocessor.reverse_binarize_images(grayscale_images)
+        cropped_images = preprocessor.crop_text_from_reversed_binary_images(reverse_binarize_images)
+
+        # for i in range(3):
+        #     cv2.imshow('Image', proc_images[i])
+        #     cv2.waitKey(0)
+
+        proc_images = preprocessor.resize_images(cropped_images)  # TODO: replace with segmentation
 
         if data_type == "train":
             self.train_images, self.train_labels = proc_images, proc_labels

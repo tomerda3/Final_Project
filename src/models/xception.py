@@ -8,6 +8,7 @@ from sklearn.metrics import accuracy_score, precision_score, recall_score
 from keras import layers
 from keras.utils import to_categorical
 import keras
+import tensorflow as tf
 
 NUM_OF_CLASSES = 4
 
@@ -15,8 +16,17 @@ NUM_OF_CLASSES = 4
 class XceptionModel:
 
     def __init__(self, weights: str = "imagenet", include_top: bool = True, input_shape: Tuple = (0, 0)):
-        inputs = layers.Input(shape=(input_shape[0], input_shape[1], 3))
-        optimal_layer = layers.Resizing(299, 299)(inputs)
+        # inputs = layers.Input(shape=(input_shape[0], input_shape[1], 3))
+        inputs = layers.Input(shape=input_shape)
+
+        # optimal_layer = layers.Resizing(299, 299)(inputs)
+
+        if include_top:  # If using pre-trained top layers that expect RGB
+            gray_to_rgb = layers.Lambda(lambda x: tf.image.grayscale_to_rgb(x))(inputs)
+            optimal_layer = layers.Resizing(299, 299)(gray_to_rgb)
+        else:  # If not using pre-trained top layers, keep as grayscale
+            optimal_layer = layers.Resizing(299, 299)(inputs)
+
         base_model = Xception(weights=weights, include_top=include_top)
         for layer in base_model.layers:
             layer.trainable = False

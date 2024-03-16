@@ -3,15 +3,15 @@ import pandas as pd
 from pathlib import Path
 import cv2
 from typing import List, Any
-from pydantic import BaseModel
+# from pydantic import BaseModel
 from typing import Literal
 from tqdm import tqdm
 
 
-class Image(BaseModel):
-    image_name: str
-    data_type: str
-    image_data: Any
+# class Image(BaseModel):
+#     image_name: str
+#     data_type: str
+#     image_data: Any
 
 
 class DataLoader:
@@ -31,10 +31,11 @@ class DataLoader:
         for file_name in tqdm(files, total=len(files)):
             image = cv2.imread(str(Path(self.path) / file_name))
 
-            im = Image(image_name=file_name, image_data=image, data_type=self.type)
+            # im = Image(image_name=file_name, image_data=image, data_type=self.type)
             lbl = self.df[self.df[self.name_col] == file_name][self.label_col].values[0]
 
-            images.append(im)
+            # images.append(im)
+            images.append(image)
             labels.append(lbl)
 
         return images, labels
