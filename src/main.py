@@ -1,9 +1,6 @@
 from engine import *
 from pathlib import Path
-
-VGG16 = "vgg16"
-VGG19 = "vgg19"
-XCEPTION = "xception"
+from models.model_names import *
 
 if __name__ == "__main__":
 

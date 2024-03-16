@@ -5,10 +5,7 @@ from src.models.xception import XceptionModel
 from src.data_handler.data_loader import DataLoader
 from src.data_handler.label_splitter import LabelSplitter
 from src.data_handler.pre_proc import PreProcess
-
-VGG16 = "vgg16"
-VGG19 = "vgg19"
-XCEPTION = "xception"
+from models.model_names import *
 
 
 class Engine:
