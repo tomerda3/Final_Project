@@ -32,7 +32,7 @@ class XceptionModel:
 
         fittable_labels = to_categorical(train_labels, num_classes=NUM_OF_CLASSES)
 
-        data_cut = len(train_data) // 5  # 20% to the freezed model, then 80% to the unfreezed model
+        data_cut = int(len(train_data) * 0.20)  # 20% to the freezed model, then 80% to the unfreezed model
 
         freezed_model_train_data, freezed_model_fittable_labels = train_data[:data_cut], fittable_labels[:data_cut]
         unfreezed_model_train_data, unfreezed_model_fittable_labels = train_data[data_cut:], fittable_labels[data_cut:]
