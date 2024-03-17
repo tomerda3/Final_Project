@@ -9,7 +9,7 @@ class PreProcess:
         self.image_shape = shape
 
     def resize_images(self, images):
-        print("Resizing images...")
+        # print("Resizing images...")
         # processed_images = [cv2.resize(im.image_data, (self.image_shape[0], self.image_shape[1])) for im in images]
         processed_images = [cv2.resize(im, (self.image_shape[0], self.image_shape[1])) for im in images]
         for row in tqdm(processed_images):
@@ -18,7 +18,7 @@ class PreProcess:
         return np.array(processed_images)
 
     def segment_images(self, images, labels, segment_shape):  # TODO: Fix method
-        print("Segmenting images...")
+        # print("Segmenting images...")
         segmented_images = []
         segmented_labels = []
 
@@ -51,7 +51,7 @@ class PreProcess:
         return [x-1 for x in labels if 0 not in labels]
 
     def grayscale_images(self, images):
-        print("Turning images to grayscale...")
+        # print("Turning images to grayscale...")
         grayscale_images = []
         for image in tqdm(images):
             if len(image.shape) == 3:
@@ -60,7 +60,7 @@ class PreProcess:
         return grayscale_images
 
     def reverse_binarize_images(self, images, threshold_method=cv2.THRESH_BINARY_INV):
-        print("Reverse binarizing images...")
+        # print("Reverse binarizing images...")
         binarized_images = []
 
         for image in tqdm(images):
@@ -70,7 +70,7 @@ class PreProcess:
         return binarized_images
 
     def crop_text_from_reversed_binary_images(self, images, min_black_pixels=1):  # TODO: Fix, might not crop correctly
-        print("Cropping text from images...")
+        # print("Cropping text from images...")
         cropped_images = []
         for image in tqdm(images):
 

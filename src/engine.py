@@ -6,7 +6,6 @@ from src.data_handler.data_loader import DataLoader
 from src.data_handler.label_splitter import LabelSplitter
 from src.data_handler.pre_proc import PreProcess
 from models.model_names import *
-import cv2
 
 
 class Engine:
@@ -44,6 +43,19 @@ class Engine:
             print(f"No model found with the name={model}")
             raise KeyError
 
+    def preprocess_data(self, images, labels, data_type):
+        print(f"\nPreprocessing {data_type} images...")
+
+        preprocessor = PreProcess(self.image_shape)
+        proc_labels = preprocessor.arrange_labels_indexing_from_0(labels)
+        grayscale_images = preprocessor.grayscale_images(images)
+        reverse_binarize_images = preprocessor.reverse_binarize_images(grayscale_images)
+        cropped_images = preprocessor.crop_text_from_reversed_binary_images(reverse_binarize_images)
+        # proc_images, proc_labels = preprocessor.segment_images(cropped_images, proc_labels, self.image_shape)
+        proc_images = preprocessor.resize_images(cropped_images)  # TODO: replace with segmentation
+
+        return proc_images, proc_labels
+
     def load_images(self, data_type: Literal["test", "train"], image_filename_col: str, label_col: str):
         data_path, dataframe = "", ""
 
@@ -58,15 +70,8 @@ class Engine:
         data_loader = DataLoader(dataframe, data_type, data_path, image_filename_col, label_col)
         images, labels = data_loader.load_data()
 
-        print(f"Preprocessing {data_type} images...")
-        # Preprocessing images
-        preprocessor = PreProcess(self.image_shape)
-        proc_labels = preprocessor.arrange_labels_indexing_from_0(labels)
-        grayscale_images = preprocessor.grayscale_images(images)
-        reverse_binarize_images = preprocessor.reverse_binarize_images(grayscale_images)
-        cropped_images = preprocessor.crop_text_from_reversed_binary_images(reverse_binarize_images)
-        # proc_images, proc_labels = preprocessor.segment_images(cropped_images, proc_labels, self.image_shape)
-        proc_images = preprocessor.resize_images(cropped_images)  # TODO: replace with segmentation
+        # Preprocessing:
+        proc_images, proc_labels = self.preprocess_data(images, labels, data_type)
 
         if data_type == "train":
             self.train_images, self.train_labels = proc_images, proc_labels

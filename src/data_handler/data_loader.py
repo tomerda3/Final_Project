@@ -28,12 +28,13 @@ class DataLoader:
         images = []
         labels = []
 
-        cnt = 0
-        for file_name in tqdm(files, total=len(files)):
+        # cnt = 0
 
-            cnt += 1
-            if cnt == 50:
-                return images, labels
+        for file_name in tqdm(files):
+
+            # cnt += 1
+            # if cnt == 50:
+            #     return images, labels
 
             image = cv2.imread(str(Path(self.path) / file_name))
 
