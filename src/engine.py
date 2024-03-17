@@ -44,7 +44,7 @@ class Engine:
             raise KeyError
 
     def preprocess_data(self, images, labels, data_type):
-        print(f"\nPreprocessing {data_type} images...")
+        print(f"\nPreprocessing {data_type} images... (4 stages)")
 
         preprocessor = PreProcess(self.image_shape)
         proc_labels = preprocessor.arrange_labels_indexing_from_0(labels)

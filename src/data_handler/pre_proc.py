@@ -17,7 +17,7 @@ class PreProcess:
                 row[i] = row[i] / 255
         return np.array(processed_images)
 
-    def segment_images(self, images, labels, segment_shape):  # TODO: Fix method
+    def segment_images(self, images, labels, segment_shape):  # TODO: Fix method to segment test data
         # print("Segmenting images...")
         segmented_images = []
         segmented_labels = []

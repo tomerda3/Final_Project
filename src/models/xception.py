@@ -42,22 +42,17 @@ class XceptionModel:
 
         fittable_labels = to_categorical(train_labels, num_classes=NUM_OF_CLASSES)
 
-        data_cut = int(len(train_data) * 0.20)  # 20% to the freezed model, then 80% to the unfreezed model
-
-        freezed_model_train_data, freezed_model_fittable_labels = train_data[:data_cut], fittable_labels[:data_cut]
-        unfreezed_model_train_data, unfreezed_model_fittable_labels = train_data[data_cut:], fittable_labels[data_cut:]
-
         print("Epochs excluding base layers...")
-        self.model.fit(x=freezed_model_train_data, y=freezed_model_fittable_labels,
-                       epochs=10,
+        self.model.fit(x=train_data, y=fittable_labels,
+                       epochs=20,
                        batch_size=32)
 
         for layer in self.model.layers:
             layer.trainable = True
 
         print("Epochs including base layers...")
-        self.model.fit(x=unfreezed_model_train_data, y=unfreezed_model_fittable_labels,
-                       epochs=10,
+        self.model.fit(x=train_data, y=fittable_labels,
+                       epochs=20,
                        batch_size=32)
 
     def evaluation(self, test_data, test_labels):
@@ -65,12 +60,12 @@ class XceptionModel:
         predictions = np.argmax(probabilities, axis=1)
 
         accuracy = accuracy_score(test_labels, predictions)
-        precision = precision_score(test_labels, predictions, average=None)
-        recall = recall_score(test_labels, predictions, average=None)
+        # precision = precision_score(test_labels, predictions, average=None)
+        # recall = recall_score(test_labels, predictions, average=None)
 
         print("Accuracy:", accuracy)
-        print("Precision:", precision)
-        print("Recall:", recall)
+        # print("Precision:", precision)
+        # print("Recall:", recall)
 
         print("Predictions: ", list(predictions))
         print("Real labels: ", list(test_labels))
