@@ -65,11 +65,7 @@ class Engine:
         grayscale_images = preprocessor.grayscale_images(images)
         reverse_binarize_images = preprocessor.reverse_binarize_images(grayscale_images)
         cropped_images = preprocessor.crop_text_from_reversed_binary_images(reverse_binarize_images)
-
-        # for i in range(3):
-        #     cv2.imshow('Image', proc_images[i])
-        #     cv2.waitKey(0)
-
+        # proc_images, proc_labels = preprocessor.segment_images(cropped_images, proc_labels, self.image_shape)
         proc_images = preprocessor.resize_images(cropped_images)  # TODO: replace with segmentation
 
         if data_type == "train":

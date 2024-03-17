@@ -8,9 +8,8 @@ class PreProcess:
     def __init__(self, shape: Tuple):
         self.image_shape = shape
 
-    # TODO: Replace resizing with segmentation
     def resize_images(self, images):
-        print("\nResizing images...")
+        print("Resizing images...")
         # processed_images = [cv2.resize(im.image_data, (self.image_shape[0], self.image_shape[1])) for im in images]
         processed_images = [cv2.resize(im, (self.image_shape[0], self.image_shape[1])) for im in images]
         for row in tqdm(processed_images):
@@ -18,11 +17,41 @@ class PreProcess:
                 row[i] = row[i] / 255
         return np.array(processed_images)
 
+    def segment_images(self, images, labels, segment_shape):  # TODO: Fix method
+        print("Segmenting images...")
+        segmented_images = []
+        segmented_labels = []
+
+        for i in range(len(images)):
+            image = images[i]
+            label = labels[i]
+            height = len(image)
+            width = len(image[0])
+            y = 0
+
+            y_step = segment_shape[1] // 2
+            x_step = segment_shape[0] // 2
+
+            while y <= height - y_step:
+                if segment_shape[1] - y < y_step:
+                    break
+                x = 0
+                while x < width - x_step:
+                    if segment_shape[0] - x < x_step:
+                        break
+                    segment = image[y: y + segment_shape[1], x: x + segment_shape[0]].copy()
+                    x = x + x_step
+                    segmented_images.append(segment)
+                    segmented_labels.append(label)
+                y = y + y_step
+
+        return segmented_images, segmented_labels
+
     def arrange_labels_indexing_from_0(self, labels: List) -> List:
         return [x-1 for x in labels if 0 not in labels]
 
     def grayscale_images(self, images):
-        print("\nTurning images to grayscale...")
+        print("Turning images to grayscale...")
         grayscale_images = []
         for image in tqdm(images):
             if len(image.shape) == 3:
@@ -31,7 +60,7 @@ class PreProcess:
         return grayscale_images
 
     def reverse_binarize_images(self, images, threshold_method=cv2.THRESH_BINARY_INV):
-        print("\nReverse binarizing images...")
+        print("Reverse binarizing images...")
         binarized_images = []
 
         for image in tqdm(images):
@@ -41,7 +70,7 @@ class PreProcess:
         return binarized_images
 
     def crop_text_from_reversed_binary_images(self, images, min_black_pixels=1):  # TODO: Fix, might not crop correctly
-        print("\nCropping text from images...")
+        print("Cropping text from images...")
         cropped_images = []
         for image in tqdm(images):
 
