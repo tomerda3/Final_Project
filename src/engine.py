@@ -6,6 +6,8 @@ from src.data_handler.data_loader import DataLoader
 from src.data_handler.label_splitter import LabelSplitter
 from src.data_handler.pre_proc import PreProcess
 from models.model_names import *
+from collections import Counter
+from sklearn.metrics import accuracy_score
 
 
 class Engine:
@@ -44,15 +46,19 @@ class Engine:
             raise KeyError
 
     def preprocess_data(self, images, labels, data_type):
-        print(f"\nPreprocessing {data_type} images... (4 stages)")
+        print(f"\nPreprocessing {data_type} images...")
 
         preprocessor = PreProcess(self.image_shape)
+
         proc_labels = preprocessor.arrange_labels_indexing_from_0(labels)
         grayscale_images = preprocessor.grayscale_images(images)
         reverse_binarize_images = preprocessor.reverse_binarize_images(grayscale_images)
         cropped_images = preprocessor.crop_text_from_reversed_binary_images(reverse_binarize_images)
-        # proc_images, proc_labels = preprocessor.patch_images(cropped_images, proc_labels, self.image_shape)
-        proc_images = preprocessor.resize_images(cropped_images)  # TODO: replace with patching
+
+        proc_images = cropped_images
+        if data_type == "train":
+            proc_images, proc_labels = preprocessor.patch_images(cropped_images, proc_labels, self.image_shape)
+        # proc_images = preprocessor.resize_images(cropped_images)
 
         return proc_images, proc_labels
 
@@ -82,9 +88,30 @@ class Engine:
         print("Training model...")
         self.model.train_model(self.train_images, self.train_labels)
 
+    def most_common_number(self, number_list):
+        number_counts = Counter(number_list)
+        most_common = number_counts.most_common(1)[0][0]
+        return most_common
+
     def test_model(self):
         print("Evaluating model...")
-        self.model.evaluation(self.test_images, self.test_labels)
+        # self.model.evaluation(self.test_images, self.test_labels)
+
+        predictions = []
+        preprocessor = PreProcess(self.image_shape)
+
+        for i in range(len(self.test_images)):
+            image = self.test_images[i]
+            label = self.test_labels[i]
+
+            patches, _ = preprocessor.patch_images([image], [label], self.image_shape)
+            patch_predictions = self.model.patch_evaluation(patches)
+            predictions.append(self.most_common_number(patch_predictions))
+
+        accuracy = accuracy_score(self.test_labels, predictions)
+        print(f"Accuracy: {accuracy}")
+        print(f"Predictions: {predictions}")
+        print(f"Real labels: {self.test_labels}")
 
     def save_model(self):
         # TODO: SAVE MODEL TO DISC USING PICKLE

@@ -7,6 +7,8 @@ from typing import List, Any
 from typing import Literal
 from tqdm import tqdm
 
+SHORT_RUN = False
+IMAGE_LIMIT = 100
 
 # class Image(BaseModel):
 #     image_name: str
@@ -28,13 +30,15 @@ class DataLoader:
         images = []
         labels = []
 
-        # cnt = 0
+        if SHORT_RUN:
+            cnt = 0
 
         for file_name in tqdm(files):
 
-            # cnt += 1
-            # if cnt == 50:
-            #     return images, labels
+            if SHORT_RUN:
+                cnt += 1
+                if cnt == IMAGE_LIMIT:
+                    return images, labels
 
             image = cv2.imread(str(Path(self.path) / file_name))
 

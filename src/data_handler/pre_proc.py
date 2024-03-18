@@ -17,7 +17,7 @@ class PreProcess:
                 row[i] = row[i] / 255
         return np.array(processed_images)
 
-    def patch_images(self, images, labels, segment_shape):  # TODO: Fix method to segment test data
+    def patch_images(self, images, labels, segment_shape):
         # print("Patching images...")
         patched_images = []
         patched_labels = []
@@ -45,7 +45,7 @@ class PreProcess:
                     patched_labels.append(label)
                 y = y + y_step
 
-        return patched_images, patched_labels
+        return np.array(patched_images), patched_labels
 
     def arrange_labels_indexing_from_0(self, labels: List) -> List:
         return [x-1 for x in labels if 0 not in labels]
