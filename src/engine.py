@@ -61,9 +61,6 @@ class Engine:
         proc_images = cropped_images
         if data_type == "train":
             proc_images, proc_labels = preprocessor.patch_images(cropped_images, proc_labels, self.image_shape)
-            for i in range(len(proc_images)):
-                cv2.imshow("Image", proc_images[i])
-                cv2.waitKey(0)
         # proc_images = preprocessor.resize_images(proc_images)
 
         return proc_images, proc_labels

@@ -7,7 +7,7 @@ from typing import List, Any
 from typing import Literal
 from tqdm import tqdm
 
-SHORT_RUN = True
+SHORT_RUN = False
 IMAGE_LIMIT = 10
 
 # class Image(BaseModel):
