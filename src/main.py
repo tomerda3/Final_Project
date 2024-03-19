@@ -10,7 +10,6 @@ if __name__ == "__main__":
         train_images_folder="train",
         test_images_folder="test",
         labels_file="AgeSplit.csv",
-        # image_shape=(400, 400, 3)
         image_shape=(400, 400, 1)
     )
 

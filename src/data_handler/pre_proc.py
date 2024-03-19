@@ -40,10 +40,10 @@ class PreProcess:
                     if segment_shape[0] - x < x_step:
                         break
                     segment = image[y: y + segment_shape[1], x: x + segment_shape[0]].copy()
-                    x = x + x_step
+                    x += x_step
                     patched_images.append(segment)
                     patched_labels.append(label)
-                y = y + y_step
+                y += y_step
 
         return np.array(patched_images), patched_labels
 

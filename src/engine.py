@@ -1,4 +1,7 @@
 from typing import Tuple, Literal
+
+import cv2
+
 from src.models.vgg16 import Vgg16
 from src.models.vgg19 import Vgg19
 from src.models.xception import XceptionModel
@@ -58,6 +61,9 @@ class Engine:
         proc_images = cropped_images
         if data_type == "train":
             proc_images, proc_labels = preprocessor.patch_images(cropped_images, proc_labels, self.image_shape)
+            for i in range(len(proc_images)):
+                cv2.imshow("Image", proc_images[i])
+                cv2.waitKey(0)
         # proc_images = preprocessor.resize_images(proc_images)
 
         return proc_images, proc_labels
@@ -106,8 +112,8 @@ class Engine:
 
             patches, _ = preprocessor.patch_images([image], [label], self.image_shape)
             patch_predictions = self.model.patch_evaluation(patches)
-            most_common_prediction = self.most_common_number(patch_predictions)
-            predictions.append(most_common_prediction)
+            most_common_image_prediction = self.most_common_number(patch_predictions)
+            predictions.append(most_common_image_prediction)
 
         accuracy = accuracy_score(self.test_labels, predictions)
         print(f"Accuracy: {accuracy}")
