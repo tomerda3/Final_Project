@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="79925ffe-40dc-4e95-b7a9-483ace359046" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data_handler/pre_proc.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/data_handler/pre_proc.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +40,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../Desktop/Scanner" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../Desktop/Final Project/readlist for project/9_9_project" />
   </component>
   <component name="RunManager" selected="Python.main">
     <configuration name="Pre_Process_OLD" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
