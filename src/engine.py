@@ -58,7 +58,7 @@ class Engine:
         proc_images = cropped_images
         if data_type == "train":
             proc_images, proc_labels = preprocessor.patch_images(cropped_images, proc_labels, self.image_shape)
-        # proc_images = preprocessor.resize_images(cropped_images)
+        # proc_images = preprocessor.resize_images(proc_images)
 
         return proc_images, proc_labels
 
@@ -106,7 +106,8 @@ class Engine:
 
             patches, _ = preprocessor.patch_images([image], [label], self.image_shape)
             patch_predictions = self.model.patch_evaluation(patches)
-            predictions.append(self.most_common_number(patch_predictions))
+            most_common_prediction = self.most_common_number(patch_predictions)
+            predictions.append(most_common_prediction)
 
         accuracy = accuracy_score(self.test_labels, predictions)
         print(f"Accuracy: {accuracy}")

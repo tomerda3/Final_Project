@@ -16,10 +16,7 @@ NUM_OF_CLASSES = 4
 class XceptionModel:
 
     def __init__(self, weights: str = "imagenet", include_top: bool = True, input_shape: Tuple = (0, 0)):
-        # inputs = layers.Input(shape=(input_shape[0], input_shape[1], 3))
         inputs = layers.Input(shape=input_shape)
-
-        # optimal_layer = layers.Resizing(299, 299)(inputs)
 
         if include_top:  # If using pre-trained top layers that expect RGB
             gray_to_rgb = layers.Lambda(lambda x: tf.image.grayscale_to_rgb(x))(inputs)
