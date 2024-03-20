@@ -24,7 +24,7 @@ class DataLoader:
         self.name_col = name_col
         self.label_col = label_col
 
-    def load_data(self):
+    def load_data(self, clean_method: Literal["HHD", "KHATT"]="HHD"):
 
         files = self._get_files_name()
         images = []
@@ -42,8 +42,14 @@ class DataLoader:
 
             image = cv2.imread(str(Path(self.path) / file_name))
 
-            # im = Image(image_name=file_name, image_data=image, data_type=self.type)
-            lbl = self.df[self.df[self.name_col] == file_name][self.label_col].values[0]
+            if clean_method == "KHATT":
+                clean_name = file_name[5:10]
+                row_of_file = self.df[self.df[self.name_col] == clean_name]
+                if len(row_of_file) == 0:  # if filename not in labels database
+                    continue
+                lbl = row_of_file[self.label_col].values[0]
+            else:
+                lbl = self.df[self.df[self.name_col] == file_name][self.label_col].values[0]
 
             # images.append(im)
             images.append(image)
