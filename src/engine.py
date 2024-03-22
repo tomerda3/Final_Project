@@ -1,7 +1,5 @@
 from typing import Tuple, Literal
 
-import cv2
-
 from src.models.vgg16 import Vgg16
 from src.models.vgg19 import Vgg19
 from src.models.xception import XceptionModel
@@ -126,26 +124,6 @@ class Engine:
     def load_model(self):
         # TODO: LOAD MODEL FROM DISC USING PICKLE
         pass
-
-
-# def get_bundled_engine(base_dir, train_images_folder, test_images_folder, labels_file, image_shape):
-#
-#     # Setting file system
-#     train_path = base_dir / train_images_folder
-#     test_path = base_dir / test_images_folder
-#     csv_label_path = str(base_dir / labels_file)
-#
-#     # Initializing engine
-#     engine = Engine(image_shape)
-#
-#     # Setting engine labels & paths
-#     get_labels = LabelSplitter(csv_label_path)  # returns object with 'train', 'test', 'val' attributes
-#     engine.set_train_labels(get_labels.train)
-#     engine.set_test_labels(get_labels.test)
-#     engine.set_test_data_path(str(test_path))
-#     engine.set_train_data_path(str(train_path))
-#
-#     return engine
 
 
 def construct_HHD_engine(base_dir, image_shape):

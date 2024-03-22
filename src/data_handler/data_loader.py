@@ -2,18 +2,12 @@ import os
 import pandas as pd
 from pathlib import Path
 import cv2
-from typing import List, Any
-# from pydantic import BaseModel
+from typing import List
 from typing import Literal
 from tqdm import tqdm
 
 SHORT_RUN = False
 IMAGE_LIMIT = 100
-
-# class Image(BaseModel):
-#     image_name: str
-#     data_type: str
-#     image_data: Any
 
 
 class DataLoader:
@@ -40,7 +34,7 @@ class DataLoader:
                 if cnt == IMAGE_LIMIT:
                     return images, labels
 
-            image = cv2.imread(str(Path(self.path) / file_name))
+            image = cv2.imread(str(Path(self.path) / file_name))  # TODO: Read as greyscale -> remove from preprocess
 
             if clean_method == "KHATT":
                 clean_name = file_name[5:10]
@@ -51,7 +45,6 @@ class DataLoader:
             else:
                 lbl = self.df[self.df[self.name_col] == file_name][self.label_col].values[0]
 
-            # images.append(im)
             images.append(image)
             labels.append(lbl)
 
