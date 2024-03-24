@@ -41,7 +41,7 @@ class XceptionModel:
 
         print("Epochs excluding base layers...")
         self.model.fit(x=train_data, y=fittable_labels,
-                       epochs=20,
+                       epochs=10,
                        batch_size=32)
 
         for layer in self.model.layers:

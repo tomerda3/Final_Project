@@ -7,3 +7,4 @@ opencv-python==4.9.0.80
 pandas~=2.2.1
 numpy~=1.26.4
 tqdm~=4.66.2
+tensorflow~=2.15.0

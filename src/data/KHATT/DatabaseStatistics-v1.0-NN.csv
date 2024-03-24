@@ -1,0 +1,1001 @@
+﻿Form Number,"Age (1,2,3,or 4 from right to left)",Upbringing Country,if KSA (City),"Qualification (1,2,or 3 from right to left)",Gender (M or F),Handedness (R or L),"Level of difficulty (1, 2 or 3)",Form Number,Collected,Selected for DB,Region,Group
+A0001,2,Saudi Arabia,,2,M,R,1,A0001,X,X,Region 1,V
+A0002,2,Saudi Arabia,Makkah,2,M,R,1,A0002,X,X,Region 1,T
+A0003,2,Saudi Arabia,,2,M,R,1,A0003,X,X,Region 1,T
+A0004,2,Saudi Arabia,khamis msheit,2,M,R,1,A0004,X,X,Region 1,T
+A0005,2,Saudi Arabia,,2,M,R,1,A0005,X,X,Region 1,V
+A0006,2,Saudi Arabia,,2,M,L,1,A0006,X,X,Region 1,T
+A0007,2,Saudi Arabia,,2,M,R,1,A0007,X,X,Region 1,T
+A0008,4,Egypt,,3,M,R,1,A0008,X,X,Region 2,R
+A0009,2,Saudi Arabia,al jubail,2,M,R,1,A0009,X,X,Region 1,T
+A0011,2,Saudi Arabia,,3,M,R,1,A0011,X,X,Region 1,T
+A0012,2,Saudi Arabia,,3,M,R,1,A0012,X,X,Region 1,T
+A0013,2,Saudi Arabia,,3,M,R,1,A0013,X,X,Region 1,T
+A0014,2,Saudi Arabia,,2,M,R,2,A0014,X,X,Region 1,T
+A0015,2,Saudi Arabia,al ihsa,2,M,R,1,A0015,X,X,Region 1,T
+A0016,2,Saudi Arabia,,3,M,R,1,A0016,X,X,Region 1,T
+A0017,2,Saudi Arabia,,3,M,R,1,A0017,X,X,Region 1,T
+A0018,2,Saudi Arabia,,2,M,L,2,A0018,X,X,Region 1,R
+A0019,2,Saudi Arabia,al ihsa,2,M,R,1,A0019,X,X,Region 1,T
+A0020,3,Kuwait,,3,M,R,1,A0020,X,X,Region 1,T
+A0021,2,Saudi Arabia,tabook,3,M,R,1,A0021,X,X,Region 1,T
+A0022,3,Kuwait,,2,M,R,2,A0022,X,X,Region 1,T
+A0023,2,Saudi Arabia,al ihsa,2,M,R,1,A0023,X,X,Region 1,T
+A0024,2,Saudi Arabia,Makkah,2,M,R,1,A0024,X,X,Region 1,T
+A0025,2,Saudi Arabia,Ryiadh,2,M,R,2,A0025,X,X,Region 1,T
+A0027,2,Saudi Arabia,najran,2,M,R,1,A0027,X,X,Region 1,T
+A0029,2,Saudi Arabia,,3,M,R,1,A0029,X,X,Region 1,T
+A0030,2,Saudi Arabia,,3,M,R,1,A0030,X,X,Region 1,T
+A0031,2,Saudi Arabia,,2,M,R,1,A0031,X,X,Region 1,T
+A0032,2,Saudi Arabia,Jeddah,3,M,R,1,A0032,X,X,Region 1,T
+A0033,2,Saudi Arabia,KHASHAM,2,M,R,1,A0033,X,X,Region 1,T
+A0034,2,Saudi Arabia,Ryiadh,3,M,R,1,A0034,X,X,Region 1,T
+A0035,2,Morocco,,3,F,R,1,A0035,X,X,Region 2,T
+A0036,2,Saudi Arabia,,3,M,R,1,A0036,X,X,Region 1,T
+A0037,3,Kuwait,,3,F,R,1,A0037,X,X,Region 1,T
+A0039,2,Saudi Arabia,Jeddah,3,M,R,1,A0039,X,X,Region 1,T
+A0040,2,Saudi Arabia,,2,M,R,1,A0040,X,X,Region 1,T
+A0041,3,Morocco,,2,F,R,1,A0041,X,X,Region 2,T
+A0042,2,Saudi Arabia,Khobar,2,M,L,1,A0042,X,X,Region 1,T
+A0043,2,Saudi Arabia,Jeddah,2,M,R,1,A0043,X,X,Region 1,T
+A0044,3,Kuwait,,2,F,R,1,A0044,X,X,Region 1,T
+A0045,2,Saudi Arabia,dammam,2,F,R,1,A0045,X,X,Region 1,T
+A0046,2,Saudi Arabia,,3,M,R,1,A0046,X,X,Region 1,T
+A0047,2,Morocco,,2,F,R,1,A0047,X,X,Region 2,V
+A0048,2,Saudi Arabia,Ahsa,3,M,R,1,A0048,X,X,Region 1,T
+A0049,2,Morocco,,2,F,R,1,A0049,X,X,Region 2,T
+A0050,2,Saudi Arabia,,3,M,R,1,A0050,X,X,Region 1,T
+A0051,2,Saudi Arabia,,2,M,R,1,A0051,X,X,Region 1,T
+A0052,2,Saudi Arabia,,2,M,R,1,A0052,X,X,Region 1,T
+A0053,2,Saudi Arabia,Jeddah,3,M,R,1,A0053,X,X,Region 1,T
+A0054,2,Saudi Arabia,,3,M,R,1,A0054,X,X,Region 1,T
+A0055,2,Saudi Arabia,,2,M,R,1,A0055,X,X,Region 1,T
+A0056,2,Saudi Arabia,,2,M,R,1,A0056,X,X,Region 1,T
+A0057,2,Saudi Arabia,,2,M,L,1,A0057,X,X,Region 1,T
+A0058,2,Saudi Arabia,,2,M,R,1,A0058,X,X,Region 1,R
+A0059,2,Saudi Arabia,,2,M,R,1,A0059,X,X,Region 1,T
+A0060,2,Saudi Arabia,,2,M,L,1,A0060,X,X,Region 1,T
+A0061,2,Saudi Arabia,,2,M,R,1,A0061,X,X,Region 1,T
+A0062,2,Saudi Arabia,,2,M,R,1,A0062,X,X,Region 1,T
+A0063,2,Saudi Arabia,,3,M,R,1,A0063,X,X,Region 1,T
+A0064,2,Saudi Arabia,,2,M,R,1,A0064,X,X,Region 1,T
+A0065,2,Saudi Arabia,al ihsa,2,M,R,1,A0065,X,X,Region 1,T
+A0066,2,Saudi Arabia,,3,M,R,1,A0066,X,X,Region 1,T
+A0067,2,Saudi Arabia,,2,M,R,1,A0067,X,X,Region 1,T
+A0068,2,Saudi Arabia,,3,M,R,1,A0068,X,X,Region 1,T
+A0069,3,Jordan,,3,M,R,1,A0069,X,X,Region 1,T
+A0070,2,Algeria,,3,M,R,1,A0070,X,X,Region 2,T
+A0071,2,Saudi Arabia,جدة,3,M,R,1,A0071,X,X,Region 1,T
+A0072,2,Saudi Arabia,,3,M,R,1,A0072,X,X,Region 1,V
+A0074,2,Saudi Arabia,,3,M,R,1,A0074,X,X,Region 1,V
+A0075,2,Saudi Arabia,,3,M,R,2,A0075,X,X,Region 1,T
+A0076,2,Saudi Arabia,Ryiadh,3,M,R,1,A0076,X,X,Region 1,V
+A0077,2,Saudi Arabia,,3,M,R,1,A0077,X,X,Region 1,V
+A0078,2,Saudi Arabia,Ryiadh,3,M,R,1,A0078,X,X,Region 1,V
+A0080,2,Saudi Arabia,Khobar,3,M,R,1,A0080,X,X,Region 1,V
+A0081,2,Saudi Arabia,,3,M,R,1,A0081,X,X,Region 1,V
+A0082,2,Saudi Arabia,Khobar,2,M,R,1,A0082,X,X,Region 1,T
+A0083,3,Canada,,3,M,R,1,A0083,X,X,Region 3,R
+A0084,2,Bahrain,,3,M,R,1,A0084,X,X,Region 1,V
+A0085,2,Canada,,2,M,R,1,A0085,X,X,Region 3,R
+A0086,2,Saudi Arabia,,3,M,R,1,A0086,X,X,Region 1,V
+A0087,2,Saudi Arabia,,3,M,R,1,A0087,X,X,Region 1,V
+A0088,2,Jordan,,2,M,R,1,A0088,X,X,Region 1,T
+A0089,2,Palestine,,3,M,R,1,A0089,X,X,Region 1,V
+A0090,3,Morocco,,3,M,L,2,A0090,X,X,Region 2,R
+A0091,2,Saudi Arabia,,3,M,R,1,A0091,X,X,Region 1,V
+A0092,2,Saudi Arabia,,3,M,R,1,A0092,X,X,Region 1,V
+A0093,3,Saudi Arabia,,3,M,R,1,A0093,X,X,Region 1,T
+A0094,2,Saudi Arabia,,3,M,R,1,A0094,X,X,Region 1,V
+A0095,3,Saudi Arabia,,3,M,R,1,A0095,X,X,Region 1,T
+A0096,2,Saudi Arabia,الاحساء,3,M,R,1,A0096,X,X,Region 1,V
+A0098,2,Saudi Arabia,,2,M,R,2,A0098,X,X,Region 1,T
+A0099,3,Canada,,3,F,R,1,A0099,X,X,Region 3,V
+A0100,4,Morocco,,2,M,R,1,A0100,X,X,Region 2,R
+A0101,3,Morocco,,2,F,R,2,A0101,X,X,Region 2,R
+A0102,2,Saudi Arabia,,3,M,R,1,A0102,X,X,Region 1,V
+A0103,3,Jordan,,3,F,R,1,A0103,X,X,Region 1,T
+A0104,2,Saudi Arabia,,3,M,R,1,A0104,X,X,Region 1,R
+A0105,2,Morocco,,2,F,R,1,A0105,X,X,Region 2,V
+A0106,3,Morocco,,2,M,R,1,A0106,X,X,Region 2,T
+A0108,2,Saudi Arabia,,2,M,R,1,A0108,X,X,Region 1,T
+A0109,3,Morocco,,3,F,R,1,A0109,X,X,Region 2,T
+A0110,2,Saudi Arabia,الرياض,2,M,R,1,A0110,X,X,Region 1,T
+A0112,2,Morocco,,2,F,L,1,A0112,X,X,Region 2,T
+A0115,2,Morocco,,3,F,R,1,A0115,X,X,Region 2,T
+A0119,2,Saudi Arabia,الرياض,3,M,R,1,A0119,X,X,Region 1,R
+A0121,2,Saudi Arabia,,3,M,R,1,A0121,X,X,Region 1,R
+A0122,2,Morocco,,2,F,R,1,A0122,X,X,Region 2,T
+A0123,2,Saudi Arabia,,3,M,R,1,A0123,X,X,Region 1,R
+A0124,3,Morocco,,3,F,L,1,A0124,X,X,Region 2,R
+A0126,3,Morocco,وجدة,3,M,L,2,A0126,X,X,Region 2,R
+A0127,2,Morocco,,3,F,R,1,A0127,X,X,Region 2,V
+A0128,2,Saudi Arabia,,2,F,R,1,A0128,X,X,Region 1,T
+A0129,3,Morocco,,3,F,R,1,A0129,X,X,Region 2,T
+A0130,2,Morocco,,2,F,R,1,A0130,X,X,Region 2,V
+A0131,3,Morocco,,3,F,R,1,A0131,X,X,Region 2,R
+A0132,2,Saudi Arabia,,3,M,R,1,A0132,X,X,Region 1,R
+A0133,3,Saudi Arabia,,2,F,R,1,A0133,X,X,Region 1,V
+A0135,3,Jordan,,3,M,R,1,A0135,X,X,Region 1,T
+A0136,2,Morocco,,2,F,R,1,A0136,X,X,Region 2,R
+A0137,3,Morocco,,3,F,R,1,A0137,X,X,Region 2,R
+A0138,4,Morocco,,3,M,R,1,A0138,X,X,Region 2,T
+A0139,3,Morocco,,2,M,R,1,A0139,X,X,Region 2,V
+A0140,2,Saudi Arabia,,3,M,R,1,A0140,X,X,Region 1,R
+A0141,3,Saudi Arabia,,3,M,R,1,A0141,X,X,Region 1,T
+A0142,2,Saudi Arabia,,3,M,R,1,A0142,X,X,Region 1,R
+A0143,4,Tunisia,,3,M,R,1,A0143,X,X,Region 2,V
+A0144,3,Syria,,3,F,R,1,A0144,X,X,Region 1,T
+A0145,2,Saudi Arabia,,2,M,L,1,A0145,X,X,Region 1,V
+A0146,3,Palestine,,3,M,R,1,A0146,X,X,Region 1,T
+A0147,2,Saudi Arabia,,2,F,R,1,A0147,X,X,Region 1,T
+A0148,2,Saudi Arabia,,3,M,R,1,A0148,X,X,Region 1,R
+A0149,1,Jordan,,1,M,R,1,A0149,X,X,Region 1,R
+A0150,3,Jordan,,2,M,R,1,A0150,X,X,Region 1,R
+A0151,2,Saudi Arabia,,3,F,R,1,A0151,X,X,Region 1,T
+A0152,3,Jordan,,2,M,R,1,A0152,X,X,Region 1,T
+A0153,2,Saudi Arabia,TABOOK,2,M,R,1,A0153,X,X,Region 1,T
+A0154,3,Jordan,,2,M,R,2,A0154,X,X,Region 1,R
+A0155,3,Sudan,,2,M,R,1,A0155,X,X,Region 2,R
+A0156,3,Jordan,,2,M,R,1,A0156,X,X,Region 1,R
+A0157,2,Saudi Arabia,,2,M,R,1,A0157,X,X,Region 1,T
+A0158,3,Saudi Arabia,,3,F,R,1,A0158,X,X,Region 1,T
+A0159,3,Jordan,,3,F,R,1,A0159,X,X,Region 1,R
+A0160,2,Yemen,,3,M,R,1,A0160,X,X,Region 1,R
+A0161,2,Saudi Arabia,Qassim,3,F,R,1,A0161,X,X,Region 1,T
+A0162,2,Saudi Arabia,,3,F,R,1,A0162,X,X,Region 1,T
+A0163,2,Saudi Arabia,الخبر,2,M,R,1,A0163,X,X,Region 1,V
+A0164,3,Palestine,,3,F,L,1,A0164,X,X,Region 1,V
+A0165,3,Egypt,,3,F,R,1,A0165,X,X,Region 2,V
+A0166,3,Egypt,QAIRO,2,F,R,1,A0166,X,X,Region 2,V
+A0167,2,Saudi Arabia,Qassim,3,F,R,1,A0167,X,X,Region 1,T
+A0168,3,Saudi Arabia,Qassim,3,F,R,1,A0168,X,X,Region 1,T
+A0170,3,Algeria,,3,F,R,1,A0170,X,X,Region 2,V
+A0172,2,Saudi Arabia,,3,F,R,1,A0172,X,X,Region 1,T
+A0173,2,Saudi Arabia,Qassim,3,F,R,1,A0173,X,X,Region 1,V
+A0174,2,Saudi Arabia,,3,F,R,1,A0174,X,X,Region 1,V
+A0175,2,Saudi Arabia,الرياض,3,M,R,1,A0175,X,X,Region 1,R
+A0176,2,Saudi Arabia,,3,F,R,1,A0176,X,X,Region 1,V
+A0177,2,Saudi Arabia,Qassim,3,F,R,1,A0177,X,X,Region 1,V
+A0178,2,Saudi Arabia,الظهران,3,F,R,1,A0178,X,X,Region 1,V
+A0180,2,Saudi Arabia,,3,M,R,1,A0180,X,X,Region 1,R
+A0181,3,Syria,,3,F,R,1,A0181,X,X,Region 1,T
+A0182,4,Morocco,,2,M,R,1,A0182,X,X,Region 2,R
+A0183,3,Palestine,,3,F,R,1,A0183,X,X,Region 1,T
+A0184,3,Saudi Arabia,,3,F,R,1,A0184,X,X,Region 1,T
+A0185,2,Saudi Arabia,Khobar,2,M,L,1,A0185,X,X,Region 1,V
+A0186,2,Saudi Arabia,Ryiadh,2,M,R,1,A0186,X,X,Region 1,V
+A0187,2,Saudi Arabia,Khobar,2,M,R,1,A0187,X,X,Region 1,V
+A0188,2,Saudi Arabia,,2,M,R,1,A0188,X,X,Region 1,V
+A0190,2,Saudi Arabia,Khobar,2,M,R,1,A0190,X,X,Region 1,V
+A0191,2,Saudi Arabia,Ahsa,2,M,R,1,A0191,X,X,Region 1,V
+A0192,2,Saudi Arabia,Taif,2,M,R,1,A0192,X,X,Region 1,V
+A0193,2,Saudi Arabia,Ahsa,2,M,R,1,A0193,X,X,Region 1,V
+A0194,2,Saudi Arabia,Abha,2,M,R,1,A0194,X,X,Region 1,V
+A0195,2,Syria,,2,M,R,1,A0195,X,X,Region 1,V
+A0196,2,Egypt,,2,M,R,1,A0196,X,X,Region 2,T
+A0197,2,Jordan,,2,M,R,1,A0197,X,X,Region 1,V
+A0199,2,Saudi Arabia,Khobar,2,M,R,1,A0199,X,X,Region 1,V
+A0200,4,Morocco,,2,F,R,1,A0200,X,X,Region 2,R
+A0201,2,Saudi Arabia,Khobar,2,M,R,1,A0201,X,X,Region 1,V
+A0202,1,Morocco,,2,F,R,1,A0202,X,X,Region 2,T
+A0204,2,Saudi Arabia,,2,M,L,1,A0204,X,X,Region 1,V
+A0205,2,Saudi Arabia,Dhahran,2,M,R,1,A0205,X,X,Region 1,V
+A0206,2,Saudi Arabia,,2,M,R,1,A0206,X,X,Region 1,V
+A0207,2,Saudi Arabia,Taif,2,M,R,1,A0207,X,X,Region 1,V
+A0208,2,Saudi Arabia,Qassim,2,M,L,1,A0208,X,X,Region 1,V
+A0209,2,Saudi Arabia,,2,M,R,1,A0209,X,X,Region 1,V
+A0210,2,Saudi Arabia,,2,M,R,2,A0210,X,X,Region 1,T
+A0211,3,Morocco,,3,F,R,1,A0211,X,X,Region 2,V
+A0212,3,Yemen,,3,M,R,1,A0212,X,X,Region 1,T
+A0213,2,Saudi Arabia,,2,M,R,1,A0213,X,X,Region 1,V
+A0214,3,Saudi Arabia,,3,F,R,1,A0214,X,X,Region 1,T
+A0215,2,Saudi Arabia,,2,M,L,1,A0215,X,X,Region 1,R
+A0216,2,Saudi Arabia,Dhahran,2,M,R,1,A0216,X,X,Region 1,V
+A0217,1,Saudi Arabia,Dammam,2,M,R,1,A0217,X,X,Region 1,T
+A0218,1,Saudi Arabia,Ahsa,2,M,R,1,A0218,X,X,Region 1,R
+A0219,2,Saudi Arabia,Dammam,2,M,R,1,A0219,X,X,Region 1,V
+A0221,2,Morocco,,2,F,R,1,A0221,X,X,Region 2,R
+A0222,2,Saudi Arabia,,2,M,R,2,A0222,X,X,Region 1,T
+A0223,2,Saudi Arabia,,3,M,R,1,A0223,X,X,Region 1,R
+A0224,2,Saudi Arabia,,2,M,R,1,A0224,X,X,Region 1,V
+A0225,2,Saudi Arabia,,2,M,R,1,A0225,X,X,Region 1,V
+A0226,1,Saudi Arabia,,2,M,R,1,A0226,X,X,Region 1,R
+A0227,1,Saudi Arabia,,2,M,R,1,A0227,X,X,Region 1,R
+A0228,2,Saudi Arabia,,2,M,R,1,A0228,X,X,Region 1,V
+A0229,2,Saudi Arabia,,2,M,R,2,A0229,X,X,Region 1,T
+A0230,2,Sudan,,3,M,L,1,A0230,X,X,Region 2,T
+A0232,3,Egypt,,3,M,L,1,A0232,X,X,Region 2,V
+A0233,3,Saudi Arabia,,3,M,R,1,A0233,X,X,Region 1,T
+A0234,3,Saudi Arabia,,3,M,R,1,A0234,X,X,Region 1,T
+A0235,3,Jordan,,2,M,R,1,A0235,X,X,Region 1,R
+A0236,2,Morocco,,2,F,R,1,A0236,X,X,Region 2,R
+A0237,2,Morocco,,2,F,R,1,A0237,X,X,Region 2,R
+A0238,1,Morocco,,2,F,R,1,A0238,X,X,Region 2,V
+A0239,3,Morocco,,1,F,R,1,A0239,X,X,Region 2,R
+A0240,3,Morocco,,2,M,R,1,A0240,X,X,Region 2,R
+A0241,3,Yemen,,3,M,R,1,A0241,X,X,Region 1,V
+A0242,3,Yemen,,3,M,R,1,A0242,X,X,Region 1,V
+A0243,2,Saudi Arabia,,2,M,R,1,A0243,X,X,Region 1,V
+A0244,2,Saudi Arabia,,2,M,R,1,A0244,X,X,Region 1,V
+A0245,3,Yemen,,3,M,R,1,A0245,X,X,Region 1,T
+A0247,3,Yemen,,3,M,R,1,A0247,X,X,Region 1,V
+A0248,3,Yemen,,3,M,R,1,A0248,X,X,Region 1,V
+A0250,2,Saudi Arabia,,2,M,R,1,A0250,X,X,Region 1,V
+A0251,3,Saudi Arabia,,2,M,R,1,A0251,X,X,Region 1,R
+A0252,3,Saudi Arabia,,3,M,L,1,A0252,X,X,Region 1,V
+A0253,3,Jordan,,3,F,R,1,A0253,X,X,Region 1,V
+A0254,1,Saudi Arabia, ,1,M,R,2,A0254,X,X,Region 1,T
+A0255,1,Saudi Arabia, ,1,M,R,2,A0255,X,X,Region 1,T
+A0256,1,Saudi Arabia, ,1,M,R,2,A0256,X,X,Region 1,T
+A0257,1,Saudi Arabia,,1,M,R,2,A0257,X,X,Region 1,T
+A0258,3,Kuwait,,3,M,R,1,A0258,X,X,Region 1,V
+A0259,2,Morocco,,3,F,R,1,A0259,X,X,Region 2,R
+A0261,3,Syria,,3,F,R,1,A0261,X,X,Region 1,V
+A0262,1,Saudi Arabia, ,1,M,R,2,A0262,X,X,Region 1,V
+A0263,1,Saudi Arabia, ,1,M,R,1,A0263,X,X,Region 1,T
+A0264,3,Yemen,,3,M,R,1,A0264,X,X,Region 1,V
+A0265,1,Saudi Arabia, ,1,M,R,1,A0265,X,X,Region 1,T
+A0267,3,Yemen,,3,M,R,1,A0267,X,X,Region 1,V
+A0268,3,Jordan,,3,M,R,1,A0268,X,X,Region 1,V
+A0269,1,Saudi Arabia, ,1,M,R,1,A0269,X,X,Region 1,V
+A0270,1,Saudi Arabia, ,1,M,R,2,A0270,X,X,Region 1,V
+A0271,1,Saudi Arabia, ,1,M,R,2,A0271,X,X,Region 1,R
+A0272,1,Saudi Arabia, ,1,M,R,1,A0272,X,X,Region 1,V
+A0273,1,Saudi Arabia, ,1,M,R,2,A0273,X,X,Region 1,R
+A0274,1,Saudi Arabia, ,1,M,R,2,A0274,X,X,Region 1,R
+A0275,1,Saudi Arabia, ,1,M,R,1,A0275,X,X,Region 1,V
+A0276,3,Saudi Arabia, ,3,M,R,1,A0276,X,X,Region 1,V
+A0277,1,Saudi Arabia, ,1,M,R,1,A0277,X,X,Region 1,R
+A0278,3,Saudi Arabia,,3,M,L,1,A0278,X,X,Region 1,R
+A0280,1,Saudi Arabia,Dammam,1,M,R,2,A0280,X,X,Region 1,R
+A0281,1,Saudi Arabia,Dammam,1,M,R,2,A0281,X,X,Region 1,R
+A0282,1,Saudi Arabia,Dhahran,1,M,R,2,A0282,X,X,Region 1,R
+A0283,1,Saudi Arabia, ,1,M,R,2,A0283,X,X,Region 1,R
+A0284,1,Saudi Arabia,Makkah,1,M,R,1,A0284,X,X,Region 1,R
+A0285,1,Saudi Arabia,Dammam,1,M,R,1,A0285,X,X,Region 1,R
+A0287,1,Canada,,1,M,R,1,A0287,X,X,Region 3,R
+A0288,1,USA,,1,M,R,2,A0288,X,X,Region 3,R
+A0289,1,Jordan,,1,M,R,2,A0289,X,X,Region 1,R
+A0290,1,Saudi Arabia,Dhahran,1,M,R,1,A0290,X,X,Region 1,R
+A0292,1,Saudi Arabia,Dammam,1,M,R,1,A0292,X,X,Region 1,R
+A0294,1,Saudi Arabia,Ahsa,1,M,R,1,A0294,X,X,Region 1,R
+A0295,1,Saudi Arabia,Dammam,1,M,R,2,A0295,X,X,Region 1,R
+A0296,1,Saudi Arabia,Dammam,1,M,R,2,A0296,X,X,Region 1,R
+A0299,1,Morocco,,1,F,R,1,A0299,X,X,Region 2,T
+A0300,2,Saudi Arabia,,2,M,R,1,A0300,X,X,Region 1,V
+A0301,3,Saudi Arabia,,3,M,R,1,A0301,X,X,Region 1,V
+A0302,3,Saudi Arabia,,3,M,R,1,A0302,X,X,Region 1,V
+A0303,1,Saudi Arabia,,1,M,R,1,A0303,X,X,Region 1,R
+A0304,1,Saudi Arabia,,1,M,R,2,A0304,X,X,Region 1,R
+A0306,2,Saudi Arabia,,3,M,R,1,A0306,X,X,Region 1,R
+A0307,1,Saudi Arabia,,1,M,R,1,A0307,X,X,Region 1,R
+A0308,1,Saudi Arabia,,1,M,R,2,A0308,X,X,Region 1,R
+A0310,1,Saudi Arabia,,1,M,R,1,A0310,X,X,Region 1,R
+A0311,1,Saudi Arabia,,2,M,R,1,A0311,X,X,Region 1,R
+A0312,1,Saudi Arabia,,1,M,R,1,A0312,X,X,Region 1,R
+A0313,1,Morocco,,1,F,R,1,A0313,X,X,Region 2,V
+A0314,1,Saudi Arabia,,1,M,R,1,A0314,X,X,Region 1,R
+A0315,1,Saudi Arabia,,1,M,R,1,A0315,X,X,Region 1,R
+A0317,3,Palestine,,2,F,R,1,A0317,X,X,Region 1,R
+A0318,1,Saudi Arabia,,1,M,R,1,A0318,X,X,Region 1,R
+A0319,2,Saudi Arabia,,3,M,L,1,A0319,X,X,Region 1,T
+A0320,1,Saudi Arabia,,1,M,R,1,A0320,X,X,Region 1,R
+A0321,1,Saudi Arabia,,1,M,R,1,A0321,X,X,Region 1,V
+A0322,2,Jordan,,3,M,R,1,A0322,X,X,Region 1,R
+A0323,1,Morocco,,2,F,L,1,A0323,X,X,Region 2,R
+A0324,3,Jordan,,2,M,R,1,A0324,X,X,Region 1,V
+A0325,2,Morocco,,2,F,R,1,A0325,X,X,Region 2,R
+A0326,1,Morocco,,1,F,R,1,A0326,X,X,Region 2,R
+A0327,1,Morocco,,1,F,R,1,A0327,X,X,Region 2,R
+A0328,1,Morocco,,1,F,R,1,A0328,X,X,Region 2,R
+A0329,2,Morocco,,3,F,R,2,A0329,X,X,Region 2,R
+A0330,1,Morocco,,1,F,R,1,A0330,X,X,Region 2,R
+A0331,2,Saudi Arabia,Dhaharn,2,F,R,1,A0331,X,X,Region 1,T
+A0332,2,Saudi Arabia,Dammam,2,F,R,1,A0332,X,X,Region 1,T
+A0333,3,Morocco,,2,F,R,1,A0333,X,X,Region 2,R
+A0334,3,Morocco,,3,M,R,1,A0334,X,X,Region 2,R
+A0335,3,Yemen,,3,M,R,1,A0335,X,X,Region 1,V
+A0336,2,Morocco,,2,F,R,2,A0336,X,X,Region 2,R
+A0337,3,Morocco,,3,M,R,1,A0337,X,X,Region 2,T
+A0338,3,Yemen,,3,M,R,1,A0338,X,X,Region 1,R
+A0339,2,Morocco,,2,F,R,1,A0339,X,X,Region 2,R
+A0340,3,Morocco,,3,M,R,1,A0340,X,X,Region 2,V
+A0341,3,Morocco,,3,F,R,1,A0341,X,X,Region 2,R
+A0342,3,Morocco,,1,F,R,1,A0342,X,X,Region 2,R
+A0343,2,Saudi Arabia,,2,F,R,1,A0343,X,X,Region 1,T
+A0344,2,USA,,2,F,R,1,A0344,X,X,Region 3,R
+A0346,2,Saudi Arabia,Khobar,2,F,R,1,A0346,X,X,Region 1,T
+A0347,2,Saudi Arabia,Khobar,2,F,R,1,A0347,X,X,Region 1,T
+A0348,2,Saudi Arabia,,2,F,L,1,A0348,X,X,Region 1,T
+A0349,2,Saudi Arabia,Khobar,2,F,R,1,A0349,X,X,Region 1,T
+A0350,2,Saudi Arabia,Khobar,2,F,R,1,A0350,X,X,Region 1,T
+A0351,2,Saudi Arabia,Dammam,2,F,R,1,A0351,X,X,Region 1,V
+A0352,2,Saudi Arabia,Khobar,2,F,R,1,A0352,X,X,Region 1,V
+A0353,2,Saudi Arabia,Khobar,2,F,R,1,A0353,X,X,Region 1,V
+A0354,1,Saudi Arabia,,1,F,R,1,A0354,X,X,Region 1,T
+A0355,2,USA,,2,F,R,1,A0355,X,X,Region 3,R
+A0356,2,Saudi Arabia,,2,F,R,2,A0356,X,X,Region 1,V
+A0357,2,Saudi Arabia,Khobar,2,F,R,1,A0357,X,X,Region 1,V
+A0358,2,Saudi Arabia,,2,F,R,1,A0358,X,X,Region 1,V
+A0359,4,Morocco,,3,F,R,1,A0359,X,X,Region 2,R
+A0360,1,Morocco,,2,F,R,2,A0360,X,X,Region 2,T
+A0361,2,Morocco,,2,F,R,1,A0361,X,X,Region 2,R
+A0363,4,Morocco,,3,M,R,1,A0363,X,X,Region 2,R
+A0364,2,Saudi Arabia,Khobar,2,F,R,1,A0364,X,X,Region 1,V
+A0365,2,Saudi Arabia,Dhahran,2,F,R,1,A0365,X,X,Region 1,V
+A0366,2,Saudi Arabia,Dhahran,2,F,R,1,A0366,X,X,Region 1,V
+A0367,2,Saudi Arabia,Dammam,2,F,R,2,A0367,X,X,Region 1,V
+A0368,2,Saudi Arabia,,2,F,R,2,A0368,X,X,Region 1,R
+A0369,2,Saudi Arabia,,2,F,R,1,A0369,X,X,Region 1,V
+A0370,2,Saudi Arabia,Khobar,2,F,R,1,A0370,X,X,Region 1,V
+A0371,2,Saudi Arabia,,3,M,R,1,A0371,X,X,Region 1,R
+A0372,2,Saudi Arabia,Dhahran,2,F,R,1,A0372,X,X,Region 1,R
+A0373,2,Saudi Arabia,Dammam,2,F,R,1,A0373,X,X,Region 1,R
+A0374,2,USA,,2,F,R,1,A0374,X,X,Region 3,R
+A0375,2,Saudi Arabia,Khobar,2,F,R,1,A0375,X,X,Region 1,R
+A0376,2,Saudi Arabia,Dhahran,2,F,R,1,A0376,X,X,Region 1,R
+A0377,2,Saudi Arabia,,2,F,R,1,A0377,X,X,Region 1,R
+A0378,2,Saudi Arabia,Dammam,2,F,L,1,A0378,X,X,Region 1,R
+A0379,2,USA,,2,F,R,1,A0379,X,X,Region 3,R
+A0380,2,Morocco,,2,M,R,1,A0380,X,X,Region 2,V
+A0381,2,Saudi Arabia,Khobar,2,F,R,1,A0381,X,X,Region 1,R
+A0382,2,Saudi Arabia,Dammam,2,F,R,1,A0382,X,X,Region 1,R
+A0383,1,Saudi Arabia,Khobar,2,F,R,1,A0383,X,X,Region 1,R
+A0384,2,Canada,,2,F,R,1,A0384,X,X,Region 3,T
+A0385,3,Morocco,,3,F,R,1,A0385,X,X,Region 2,R
+A0387,1,Saudi Arabia,Dhahran,2,F,R,1,A0387,X,X,Region 1,T
+A0388,1,Australia,,1,F,R,1,A0388,X,X,Region 3,V
+A0389,1,Saudi Arabia,Shargiah,1,F,R,1,A0389,X,X,Region 1,T
+A0390,1,Saudi Arabia,,1,F,R,1,A0390,X,X,Region 1,T
+A0391,2,Saudi Arabia,Khobar,2,F,L,1,A0391,X,X,Region 1,V
+A0392,1,Saudi Arabia,Dhahran,1,F,R,1,A0392,X,X,Region 1,V
+A0393,1,USA,,2,F,L,1,A0393,X,X,Region 3,R
+A0394,1,Saudi Arabia,Khobar,2,F,R,1,A0394,X,X,Region 1,T
+A0395,1,Saudi Arabia,Dhahran,1,F,R,2,A0395,X,X,Region 1,V
+A0396,1,Saudi Arabia,Dammam,1,F,R,1,A0396,X,X,Region 1,V
+A0397,2,Morocco,,2,F,R,1,A0397,X,X,Region 2,R
+A0398,3,Morocco,,3,F,R,1,A0398,X,X,Region 2,R
+A0399,2,Morocco,,3,F,R,1,A0399,X,X,Region 2,R
+A0400,2,Saudi Arabia,Dhahran,2,F,R,1,A0400,X,X,Region 1,R
+A0401,1,Saudi Arabia,Dhahran,2,F,L,1,A0401,X,X,Region 1,R
+A0402,1,Saudi Arabia,Dhahran,2,F,R,1,A0402,X,X,Region 1,T
+A0403,1,Saudi Arabia,,2,F,R,1,A0403,X,X,Region 1,V
+A0404,1,Saudi Arabia,,2,F,R,1,A0404,X,X,Region 1,V
+A0405,1,Saudi Arabia,Shargiah,2,F,R,1,A0405,X,X,Region 1,V
+A0406,1,Saudi Arabia,,2,F,R,1,A0406,X,X,Region 1,R
+A0407,1,Saudi Arabia,Khobar,2,F,R,1,A0407,X,X,Region 1,R
+A0408,1,Saudi Arabia,Dhahran,2,F,R,1,A0408,X,X,Region 1,R
+A0409,3,Yemen,,3,M,R,1,A0409,X,X,Region 1,V
+A0410,1,Saudi Arabia,Dhahran,2,F,R,1,A0410,X,X,Region 1,R
+A0411,2,Saudi Arabia,Dhahran,2,F,R,1,A0411,X,X,Region 1,R
+A0412,2,Saudi Arabia,Dhahran,2,F,R,1,A0412,X,X,Region 1,R
+A0413,1,Saudi Arabia,Dhahran,1,F,R,1,A0413,X,X,Region 1,V
+A0414,1,Saudi Arabia,Ahsa,1,F,R,2,A0414,X,X,Region 1,R
+A0415,1,Saudi Arabia,,1,F,R,2,A0415,X,X,Region 1,R
+A0416,1,Saudi Arabia,,1,F,R,1,A0416,X,X,Region 1,R
+A0417,1,Saudi Arabia,Shargiah,1,F,R,1,A0417,X,X,Region 1,R
+A0418,1,Morocco,,1,M,L,1,A0418,X,X,Region 2,R
+A0419,1,Saudi Arabia,Khobar,2,F,R,1,A0419,X,X,Region 1,R
+A0420,2,Saudi Arabia,Dhahran,2,F,R,1,A0420,X,X,Region 1,R
+A0421,2,Canada,,2,F,L,1,A0421,X,X,Region 3,T
+A0422,2,Saudi Arabia,,2,F,R,1,A0422,X,X,Region 1,R
+A0423,2,USA,,2,F,R,1,A0423,X,X,Region 3,R
+A0424,2,Saudi Arabia,Dammam,2,F,R,1,A0424,X,X,Region 1,R
+A0425,2,Saudi Arabia,Dhahran,2,F,R,1,A0425,X,X,Region 1,R
+A0426,2,Jordan,,2,F,R,1,A0426,X,X,Region 1,R
+A0427,2,Saudi Arabia,Dhahran,2,F,R,1,A0427,X,X,Region 1,R
+A0428,2,Saudi Arabia,Khobar,2,F,R,1,A0428,X,X,Region 1,R
+A0429,2,Saudi Arabia,,3,M,L,1,A0429,X,X,Region 1,V
+A0430,2,Saudi Arabia,Khobar,2,F,R,1,A0430,X,X,Region 1,R
+A0431,2,Canada,,2,F,R,1,A0431,X,X,Region 3,R
+A0432,2,Saudi Arabia,Ryiadh,2,F,R,1,A0432,X,X,Region 1,R
+A0433,2,Saudi Arabia,Khobar,2,F,R,1,A0433,X,X,Region 1,R
+A0434,2,Saudi Arabia,Ryiadh,2,F,R,1,A0434,X,X,Region 1,R
+A0435,2,Saudi Arabia,,2,F,R,1,A0435,X,X,Region 1,R
+A0436,2,Egypt,,2,F,R,1,A0436,X,X,Region 2,R
+A0437,2,Saudi Arabia,Shargiah,2,F,R,1,A0437,X,X,Region 1,R
+A0438,2,Saudi Arabia,Khobar,2,F,R,1,A0438,X,X,Region 1,R
+A0439,2,Saudi Arabia,Khobar,2,F,R,1,A0439,X,X,Region 1,R
+A0440,2,Saudi Arabia,Khobar,2,F,R,1,A0440,X,X,Region 1,R
+A0441,2,Saudi Arabia,Khobar,2,F,R,1,A0441,X,X,Region 1,R
+A0442,1,Saudi Arabia,Ahsa,2,F,L,1,A0442,X,X,Region 1,R
+A0443,1,Canada,,2,F,R,1,A0443,X,X,Region 3,V
+A0445,1,Saudi Arabia,Shargiah,1,F,R,1,A0445,X,X,Region 1,R
+A0446,1,Saudi Arabia,,1,F,R,2,A0446,X,X,Region 1,R
+A0448,1,Saudi Arabia,,1,F,R,1,A0448,X,X,Region 1,R
+A0449,1,Jordan,,1,F,R,1,A0449,X,X,Region 1,R
+A0450,1,Saudi Arabia,Khobar,2,F,R,1,A0450,X,X,Region 1,R
+A0451,2,Saudi Arabia,Khobar,2,F,R,2,A0451,X,X,Region 1,R
+A0452,1,USA,,2,F,R,1,A0452,X,X,Region 3,R
+A0453,3,Morocco,,3,F,R,1,A0453,X,X,Region 2,R
+A0454,2,Morocco,,2,F,R,2,A0454,X,X,Region 2,R
+A0455,1,Morocco,,1,F,R,2,A0455,X,X,Region 2,R
+A0456,3,Morocco,,2,M,R,1,A0456,X,X,Region 2,R
+A0457,2,Morocco,,3,F,R,1,A0457,X,X,Region 2,R
+A0459,1,Morocco,,1,F,R,2,A0459,X,X,Region 2,R
+A0460,1,Saudi Arabia,Khobar,2,F,R,1,A0460,X,X,Region 1,R
+A0461,2,Saudi Arabia,Dammam,2,F,R,2,A0461,X,X,Region 1,R
+A0462,1,Saudi Arabia,Khobar,2,F,R,1,A0462,X,X,Region 1,R
+A0463,2,Saudi Arabia,Dhahran,2,F,R,1,A0463,X,X,Region 1,R
+A0464,1,USA,,2,F,R,2,A0464,X,X,Region 3,T
+A0465,1,Saudi Arabia,Shargiah,1,F,R,1,A0465,X,X,Region 1,R
+A0466,1,Saudi Arabia,,1,F,R,1,A0466,X,X,Region 1,R
+A0467,1,Saudi Arabia,,1,F,R,1,A0467,X,X,Region 1,R
+A0468,1,Saudi Arabia,,1,F,R,1,A0468,X,X,Region 1,R
+A0469,2,Morocco,,2,F,R,1,A0469,X,X,Region 2,R
+A0470,2,Morocco,,2,F,L,1,A0470,X,X,Region 2,V
+A0471,1,Saudi Arabia,Shargiah,1,F,R,1,A0471,X,X,Region 1,R
+A0472,1,USA,,1,F,R,1,A0472,X,X,Region 3,R
+A0473,2,Saudi Arabia,Ryiadh,2,F,R,1,A0473,X,X,Region 1,R
+A0474,1,Saudi Arabia,,2,F,R,1,A0474,X,X,Region 1,R
+A0475,2,Saudi Arabia,Khobar,2,F,R,2,A0475,X,X,Region 1,R
+A0476,1,Jordan,,2,F,R,1,A0476,X,X,Region 1,R
+A0477,2,Morocco,,3,M,R,1,A0477,X,X,Region 2,V
+A0478,2,Morocco,,2,M,R,2,A0478,X,X,Region 2,R
+A0479,3,Morocco,,3,M,R,2,A0479,X,X,Region 2,R
+A0480,2,Saudi Arabia,Ryiadh,2,F,R,1,A0480,X,X,Region 1,R
+A0481,2,Saudi Arabia,Khobar,2,F,R,1,A0481,X,X,Region 1,R
+A0482,1,USA,,2,F,R,2,A0482,X,X,Region 3,V
+A0483,1,Saudi Arabia,Shargiah,1,F,R,1,A0483,X,X,Region 1,R
+A0484,1,USA,,1,F,R,1,A0484,X,X,Region 3,R
+A0485,3,Morocco,,3,F,R,2,A0485,X,X,Region 2,R
+A0486,1,Morocco,,2,F,R,1,A0486,X,X,Region 2,T
+A0488,3,Morocco,,2,F,R,1,A0488,X,X,Region 2,R
+A0489,2,Morocco,,2,F,R,1,A0489,X,X,Region 2,R
+A0490,1,Saudi Arabia,Khobar,2,F,R,1,A0490,X,X,Region 1,R
+A0491,1,Saudi Arabia,Khobar,2,F,R,1,A0491,X,X,Region 1,R
+A0492,1,Saudi Arabia,Khobar,2,F,R,2,A0492,X,X,Region 1,T
+A0493,1,Saudi Arabia,Khobar,2,F,R,1,A0493,X,X,Region 1,R
+A0494,1,Saudi Arabia,Khobar,2,F,R,1,A0494,X,X,Region 1,R
+A0495,2,Saudi Arabia,Khobar,2,F,R,1,A0495,X,X,Region 1,R
+A0496,1,Saudi Arabia,Khobar,2,F,R,2,A0496,X,X,Region 1,T
+A0497,2,Saudi Arabia,,3,M,R,1,A0497,X,X,Region 1,R
+A0498,2,USA,,2,F,R,1,A0498,X,X,Region 3,R
+A0499,2,Saudi Arabia,Jeddah,2,F,R,2,A0499,X,X,Region 1,R
+A0500,2,Saudi Arabia,Dhahran,2,F,R,1,A0500,X,X,Region 1,R
+A0501,2,Saudi Arabia,,2,M,R,1,A0501,X,X,Region 1,R
+A0502,2,Saudi Arabia,,2,M,R,2,A0502,X,X,Region 1,T
+A0503,2,Saudi Arabia,,2,M,R,1,A0503,X,X,Region 1,V
+A0504,2,Saudi Arabia,,2,M,R,2,A0504,X,X,Region 1,V
+A0505,2,Saudi Arabia,,2,M,R,1,A0505,X,X,Region 1,V
+A0506,2,Saudi Arabia,,2,M,R,1,A0506,X,X,Region 1,V
+A0507,2,Saudi Arabia,,2,M,L,1,A0507,X,X,Region 1,R
+A0508,2,Saudi Arabia,,2,M,R,1,A0508,X,X,Region 1,V
+A0510,2,Saudi Arabia,,2,M,R,1,A0510,X,X,Region 1,V
+A0511,2,Saudi Arabia,,2,M,R,2,A0511,X,X,Region 1,V
+A0512,2,Saudi Arabia,,2,M,R,1,A0512,X,X,Region 1,V
+A0513,2,Saudi Arabia, ,2,M,R,2,A0513,X,X,Region 1,V
+A0514,2,Saudi Arabia,,2,M,R,2,A0514,X,X,Region 1,V
+A0515,2,Saudi Arabia,,2,M,L,1,A0515,X,X,Region 1,R
+A0516,2,Saudi Arabia,Khobar,2,M,R,2,A0516,X,X,Region 1,V
+A0517,2,Saudi Arabia,,2,M,R,1,A0517,X,X,Region 1,V
+A0518,2,Saudi Arabia,,2,M,R,2,A0518,X,X,Region 1,V
+A0519,2,Saudi Arabia,Jeddah,2,M,R,2,A0519,X,X,Region 1,V
+A0520,2,Saudi Arabia,,2,M,R,2,A0520,X,X,Region 1,V
+A0521,2,Saudi Arabia,,2,M,R,1,A0521,X,X,Region 1,V
+A0523,2,Saudi Arabia,,2,M,R,2,A0523,X,X,Region 1,R
+A0524,2,Saudi Arabia,,2,M,R,2,A0524,X,X,Region 1,R
+A0525,2,Saudi Arabia,YANBUH,2,M,R,2,A0525,X,X,Region 1,R
+A0527,2,Saudi Arabia,,2,M,R,1,A0527,X,X,Region 1,V
+A0528,2,Saudi Arabia, ,2,M,R,1,A0528,X,X,Region 1,V
+A0529,2,Saudi Arabia,,2,M,R,1,A0529,X,X,Region 1,V
+A0530,3,Saudi Arabia, ,3,M,R,1,A0530,X,X,Region 1,R
+A0532,2,Saudi Arabia,Jeddah,2,M,L,1,A0532,X,X,Region 1,R
+A0533,2,Saudi Arabia,,2,M,R,2,A0533,X,X,Region 1,R
+A0534,2,Saudi Arabia,,2,M,R,2,A0534,X,X,Region 1,R
+A0535,2,Saudi Arabia,,2,M,R,1,A0535,X,X,Region 1,R
+A0536,2,Saudi Arabia,,2,M,R,1,A0536,X,X,Region 1,R
+A0537,2,Saudi Arabia,,2,M,R,2,A0537,X,X,Region 1,R
+A0538,2,Saudi Arabia,,2,M,R,1,A0538,X,X,Region 1,R
+A0539,2,Saudi Arabia,,2,M,R,2,A0539,X,X,Region 1,R
+A0540,2,Saudi Arabia,,2,M,R,2,A0540,X,X,Region 1,R
+A0541,2,Saudi Arabia,,2,M,R,1,A0541,X,X,Region 1,R
+A0542,2,Saudi Arabia,MAKKAH,2,M,R,2,A0542,X,X,Region 1,R
+A0543,2,Tunisia,,3,F,R,1,A0543,X,X,Region 2,R
+A0544,2,Saudi Arabia,,2,M,R,2,A0544,X,X,Region 1,R
+A0545,2,Saudi Arabia,,2,M,R,1,A0545,X,X,Region 1,R
+A0546,2,Saudi Arabia,,2,M,R,1,A0546,X,X,Region 1,R
+A0547,2,Saudi Arabia,,2,M,R,1,A0547,X,X,Region 1,R
+A0548,2,Saudi Arabia,,2,M,R,1,A0548,X,X,Region 1,R
+A0549,2,Saudi Arabia,,2,M,R,1,A0549,X,X,Region 1,R
+A0550,2,Saudi Arabia,,2,M,R,1,A0550,X,X,Region 1,R
+A0551,2,Saudi Arabia, ,2,M,R,1,A0551,X,X,Region 1,R
+A0552,3,Tunisia, ,3,F,R,1,A0552,X,X,Region 2,R
+A0553,2,Saudi Arabia,,2,M,R,2,A0553,X,X,Region 1,R
+A0554,2,Tunisia,,3,F,R,1,A0554,X,X,Region 2,R
+A0555,3,Tunisia,,3,F,R,2,A0555,X,X,Region 2,R
+A0556,3,Tunisia,,3,F,R,1,A0556,X,X,Region 2,R
+A0557,2,Saudi Arabia,,2,M,R,1,A0557,X,X,Region 1,R
+A0558,2,Tunisia,,3,M,R,1,A0558,X,X,Region 2,R
+A0559,2,Tunisia, ,3,F,R,1,A0559,X,X,Region 2,R
+A0560,3,Tunisia,,3,F,R,1,A0560,X,X,Region 2,R
+A0562,2,Saudi Arabia,,2,M,R,1,A0562,X,X,Region 1,R
+A0563,2,Saudi Arabia,AL QATEEF,2,M,R,1,A0563,X,X,Region 1,R
+A0564,2,Saudi Arabia,,2,M,R,1,A0564,X,X,Region 1,R
+A0565,2,Saudi Arabia,,2,M,R,2,A0565,X,X,Region 1,R
+A0566,2,Saudi Arabia,,3,M,R,1,A0566,X,X,Region 1,R
+A0567,2,OMAN,,2,M,R,1,A0567,X,X,Region 1,R
+A0568,2,Saudi Arabia,,2,M,R,1,A0568,X,X,Region 1,R
+A0569,2,Saudi Arabia,,2,M,L,1,A0569,X,X,Region 1,R
+A0570,2,Saudi Arabia,جدة,2,M,R,1,A0570,X,X,Region 1,R
+A0571,2,Saudi Arabia,,2,M,R,2,A0571,X,X,Region 1,R
+A0572,2,Saudi Arabia,,2,M,R,1,A0572,X,X,Region 1,R
+A0573,3,Tunisia,,3,F,R,1,A0573,X,X,Region 2,R
+A0574,2,Saudi Arabia,,2,M,R,2,A0574,X,X,Region 1,R
+A0575,3,Yemen,,3,M,R,1,A0575,X,X,Region 1,R
+A0576,2,Saudi Arabia,,2,M,R,2,A0576,X,X,Region 1,R
+A0577,2,Saudi Arabia,,2,M,R,1,A0577,X,X,Region 1,R
+A0578,2,Saudi Arabia,,2,M,R,1,A0578,X,X,Region 1,R
+A0579,2,Saudi Arabia,,2,M,R,2,A0579,X,X,Region 1,R
+A0580,2,Saudi Arabia,DAMMAM,2,M,R,1,A0580,X,X,Region 1,R
+A0581,2,Saudi Arabia,,2,M,L,1,A0581,X,X,Region 1,R
+A0582,2,Saudi Arabia,DAMMAM,2,M,L,1,A0582,X,X,Region 1,R
+A0583,2,Saudi Arabia,Jeddah,2,M,R,2,A0583,X,X,Region 1,R
+A0584,2,Saudi Arabia,,2,M,R,1,A0584,X,X,Region 1,R
+A0585,2,Saudi Arabia,,2,M,R,2,A0585,X,X,Region 1,R
+A0586,2,Saudi Arabia,,2,M,R,1,A0586,X,X,Region 1,R
+A0587,2,Saudi Arabia,,2,M,R,1,A0587,X,X,Region 1,R
+A0588,2,Saudi Arabia,,2,M,R,1,A0588,X,X,Region 1,R
+A0589,2,Saudi Arabia,RAS TANOUREH,2,M,L,1,A0589,X,X,Region 1,R
+A0590,2,Saudi Arabia,DAMMAM,2,M,R,2,A0590,X,X,Region 1,R
+A0591,2,Tunisia,,3,F,R,1,A0591,X,X,Region 2,R
+A0592,3,Tunisia,,3,F,R,2,A0592,X,X,Region 2,R
+A0593,2,Saudi Arabia,RIYADH,2,M,R,1,A0593,X,X,Region 1,R
+A0594,2,Saudi Arabia,,2,M,R,1,A0594,X,X,Region 1,R
+A0595,3,Tunisia,,3,M,R,1,A0595,X,X,Region 2,R
+A0597,2,Saudi Arabia,,2,M,R,2,A0597,X,X,Region 1,R
+A0598,2,Saudi Arabia,,2,M,R,1,A0598,X,X,Region 1,R
+A0599,2,Saudi Arabia,,2,M,R,1,A0599,X,X,Region 1,R
+A0600,3,Jordan,,3,F,R,1,A0600,X,X,Region 1,V
+A0601,3,Saudi Arabia,الرياض,2,M,R,1,A0601,X,X,Region 1,R
+A0602,3,Jordan,,3,F,R,1,A0602,X,X,Region 1,R
+A0603,3,Palestine,,3,M,R,1,A0603,X,X,Region 1,R
+A0604,3,Saudi Arabia,,3,M,R,1,A0604,X,X,Region 1,R
+A0605,3,Jordan,,3,F,R,1,A0605,X,X,Region 1,R
+A0606,3,Saudi Arabia,ZULFI,3,F,R,1,A0606,X,X,Region 1,V
+A0607,2,Jordan,,3,F,L,1,A0607,X,X,Region 1,R
+A0608,2,Jordan,,3,F,R,1,A0608,X,X,Region 1,R
+A0609,2,Jordan,,3,F,R,1,A0609,X,X,Region 1,R
+A0610,3,Yemen,,3,M,R,1,A0610,X,X,Region 1,R
+A0611,3,Yemen,,3,M,R,1,A0611,X,X,Region 1,R
+A0612,1,Jordan,,1,M,R,1,A0612,X,X,Region 1,R
+A0613,2,Egypt,,3,M,R,1,A0613,X,X,Region 2,R
+A0614,2,Jordan,,3,F,R,1,A0614,X,X,Region 1,R
+A0615,2,Jordan,,3,F,R,1,A0615,X,X,Region 1,R
+A0616,3,Jordan,,3,F,R,1,A0616,X,X,Region 1,V
+A0617,2,Jordan,,2,M,R,1,A0617,X,X,Region 1,R
+A0619,1,USA,,1,F,R,1,A0619,X,X,Region 3,R
+A0620,2,USA,,3,F,R,1,A0620,X,X,Region 3,T
+A0621,3,SYRIA,,3,F,R,1,A0621,X,X,Region 1,R
+A0622,2,Morocco,,2,M,R,1,A0622,X,X,Region 2,R
+A0623,2,Saudi Arabia,,3,M,R,1,A0623,X,X,Region 1,R
+A0624,2,Morocco,,2,M,R,2,A0624,X,X,Region 2,R
+A0625,2,Morocco,,2,F,R,1,A0625,X,X,Region 2,R
+A0626,2,Morocco,,3,F,R,2,A0626,X,X,Region 2,R
+A0627,1,Morocco,,2,F,R,2,A0627,X,X,Region 2,V
+A0628,2,Morocco,,2,M,R,1,A0628,X,X,Region 2,R
+A0629,3,Jordan,,2,M,R,1,A0629,X,X,Region 1,R
+A0630,2,Morocco,,2,F,R,1,A0630,X,X,Region 2,R
+A0631,2,Saudi Arabia,,2,F,R,1,A0631,X,X,Region 1,R
+A0632,3,Morocco,,3,M,L,1,A0632,X,X,Region 2,R
+A0634,2,Morocco,,2,F,R,1,A0634,X,X,Region 2,R
+A0636,2,Morocco,,3,F,R,1,A0636,X,X,Region 2,R
+A0637,2,Morocco,,2,F,R,1,A0637,X,X,Region 2,R
+A0638,3,Jordan,,3,F,R,1,A0638,X,X,Region 1,R
+A0639,3,Jordan,,3,M,R,1,A0639,X,X,Region 1,R
+A0640,3,Palestine,,3,M,R,1,A0640,X,X,Region 1,R
+A0641,3,Saudi Arabia,,2,F,R,1,A0641,X,X,Region 1,R
+A0642,3,Canada,,3,M,R,1,A0642,X,X,Region 3,R
+A0643,3,Saudi Arabia,,3,F,R,1,A0643,X,X,Region 1,R
+A0644,3,Palestine,,3,M,R,1,A0644,X,X,Region 1,R
+A0645,3,Kuwait,,3,M,R,1,A0645,X,X,Region 1,R
+A0646,3,Yemen,,3,M,R,1,A0646,X,X,Region 1,R
+A0647,3,Yemen,,3,M,R,1,A0647,X,X,Region 1,R
+A0648,3,Yemen,,3,M,R,1,A0648,X,X,Region 1,R
+A0649,1,Saudi Arabia,,1,F,R,1,A0649,X,X,Region 1,R
+A0650,2,Saudi Arabia,Dammam,3,M,R,1,A0650,X,X,Region 1,R
+A0651,1,Jordan,,1,F,R,2,A0651,X,X,Region 1,R
+A0652,2,Yemen,,2,F,R,1,A0652,X,X,Region 1,R
+A0653,2,Saudi Arabia,جدة,2,M,R,1,A0653,X,X,Region 1,R
+A0654,3,Jordan,,3,F,R,1,A0654,X,X,Region 1,R
+A0655,2,Saudi Arabia,,2,M,R,1,A0655,X,X,Region 1,R
+A0656,3,Kuwait,,3,F,R,1,A0656,X,X,Region 1,R
+A0657,2,Saudi Arabia,,3,M,R,1,A0657,X,X,Region 1,R
+A0658,2,Yemen,,3,M,R,1,A0658,X,X,Region 1,R
+A0659,3,Jordan,,3,F,R,1,A0659,X,X,Region 1,R
+A0660,2,Saudi Arabia,Khobar,2,F,L,1,A0660,X,X,Region 1,R
+A0661,2,Saudi Arabia,,3,M,L,1,A0661,X,X,Region 1,T
+A0662,4,Saudi Arabia,,3,F,R,1,A0662,X,X,Region 1,R
+A0663,2,Saudi Arabia,,2,F,L,1,A0663,X,X,Region 1,R
+A0664,2,Saudi Arabia,,2,F,R,1,A0664,X,X,Region 1,R
+A0666,3,Libya,,3,M,R,1,A0666,X,X,Region 2,R
+A0667,3,Saudi Arabia,,3,M,R,1,A0667,X,X,Region 1,R
+A0668,3,Jordan,,3,F,R,1,A0668,X,X,Region 1,R
+A0669,3,Jordan,,3,F,R,1,A0669,X,X,Region 1,R
+A0670,3,Jordan,,3,F,R,1,A0670,X,X,Region 1,R
+A0671,3,Yemen,,3,M,R,1,A0671,X,X,Region 1,R
+A0672,3,Yemen,,3,M,R,1,A0672,X,X,Region 1,R
+A0673,3,Jordan,,3,F,R,1,A0673,X,X,Region 1,R
+A0674,4,Palestine,,3,M,R,1,A0674,X,X,Region 1,T
+A0676,3,Jordan,,3,F,R,1,A0676,X,X,Region 1,R
+A0677,3,Jordan,,3,M,L,1,A0677,X,X,Region 1,R
+A0679,3,Yemen,,3,M,R,1,A0679,X,X,Region 1,R
+A0680,3,Kuwait,,3,M,L,1,A0680,X,X,Region 1,R
+A0681,3,Yemen,,3,M,R,1,A0681,X,X,Region 1,R
+A0682,3,Yemen,,3,M,L,1,A0682,X,X,Region 1,R
+A0683,3,Yemen,,3,M,R,1,A0683,X,X,Region 1,R
+A0684,3,Jordan,,3,M,R,1,A0684,X,X,Region 1,R
+A0685,2,Saudi Arabia,,2,F,R,1,A0685,X,X,Region 1,R
+A0687,3,Kuwait,,3,M,R,1,A0687,X,X,Region 1,R
+A0688,3,Jordan,,3,M,R,1,A0688,X,X,Region 1,R
+A0690,3,Jordan,,3,F,R,1,A0690,X,X,Region 1,R
+A0692,2,Jordan,,3,M,R,1,A0692,X,X,Region 1,R
+A0693,2,Saudi Arabia,,3,F,R,1,A0693,X,X,Region 1,R
+A0694,2,Bahrain,,2,M,R,1,A0694,X,X,Region 1,R
+A0695,2,Saudi Arabia,,3,M,R,1,A0695,X,X,Region 1,R
+A0696,2,Saudi Arabia,,3,F,R,1,A0696,X,X,Region 1,R
+A0697,2,Saudi Arabia,RIYADH,2,M,L,1,A0697,X,X,Region 1,R
+A0698,2,Saudi Arabia,,3,M,R,1,A0698,X,X,Region 1,R
+A0699,2,Jordan,,3,M,R,1,A0699,X,X,Region 1,R
+A0700,3,Saudi Arabia,QATIF,3,F,R,1,A0700,X,X,Region 1,R
+A0702,2,Jordan,,3,F,R,1,A0702,X,X,Region 1,R
+A0703,3,Saudi Arabia,,2,F,R,1,A0703,X,X,Region 1,R
+A0704,1,Saudi Arabia,,1,F,R,1,A0704,X,X,Region 1,R
+A0705,3,Saudi Arabia,جدة,3,M,R,1,A0705,X,X,Region 1,R
+A0706,3,Jordan,,3,F,R,1,A0706,X,X,Region 1,R
+A0707,3,Palestine,,3,M,R,1,A0707,X,X,Region 1,R
+A0708,3,Jordan,,3,M,R,1,A0708,X,X,Region 1,R
+A0709,3,Palestine,,3,F,R,1,A0709,X,X,Region 1,R
+A0710,2,Jordan,,3,M,R,1,A0710,X,X,Region 1,R
+A0711,2,Saudi Arabia,,3,F,R,1,A0711,X,X,Region 1,R
+A0712,2,Saudi Arabia,الخبر,3,F,R,1,A0712,X,X,Region 1,R
+A0713,2,Saudi Arabia,,3,M,R,1,A0713,X,X,Region 1,R
+A0714,2,Saudi Arabia,,2,M,R,1,A0714,X,X,Region 1,R
+A0715,2,Jordan,,1,F,R,1,A0715,X,X,Region 1,R
+A0716,2,Saudi Arabia,,2,F,R,1,A0716,X,X,Region 1,R
+A0717,4,Palestine,,3,M,R,1,A0717,X,X,Region 1,V
+A0718,3,Saudi Arabia,,2,F,L,1,A0718,X,X,Region 1,R
+A0719,2,Saudi Arabia,KHOBAR,2,F,R,1,A0719,X,X,Region 1,R
+A0720,3,Saudi Arabia,,3,F,R,1,A0720,X,X,Region 1,R
+A0721,3,Saudi Arabia,,3,M,R,1,A0721,X,X,Region 1,R
+A0722,2,Saudi Arabia,,2,M,R,1,A0722,X,X,Region 1,R
+A0723,3,Egypt,,3,F,R,1,A0723,X,X,Region 2,R
+A0724,3,Saudi Arabia,,3,F,R,1,A0724,X,X,Region 1,R
+A0725,3,Sudan,,3,F,R,1,A0725,X,X,Region 2,R
+A0727,4,Palestine,,3,M,R,1,A0727,X,X,Region 1,R
+A0728,3,Kuwait,,3,F,R,1,A0728,X,X,Region 1,R
+A0729,2,Kuwait,,3,M,R,1,A0729,X,X,Region 1,R
+A0730,4,Palestine,,3,M,R,1,A0730,X,X,Region 1,R
+A0732,2,Saudi Arabia,,2,M,R,1,A0732,X,X,Region 1,R
+A0733,3,Saudi Arabia,,3,M,R,1,A0733,X,X,Region 1,R
+A0734,3,Saudi Arabia,,3,M,R,1,A0734,X,X,Region 1,R
+A0735,4,Lebanon,,3,M,R,1,A0735,X,X,Region 1,R
+A0736,3,Saudi Arabia,,2,M,R,1,A0736,X,X,Region 1,R
+A0737,3,Saudi Arabia,,3,M,R,1,A0737,X,X,Region 1,R
+A0739,2,Saudi Arabia,,2,M,R,1,A0739,X,X,Region 1,R
+A0740,2,Saudi Arabia,,2,M,R,1,A0740,X,X,Region 1,R
+A0741,2,Saudi Arabia,,2,M,R,1,A0741,X,X,Region 1,R
+A0742,2,Saudi Arabia,,2,M,R,1,A0742,X,X,Region 1,R
+A0744,2,Saudi Arabia,,3,F,L,1,A0744,X,X,Region 1,R
+A0746,2,Saudi Arabia,,3,M,R,1,A0746,X,X,Region 1,R
+A0747,1,Saudi Arabia,,1,M,R,1,A0747,X,X,Region 1,R
+A0748,3,Jordan,,2,M,R,1,A0748,X,X,Region 1,R
+A0749,3,Jordan,,2,F,R,1,A0749,X,X,Region 1,R
+A0750,3,Morocco,,3,M,R,1,A0750,X,X,Region 2,R
+A0751,2,Saudi Arabia,,3,F,R,1,A0751,X,X,Region 1,R
+A0752,2,Saudi Arabia,,3,F,R,1,A0752,X,X,Region 1,R
+A0753,2,Saudi Arabia,,3,M,L,1,A0753,X,X,Region 1,R
+A0755,3,Jordan,,3,M,R,2,A0755,X,X,Region 1,R
+A0756,2,Saudi Arabia,,3,M,R,1,A0756,X,X,Region 1,V
+A0757,2,Jordan,,2,F,R,1,A0757,X,X,Region 1,R
+A0758,2,Saudi Arabia,DHAHRAN,3,F,R,1,A0758,X,X,Region 1,R
+A0759,3,Saudi Arabia,,3,F,R,1,A0759,X,X,Region 1,R
+A0760,1,Saudi Arabia,,1,M,R,1,A0760,X,X,Region 1,R
+A0761,3,Jordan,,2,F,R,1,A0761,X,X,Region 1,R
+A0762,3,Jordan,,3,M,R,1,A0762,X,X,Region 1,R
+A0763,2,Jordan,,3,F,R,1,A0763,X,X,Region 1,R
+A0764,3,Jordan,,3,F,R,1,A0764,X,X,Region 1,R
+A0766,1,Jordan,,1,F,L,2,A0766,X,X,Region 1,T
+A0769,3,Jordan,,3,F,R,1,A0769,X,X,Region 1,R
+A0770,2,Jordan,,3,F,R,1,A0770,X,X,Region 1,R
+A0771,2,Jordan,,2,F,R,1,A0771,X,X,Region 1,R
+A0772,3,Saudi Arabia,,3,F,R,1,A0772,X,X,Region 1,R
+A0773,2,Jordan,,2,F,R,1,A0773,X,X,Region 1,R
+A0774,3,Egypt,,3,M,R,1,A0774,X,X,Region 2,R
+A0775,1,Saudi Arabia,JEDDAH,1,F,R,1,A0775,X,X,Region 1,R
+A0776,2,Jordan,,2,F,R,1,A0776,X,X,Region 2,R
+A0777,3,Egypt,,3,M,R,1,A0777,X,X,Region 2,R
+A0778,2,Saudi Arabia,,3,M,R,1,A0778,X,X,Region 1,R
+A0779,3,Yemen,,3,M,R,1,A0779,X,X,Region 1,R
+A0780,2,Jordan,,3,F,R,1,A0780,X,X,Region 1,R
+A0781,2,Jordan,,3,F,R,1,A0781,X,X,Region 1,R
+A0782,2,Jordan,,3,F,R,1,A0782,X,X,Region 1,T
+A0783,2,Jordan,,3,F,R,1,A0783,X,X,Region 1,R
+A0784,3,Jordan,,2,M,R,1,A0784,X,X,Region 1,R
+A0785,2,Saudi Arabia,,3,F,L,1,A0785,X,X,Region 1,R
+A0786,2,Saudi Arabia,,3,F,R,1,A0786,X,X,Region 1,R
+A0787,2,Jordan,,3,F,R,1,A0787,X,X,Region 1,R
+A0788,2,Jordan,,3,F,R,1,A0788,X,X,Region 1,R
+A0789,3,Egypt,,3,F,R,1,A0789,X,X,Region 2,R
+A0790,2,Jordan,,3,F,R,1,A0790,X,X,Region 1,V
+A0791,3,Jordan,,1,M,R,1,A0791,X,X,Region 1,R
+A0792,2,Saudi Arabia,,3,M,R,1,A0792,X,X,Region 1,R
+A0793,2,Saudi Arabia,,3,M,L,1,A0793,X,X,Region 1,R
+A0794,2,Saudi Arabia,,3,M,R,1,A0794,X,X,Region 1,R
+A0795,3,Morocco,,3,F,R,1,A0795,X,X,Region 2,R
+A0796,2,Saudi Arabia,,3,M,L,1,A0796,X,X,Region 1,R
+A0797,3,Yemen,,3,M,R,1,A0797,X,X,Region 1,R
+A0798,3,Jordan,,3,F,R,1,A0798,X,X,Region 1,R
+A0799,2,Jordan,,2,F,R,1,A0799,X,X,Region 1,R
+A0800,2,Saudi Arabia,,2,M,R,1,A0800,X,X,Region 1,R
+A0801,2,Saudi Arabia,,2,M,R,1,A0801,X,X,Region 1,R
+A0802,2,Saudi Arabia,JEDDAH,2,M,L,1,A0802,X,X,Region 1,R
+A0804,2,Saudi Arabia,,2,M,L,1,A0804,X,X,Region 1,R
+A0805,2,Saudi Arabia,DHAHRAN,2,M,L,1,A0805,X,X,Region 1,R
+A0806,2,Saudi Arabia,,2,M,R,1,A0806,X,X,Region 1,R
+A0808,2,Saudi Arabia,,2,M,R,1,A0808,X,X,Region 1,R
+A0809,2,Saudi Arabia,,2,M,R,1,A0809,X,X,Region 1,R
+A0810,2,Saudi Arabia,,2,M,R,1,A0810,X,X,Region 1,R
+A0811,2,Saudi Arabia,,2,M,R,1,A0811,X,X,Region 1,R
+A0812,2,Saudi Arabia,,2,M,R,1,A0812,X,X,Region 1,R
+A0813,2,Saudi Arabia,AHSA,2,M,R,1,A0813,X,X,Region 1,R
+A0814,2,Saudi Arabia,,2,M,R,1,A0814,X,X,Region 1,R
+A0815,2,Saudi Arabia,JEDDAH,2,M,R,1,A0815,X,X,Region 1,R
+A0816,2,Saudi Arabia,,2,M,R,1,A0816,X,X,Region 1,R
+A0817,2,Saudi Arabia,KHOBAR,2,M,R,1,A0817,X,X,Region 1,R
+A0818,2,Saudi Arabia,RIYADH,2,M,R,1,A0818,X,X,Region 1,R
+A0819,2,Saudi Arabia,,2,M,R,1,A0819,X,X,Region 1,R
+A0820,2,Saudi Arabia,,2,M,L,1,A0820,X,X,Region 1,R
+A0821,2,Saudi Arabia,,2,M,L,1,A0821,X,X,Region 1,R
+A0822,2,Saudi Arabia,,2,M,R,1,A0822,X,X,Region 1,R
+A0823,2,Saudi Arabia,,2,M,R,1,A0823,X,X,Region 1,R
+A0825,2,Saudi Arabia,,2,M,R,1,A0825,X,X,Region 1,R
+A0826,2,Saudi Arabia,,2,M,R,1,A0826,X,X,Region 1,R
+A0827,2,Saudi Arabia,,2,M,R,1,A0827,X,X,Region 1,R
+A0829,2,Saudi Arabia,,2,M,R,1,A0829,X,X,Region 1,R
+A0830,2,Saudi Arabia,,2,M,R,1,A0830,X,X,Region 1,R
+A0831,2,Saudi Arabia,,2,M,R,1,A0831,X,X,Region 1,R
+A0833,2,Saudi Arabia,JEDDAH,2,M,R,1,A0833,X,X,Region 1,R
+A0834,2,Saudi Arabia,JEDDAH,2,M,R,1,A0834,X,X,Region 1,R
+A0835,2,Saudi Arabia,,2,M,R,1,A0835,X,X,Region 1,R
+A0836,2,Saudi Arabia,,2,M,R,1,A0836,X,X,Region 1,R
+A0837,2,Saudi Arabia,,2,M,R,1,A0837,X,X,Region 1,R
+A0839,2,Saudi Arabia,,2,M,R,1,A0839,X,X,Region 1,R
+A0840,2,Saudi Arabia,,2,M,R,1,A0840,X,X,Region 1,R
+A0841,2,Saudi Arabia,,2,M,R,1,A0841,X,X,Region 1,R
+A0842,2,Saudi Arabia,,2,M,R,1,A0842,X,X,Region 1,R
+A0843,2,Saudi Arabia,,2,M,R,1,A0843,X,X,Region 1,R
+A0844,2,Saudi Arabia,,2,M,R,1,A0844,X,X,Region 1,R
+A0845,2,Saudi Arabia,,2,M,R,1,A0845,X,X,Region 1,R
+A0846,2,Saudi Arabia,,2,M,R,1,A0846,X,X,Region 1,R
+A0847,2,Saudi Arabia,,2,M,R,1,A0847,X,X,Region 1,R
+A0849,2,Saudi Arabia,NAJRAN,2,M,R,1,A0849,X,X,Region 1,R
+A0851,2,Saudi Arabia,,2,M,R,1,A0851,X,X,Region 1,R
+A0852,2,Saudi Arabia,,2,M,R,1,A0852,X,X,Region 1,R
+A0853,2,Saudi Arabia,,2,M,R,1,A0853,X,X,Region 1,R
+A0854,2,Saudi Arabia,,2,M,R,2,A0854,X,X,Region 1,R
+A0855,2,Saudi Arabia, ,2,M,R,1,A0855,X,X,Region 1,R
+A0856,2,Saudi Arabia,,2,M,R,1,A0856,X,X,Region 1,R
+A0857,2,Saudi Arabia,,2,M,R,2,A0857,X,X,Region 1,R
+A0858,2,Saudi Arabia,,2,M,R,1,A0858,X,X,Region 1,R
+A0859,2,Saudi Arabia,,2,M,R,1,A0859,X,X,Region 1,R
+A0860,2,Saudi Arabia,,2,M,R,1,A0860,X,X,Region 1,R
+A0861,2,Saudi Arabia,,2,M,R,1,A0861,X,X,Region 1,R
+A0862,2,Saudi Arabia,RIYADH,3,M,R,1,A0862,X,X,Region 1,R
+A0864,2,Saudi Arabia,RIYADH,2,M,R,1,A0864,X,X,Region 1,R
+A0866,2,Saudi Arabia,,2,M,R,1,A0866,X,X,Region 1,R
+A0867,2,Saudi Arabia,,2,M,R,1,A0867,X,X,Region 1,R
+A0869,2,Saudi Arabia,,2,M,R,1,A0869,X,X,Region 1,R
+A0870,2,Saudi Arabia,,2,M,R,2,A0870,X,X,Region 1,R
+A0871,2,Saudi Arabia,,2,M,R,1,A0871,X,X,Region 1,R
+A0872,2,Saudi Arabia,,2,M,R,1,A0872,X,X,Region 1,R
+A0873,2,Saudi Arabia,تبوك,3,M,L,1,A0873,X,X,Region 1,R
+A0875,2,Saudi Arabia,JEDDAH,2,M,L,1,A0875,X,X,Region 1,R
+A0876,2,Saudi Arabia,RIYADH,2,M,R,1,A0876,X,X,Region 1,R
+A0877,2,Saudi Arabia,KHOBAR,2,M,R,1,A0877,X,X,Region 1,R
+A0878,2,Saudi Arabia,,2,M,R,1,A0878,X,X,Region 1,R
+A0880,2,Saudi Arabia,,3,M,R,1,A0880,X,X,Region 1,R
+A0881,2,Saudi Arabia,,2,M,R,1,A0881,X,X,Region 1,R
+A0883,2,Saudi Arabia,AHSA,2,M,R,1,A0883,X,X,Region 1,R
+A0884,2,Saudi Arabia,,2,M,R,1,A0884,X,X,Region 1,R
+A0885,3,Saudi Arabia,,3,M,R,1,A0885,X,X,Region 1,R
+A0886,2,Saudi Arabia,,2,M,R,1,A0886,X,X,Region 1,R
+A0887,3,Saudi Arabia,,2,M,R,1,A0887,X,X,Region 1,R
+A0888,2,Saudi Arabia, ,2,M,R,1,A0888,X,X,Region 1,R
+A0889,2,Saudi Arabia,,2,M,R,1,A0889,X,X,Region 1,R
+A0890,2,Saudi Arabia,,2,M,R,1,A0890,X,X,Region 1,R
+A0891,2,Saudi Arabia, ,2,M,R,1,A0891,X,X,Region 1,T
+A0892,2,Saudi Arabia,,3,M,R,1,A0892,X,X,Region 1,R
+A0893,2,Saudi Arabia,,2,M,R,1,A0893,X,X,Region 1,R
+A0894,2,Saudi Arabia,,2,M,R,1,A0894,X,X,Region 1,R
+A0895,2,Yemen,,3,F,R,1,A0895,X,X,Region 1,R
+A0896,3,Yemen,,3,M,R,1,A0896,X,X,Region 1,R
+A0897,2,Saudi Arabia,,2,M,R,1,A0897,X,X,Region 1,R
+A0898,2,Saudi Arabia,,2,M,R,1,A0898,X,X,Region 1,R
+A0899,2,Saudi Arabia,,2,M,R,1,A0899,X,X,Region 1,R
+A0900,2,USA,,2,M,R,1,A0900,X,X,Region 3,R
+A0901,2,Saudi Arabia,,3,M,R,1,A0901,X,X,Region 1,R
+A0902,2,Saudi Arabia,,2,M,R,1,A0902,X,X,Region 1,R
+A0903,2,Saudi Arabia,,2,M,R,1,A0903,X,X,Region 1,R
+A0904,2,Saudi Arabia,,2,M,R,1,A0904,X,X,Region 1,R
+A0905,2,Saudi Arabia,,2,M,R,1,A0905,X,X,Region 1,R
+A0906,2,Saudi Arabia,,2,M,R,1,A0906,X,X,Region 1,R
+A0907,2,Saudi Arabia,,2,M,R,1,A0907,X,X,Region 1,T
+A0908,2,Saudi Arabia,,2,M,R,1,A0908,X,X,Region 1,R
+A0909,2,Saudi Arabia, ,2,M,R,1,A0909,X,X,Region 1,R
+A0910,2,Egypt,,2,M,R,1,A0910,X,X,Region 2,R
+A0912,2,Saudi Arabia,,2,M,R,1,A0912,X,X,Region 1,R
+A0913,2,Saudi Arabia,,2,M,R,1,A0913,X,X,Region 1,R
+A0916,2,Saudi Arabia,,2,M,R,1,A0916,X,X,Region 1,R
+A0917,2,Saudi Arabia,,2,M,R,1,A0917,X,X,Region 1,R
+A0918,2,Saudi Arabia,,2,M,R,2,A0918,X,X,Region 1,R
+A0919,2,Saudi Arabia,,2,M,R,1,A0919,X,X,Region 1,R
+A0920,2,Saudi Arabia,,2,M,R,1,A0920,X,X,Region 1,R
+A0923,2,Saudi Arabia,,2,M,R,1,A0923,X,X,Region 1,R
+A0924,2,Saudi Arabia,,2,M,R,1,A0924,X,X,Region 1,R
+A0925,2,Saudi Arabia,,2,M,R,1,A0925,X,X,Region 1,R
+A0926,2,Saudi Arabia,,2,M,R,1,A0926,X,X,Region 1,R
+A0927,2,Saudi Arabia,,2,M,R,1,A0927,X,X,Region 1,R
+A0928,2,Saudi Arabia,,2,M,R,1,A0928,X,X,Region 1,R
+A0929,2,Saudi Arabia,,2,M,R,1,A0929,X,X,Region 1,R
+A0930,2,Saudi Arabia,,2,M,R,1,A0930,X,X,Region 1,R
+A0931,2,Saudi Arabia,,2,M,R,1,A0931,X,X,Region 1,R
+A0933,2,Saudi Arabia,QATEEF,2,M,R,1,A0933,X,X,Region 1,R
+A0934,2,Saudi Arabia,AL TAIF,2,M,R,1,A0934,X,X,Region 1,R
+A0935,2,Saudi Arabia,,2,M,R,1,A0935,X,X,Region 1,R
+A0936,2,Saudi Arabia,,2,M,R,1,A0936,X,X,Region 1,R
+A0937,2,Saudi Arabia,JEDDAH,3,M,R,1,A0937,X,X,Region 1,R
+A0939,2,Saudi Arabia,DAMMAM,2,M,L,1,A0939,X,X,Region 1,R
+A0940,2,Saudi Arabia,,2,M,R,1,A0940,X,X,Region 1,R
+A0941,2,Saudi Arabia,,2,M,R,1,A0941,X,X,Region 1,R
+A0943,2,Saudi Arabia,,2,M,R,1,A0943,X,X,Region 1,R
+A0944,2,Saudi Arabia,,2,M,R,1,A0944,X,X,Region 1,V
+A0945,2,Saudi Arabia,MADINA,2,M,R,1,A0945,X,X,Region 1,R
+A0946,2,Saudi Arabia,,2,M,R,2,A0946,X,X,Region 1,R
+A0947,2,Saudi Arabia,RIYADH,2,M,R,1,A0947,X,X,Region 1,R
+A0948,2,Saudi Arabia,RIYADH,2,M,R,1,A0948,X,X,Region 1,R
+A0949,2,Saudi Arabia,,2,M,R,1,A0949,X,X,Region 1,R
+A0950,2,Saudi Arabia,,2,M,R,1,A0950,X,X,Region 1,R
+A0951,2,Saudi Arabia,,3,M,L,1,A0951,X,X,Region 1,R
+A0952,2,Saudi Arabia,,2,M,R,2,A0952,X,X,Region 1,R
+A0953,2,Saudi Arabia,,2,M,R,1,A0953,X,X,Region 1,R
+A0954,2,Saudi Arabia,RIYADH,2,M,R,1,A0954,X,X,Region 1,R
+A0955,2,Saudi Arabia,,2,M,R,1,A0955,X,X,Region 1,R
+A0956,2,Saudi Arabia,,2,M,R,1,A0956,X,X,Region 1,R
+A0957,2,Saudi Arabia,,3,M,R,1,A0957,X,X,Region 1,R
+A0958,2,Saudi Arabia,,2,M,L,1,A0958,X,X,Region 1,R
+A0959,2,Saudi Arabia,RIYADH,2,M,R,1,A0959,X,X,Region 1,R
+A0960,2,Saudi Arabia,,2,M,R,1,A0960,X,X,Region 1,R
+A0962,2,Saudi Arabia,,3,M,R,1,A0962,X,X,Region 1,R
+A0963,2,Saudi Arabia,DAMMAM,3,M,R,1,A0963,X,X,Region 1,R
+A0965,2,Saudi Arabia,,2,M,L,2,A0965,X,X,Region 1,R
+A0966,2,Saudi Arabia,,2,M,R,1,A0966,X,X,Region 1,R
+A0967,2,Saudi Arabia,,2,M,R,1,A0967,X,X,Region 1,R
+A0968,2,Saudi Arabia,,2,M,R,1,A0968,X,X,Region 1,R
+A0969,2,Saudi Arabia,,2,M,R,1,A0969,X,X,Region 1,R
+A0970,2,Saudi Arabia,SEHAT,2,M,R,1,A0970,X,X,Region 1,R
+A0971,2,Saudi Arabia,KHOBAR,2,M,R,1,A0971,X,X,Region 1,R
+A0973,3,Morocco,,3,F,R,1,A0973,X,X,Region 2,R
+A0974,2,Saudi Arabia,FEIFA,2,M,R,1,A0974,X,X,Region 1,R
+A0975,2,Saudi Arabia,DHAHRAN,2,M,R,1,A0975,X,X,Region 1,R
+A0976,2,Saudi Arabia,ABHA,2,M,R,1,A0976,X,X,Region 1,R
+A0977,2,Saudi Arabia,,3,M,R,1,A0977,X,X,Region 1,R
+A0979,3,Jordan,,3,M,R,1,A0979,X,X,Region 1,R
+A0980,2,Saudi Arabia,DAMMAM,2,M,R,1,A0980,X,X,Region 1,R
+A0982,2,Saudi Arabia,AHSA,2,M,R,1,A0982,X,X,Region 1,R
+A0983,2,Saudi Arabia,المدينة,3,M,R,1,A0983,X,X,Region 1,R
+A0985,2,Saudi Arabia,,3,M,L,1,A0985,X,X,Region 1,R
+A0986,2,Saudi Arabia,KHOBAR,2,M,R,1,A0986,X,X,Region 1,R
+A0987,2,Saudi Arabia,AHSA,2,M,R,1,A0987,X,X,Region 1,R
+A0988,2,Saudi Arabia,JEDDAH,2,M,R,2,A0988,X,X,Region 1,R
+A0989,2,Saudi Arabia,,2,M,R,1,A0989,X,X,Region 1,R
+A0990,2,Saudi Arabia,,2,M,R,1,A0990,X,X,Region 1,R
+A0991,2,Saudi Arabia,RIYADH,2,M,L,1,A0991,X,X,Region 1,R
+A0994,2,Saudi Arabia,,2,M,R,1,A0994,X,X,Region 1,R
+A0995,2,Saudi Arabia,JEDDAH,2,M,R,1,A0995,X,X,Region 1,R
+A0996,2,Saudi Arabia,,2,M,R,1,A0996,X,X,Region 1,V
+A0997,2,Palestine,,3,M,R,1,A0997,X,X,Region 1,R
+A0998,3,Yemen,,3,M,R,1,A0998,X,X,Region 1,R
+A1000,1,Saudi Arabia,,1,M,R,2,A1000,X,X,Region 1,R
+A1001,2,Saudi Arabia,الرس,3,M,R,1,A1001,X,X,Region 1,R
+A1002,2,Saudi Arabia,القصيم,3,M,R,2,A1002,X,X,Region 1,V
+A1003,2,Saudi Arabia,القصيم,3,M,R,1,A1003,X,X,Region 1,R
+A1005,2,Saudi Arabia,,3,M,R,1,A1005,X,X,Region 1,R
+A1006,2,Saudi Arabia,,3,M,R,1,A1006,X,X,Region 1,R
+A1007,2,Saudi Arabia,القصيم,2,M,L,1,A1007,X,X,Region 1,R
+A1008,2,Saudi Arabia,القصيم,3,M,R,1,A1008,X,X,Region 1,R
+A1009,2,Saudi Arabia,المدينة,3,M,R,2,A1009,X,X,Region 1,R
+A1010,3,Saudi Arabia,,3,M,R,1,A1010,X,X,Region 1,R
+A1011,2,Saudi Arabia,,3,M,R,1,A1011,X,X,Region 1,R
+A1012,2,Saudi Arabia,القصيم,2,M,R,1,A1012,X,X,Region 1,R
+A1014,2,Saudi Arabia,القصيم,3,M,R,1,A1014,X,X,Region 1,R
+A1018,2,Saudi Arabia,القصيم,3,M,R,1,A1018,X,X,Region 1,R
+A1019,2,Saudi Arabia,,2,M,R,1,A1019,X,X,Region 1,R
+A1020,2,Saudi Arabia,,3,M,R,1,A1020,X,X,Region 1,R
+A1022,2,Syria,,2,M,R,2,A1022,X,X,Region 1,R
+A1023,2,Yemen,,2,M,R,1,A1023,X,X,Region 1,R
+A1025,2,Saudi Arabia,بريدة,2,M,R,1,A1025,X,X,Region 1,R
+A1026,2,Saudi Arabia,,3,M,R,1,A1026,X,X,Region 1,R
+A1027,2,Yemen,,2,M,L,1,A1027,X,X,Region 1,R
+A1028,2,Egypt,,2,M,R,1,A1028,X,X,Region 2,R
+A1029,2,Saudi Arabia,القصيم,3,M,R,1,A1029,X,X,Region 1,R
+A1030,2,Saudi Arabia,بريدة,3,M,L,1,A1030,X,X,Region 1,R
+A1031,2,Saudi Arabia,,2,M,R,1,A1031,X,X,Region 1,R
+A1033,2,Syria,,3,M,R,1,A1033,X,X,Region 1,R
+A1034,2,Saudi Arabia,,2,M,R,1,A1034,X,X,Region 1,R
+A1037,2,Saudi Arabia,القصيم,3,M,R,1,A1037,X,X,Region 1,R
+A1039,2,Saudi Arabia,,3,M,R,1,A1039,X,X,Region 1,R
+A1041,2,Saudi Arabia,القصيم,3,M,R,1,A1041,X,X,Region 1,R
+A1043,2,Saudi Arabia,,2,M,R,1,A1043,X,X,Region 1,R
+A1044,2,Saudi Arabia,,2,M,R,1,A1044,X,X,Region 1,R
+A1046,2,Saudi Arabia,,3,M,L,1,A1046,X,X,Region 1,R
+A1052,2,Saudi Arabia,المدينة,2,M,R,1,A1052,X,X,Region 1,R
+A1054,2,Saudi Arabia,,3,M,R,1,A1054,X,X,Region 1,R
+A1056,2,Saudi Arabia,,3,M,R,2,A1056,X,X,Region 1,R
+A1058,2,Saudi Arabia,القصيم,3,M,R,1,A1058,X,X,Region 1,R
+A1059,2,Yemen,,2,M,R,1,A1059,X,X,Region 1,R
+A1061,2,Saudi Arabia,,3,M,R,1,A1061,X,X,Region 1,R
+A1064,2,Saudi Arabia,,2,M,L,1,A1064,X,X,Region 1,R
+A1066,2,Saudi Arabia,,3,M,R,1,A1066,X,X,Region 1,R
+A1072,2,Saudi Arabia,الاحساء,3,M,R,1,A1072,X,X,Region 1,R
+A1074,2,Saudi Arabia,,2,M,R,1,A1074,X,X,Region 1,R
+A1075,2,Saudi Arabia,Jubail,3,M,R,1,A1075,X,X,Region 1,R
+A1076,2,Saudi Arabia,,3,M,R,1,A1076,X,X,Region 1,R
+A1077,2,Saudi Arabia,القصيم,2,M,R,2,A1077,X,X,Region 1,R
+A1080,2,Saudi Arabia,عنيزة,3,M,R,1,A1080,X,X,Region 1,R
+A1081,2,Saudi Arabia,,3,M,R,1,A1081,X,X,Region 1,R
+A1084,2,Saudi Arabia,,3,M,R,1,A1084,X,X,Region 1,R
+A1086,2,Saudi Arabia,القصيم,2,M,R,1,A1086,X,X,Region 1,R
+A1091,2,Saudi Arabia,,3,M,R,1,A1091,X,X,Region 1,R
+A1092,2,Saudi Arabia,,3,M,R,1,A1092,X,X,Region 1,R
+A1094,2,Saudi Arabia,بريدة,3,M,R,1,A1094,X,X,Region 1,R
+A1095,2,Saudi Arabia,,3,M,R,1,A1095,X,X,Region 1,R
+A1099,2,Saudi Arabia,,3,M,R,1,A1099,X,X,Region 1,R
+A1101,3,Yemen,,3,M,R,1,A1101,X,X,Region 1,R
+A1102,3,Yemen,,3,M,R,1,A1102,X,X,Region 1,R
+A1103,3,Yemen,,3,M,R,1,A1103,X,X,Region 1,R
+A1104,3,Yemen,,3,M,R,1,A1104,X,X,Region 1,R
+A1105,2,Yemen,,3,M,R,1,A1105,X,X,Region 1,R
+A1106,3,Yemen,,3,M,R,1,A1106,X,X,Region 1,R
+A1107,3,Yemen,,3,M,R,1,A1107,X,X,Region 1,R
+A1108,3,Yemen,,3,M,L,1,A1108,X,X,Region 1,R
+A1109,3,Saudi Arabia,DAMMAM,3,M,R,1,A1109,X,X,Region 1,R
+A1110,2,Yemen,,3,M,R,1,A1110,X,X,Region 1,R
+A1121,3,Palestine,,3,M,R,1,A1121,X,X,Region 1,R
+A1122,2,Palestine,,3,M,R,1,A1122,X,X,Region 1,R
+A1123,3,Palestine,,3,M,R,1,A1123,X,X,Region 1,R
+A1125,3,Saudi Arabia,,3,M,L,1,A1125,X,X,Region 1,R
+A1126,3,Jordan,,3,M,R,1,A1126,X,X,Region 1,R
+A1127,2,Palestine,,3,M,R,1,A1127,X,X,Region 1,R
+A1128,3,Palestine,,3,M,R,1,A1128,X,X,Region 1,R
+A1129,2,Palestine,,3,M,L,1,A1129,X,X,Region 1,R
+A1130,3,Palestine,,3,M,R,1,A1130,X,X,Region 1,R
+A1131,2,Palestine,,3,M,R,1,A1131,X,X,Region 1,R
+A1132,2,Palestine,,3,M,R,2,A1132,X,X,Region 1,R
+A1133,4,Saudi Arabia,مكة المكرمة,3,M,R,1,A1133,X,X,Region 1,R
+A1134,2,Saudi Arabia,,2,F,R,1,A1134,X,X,Region 1,R
+A1135,4,Saudi Arabia,,3,F,R,1,A1135,X,X,Region 1,R
+A1136,3,Saudi Arabia,,3,F,R,1,A1136,X,X,Region 1,R
+A1137,3,Saudi Arabia,,2,F,R,1,A1137,X,X,Region 1,R
+A1138,3,Saudi Arabia,,3,F,R,1,A1138,X,X,Region 1,R
+A1139,2,Saudi Arabia,,3,F,R,1,A1139,X,X,Region 1,R
+A1140,3,Saudi Arabia,,2,F,R,1,A1140,X,X,Region 1,R
+A1141,3,Saudi Arabia,,3,F,R,1,A1141,X,X,Region 1,R
+A1142,2,Saudi Arabia,,3,M,R,1,A1142,X,X,Region 1,T
+A1144,1,Saudi Arabia,MADINA,2,F,R,1,A1144,X,X,Region 1,R
+A1145,3,Saudi Arabia,,3,M,R,1,A1145,X,X,Region 1,R
+A1147,2,Saudi Arabia,مكة المكرمة,3,M,R,1,A1147,X,X,Region 1,T
+A1154,3,Palestine,,3,M,R,1,A1154,X,X,Region 1,R
+A1157,3,Palestine,,3,M,R,1,A1157,X,X,Region 1,R
+A1158,3,Jordan,,3,M,R,1,A1158,X,X,Region 1,R
+A1159,2,Palestine,,3,M,R,1,A1159,X,X,Region 1,R
+A1160,3,Palestine,,3,M,R,1,A1160,X,X,Region 1,R
+A1161,3,Palestine,,3,M,R,1,A1161,X,X,Region 1,R
+A1165,3,Yemen,,3,M,R,1,A1165,X,X,Region 1,R
+A1166,3,Yemen,,3,M,R,1,A1166,X,X,Region 1,R
+A1167,3,Saudi Arabia,,2,M,R,1,A1167,X,X,Region 1,R
+A1168,2,Saudi Arabia,,2,M,R,2,A1168,X,X,Region 1,R
+A1169,3,Saudi Arabia,,1,F,R,1,A1169,X,X,Region 1,R
+A1173,2,Saudi Arabia,,2,F,R,1,A1173,X,X,Region 1,T
+A1181,4,Saudi Arabia,,2,F,R,1,A1181,X,X,Region 1,T

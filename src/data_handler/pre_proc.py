@@ -29,8 +29,8 @@ class PreProcess:
             width = len(image[0])
             y = 0
 
-            y_step = segment_shape[1] // 2
-            x_step = segment_shape[0] // 2
+            y_step = int(segment_shape[1] * 0.50)  # Overlap of 50% of the Y per patch
+            x_step = int(segment_shape[0] * 0.50)  # Overlap of 50% of the X per patch
 
             while y <= height - y_step:
                 if segment_shape[1] - y < y_step:
@@ -40,10 +40,12 @@ class PreProcess:
                     if segment_shape[0] - x < x_step:
                         break
                     segment = image[y: y + segment_shape[1], x: x + segment_shape[0]].copy()
-                    x = x + x_step
+                    x += x_step
+                    if segment.shape[0] < segment_shape[0] or segment.shape[1] < segment_shape[1]:
+                        continue
                     patched_images.append(segment)
                     patched_labels.append(label)
-                y = y + y_step
+                y += y_step
 
         return np.array(patched_images), patched_labels
 

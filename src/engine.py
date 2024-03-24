@@ -1,9 +1,10 @@
 from typing import Tuple, Literal
+
 from src.models.vgg16 import Vgg16
 from src.models.vgg19 import Vgg19
 from src.models.xception import XceptionModel
 from src.data_handler.data_loader import DataLoader
-from src.data_handler.label_splitter import LabelSplitter
+from src.data_handler.label_splitter import *
 from src.data_handler.pre_proc import PreProcess
 from models.model_names import *
 from collections import Counter
@@ -62,7 +63,9 @@ class Engine:
 
         return proc_images, proc_labels
 
-    def load_images(self, data_type: Literal["test", "train"], image_filename_col: str, label_col: str):
+    def load_images(self, data_type: Literal["test", "train"], image_filename_col: str, label_col: str,
+                    clean_method: Literal["HHD", "KHATT"]="HHD"):
+
         data_path, dataframe = "", ""
 
         print(f"Loading {data_type} images...")
@@ -74,7 +77,7 @@ class Engine:
             dataframe = self.train_labels
 
         data_loader = DataLoader(dataframe, data_type, data_path, image_filename_col, label_col)
-        images, labels = data_loader.load_data()
+        images, labels = data_loader.load_data(clean_method)
 
         # Preprocessing:
         proc_images, proc_labels = self.preprocess_data(images, labels, data_type)
@@ -106,8 +109,8 @@ class Engine:
 
             patches, _ = preprocessor.patch_images([image], [label], self.image_shape)
             patch_predictions = self.model.patch_evaluation(patches)
-            most_common_prediction = self.most_common_number(patch_predictions)
-            predictions.append(most_common_prediction)
+            most_common_image_prediction = self.most_common_number(patch_predictions)
+            predictions.append(most_common_image_prediction)
 
         accuracy = accuracy_score(self.test_labels, predictions)
         print(f"Accuracy: {accuracy}")
@@ -123,21 +126,49 @@ class Engine:
         pass
 
 
-def get_bundled_engine(base_dir, train_images_folder, test_images_folder, labels_file, image_shape):
+def construct_HHD_engine(base_dir, image_shape):
 
     # Setting file system
-    train_path = base_dir / train_images_folder
-    test_path = base_dir / test_images_folder
-    csv_label_path = str(base_dir / labels_file)
+    train_path = base_dir / "train"
+    test_path = base_dir / "test"
+    csv_label_path = str(base_dir / "AgeSplit.csv")
 
     # Initializing engine
     engine = Engine(image_shape)
 
     # Setting engine labels & paths
-    get_labels = LabelSplitter(csv_label_path)  # returns object with 'train', 'test', 'val' attributes
-    engine.set_train_labels(get_labels.train)
-    engine.set_test_labels(get_labels.test)
+    HHD_labels = LabelSplitter(csv_label_path)  # returns object with 'train', 'test', 'val' attributes
+    engine.set_train_labels(HHD_labels.train)
+    engine.set_test_labels(HHD_labels.test)
     engine.set_test_data_path(str(test_path))
     engine.set_train_data_path(str(train_path))
+
+    engine.load_images(data_type='train', image_filename_col='File', label_col='Age')
+    engine.load_images(data_type='test', image_filename_col='File', label_col='Age')
+
+    return engine
+
+
+def construct_KHATT_engine(base_dir, image_shape):
+
+    # Setting file system
+    train_path = base_dir / "Train"
+    test_path = base_dir / "Test"
+    csv_label_path = str(base_dir / "DatabaseStatistics-v1.0-NN.csv")
+
+    # Initializing engine
+    engine = Engine(image_shape)
+
+    # Setting engine labels & paths
+    KHATT_labels = LabelSplitter(csv_label_path, "Group", "R", "T", "V")  # gets 'train', 'test', 'val' attributes
+    engine.set_train_labels(KHATT_labels.train)
+    engine.set_test_labels(KHATT_labels.test)
+    engine.set_test_data_path(str(test_path))
+    engine.set_train_data_path(str(train_path))
+
+    engine.load_images(data_type='train', image_filename_col='Form Number',
+                       label_col='Age (1,2,3,or 4 from right to left)', clean_method="KHATT")
+    engine.load_images(data_type='test', image_filename_col='Form Number',
+                       label_col='Age (1,2,3,or 4 from right to left)', clean_method="KHATT")
 
     return engine
