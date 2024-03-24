@@ -52,8 +52,7 @@ class Engine:
         preprocessor = PreProcess(self.image_shape)
 
         proc_labels = preprocessor.arrange_labels_indexing_from_0(labels)
-        grayscale_images = preprocessor.grayscale_images(images)
-        reverse_binarize_images = preprocessor.reverse_binarize_images(grayscale_images)
+        reverse_binarize_images = preprocessor.preprocess_and_binarize_images(images)
         cropped_images = preprocessor.crop_text_from_reversed_binary_images(reverse_binarize_images)
 
         proc_images = cropped_images

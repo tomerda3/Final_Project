@@ -52,21 +52,15 @@ class PreProcess:
     def arrange_labels_indexing_from_0(self, labels: List) -> List:
         return [x-1 for x in labels if 0 not in labels]
 
-    def grayscale_images(self, images):
-        # print("Turning images to grayscale...")
-        grayscale_images = []
+    def preprocess_and_binarize_images(self, images):
+        binarized_images = []
         for image in tqdm(images):
+            # Convert to grayscale if necessary
             if len(image.shape) == 3:
                 image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-            grayscale_images.append(image)
-        return grayscale_images
 
-    def reverse_binarize_images(self, images, threshold_method=cv2.THRESH_BINARY_INV):
-        # print("Reverse binarizing images...")
-        binarized_images = []
-
-        for image in tqdm(images):
-            thresh, binary_image = cv2.threshold(image, 127, 255, threshold_method)
+            # Apply Otsu's method for binarization
+            _, binary_image = cv2.threshold(image, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
             binarized_images.append(binary_image)
 
         return binarized_images
