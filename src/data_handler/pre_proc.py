@@ -60,7 +60,7 @@ class PreProcess:
                 image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
             # Apply Otsu's method for binarization
-            _, binary_image = cv2.threshold(image, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
+            _, binary_image = cv2.threshold(image, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)
             binarized_images.append(binary_image)
 
         return binarized_images
