@@ -128,7 +128,7 @@ class Engine:
     def save_model(self):
         uid = f"model_name-{type(self.model).__name__}-accuracy-{self.accuracy}.pickle"
         tf.saved_model.save(self.model.model, f'saved_models/{uid}')
-        plt.savefig(f"saved_models/{uid}/'confusion_matrix.png")
+        plt.savefig(f"saved_models/{uid}/confusion_matrix.png")
 
     def load_model(self, model_to_load):
         load_options = tf.saved_model.LoadOptions(experimental_io_device='/job:localhost')
