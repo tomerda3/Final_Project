@@ -4,7 +4,7 @@ from keras.applications import VGG19
 from sklearn.metrics import accuracy_score, precision_score, recall_score
 
 
-class Vgg19:
+class VGG19Model:
 
     def __init__(self, weights: str = "imagenet", include_top: bool = True, input_shape: Tuple = (0, 0)):
         self.model = VGG19(weights=weights, include_top=include_top, input_shape=input_shape)

@@ -11,7 +11,7 @@ if __name__ == "__main__":
     )
 
     # Setting engine model
-    HHD_engine.choose_model(RESNET)
+    HHD_engine.choose_model(EfficientNet)
 
     # Training model
     HHD_engine.train_model()

@@ -1,9 +1,10 @@
 from typing import Tuple, Literal
 
-from src.models.vgg16 import Vgg16
-from src.models.vgg19 import Vgg19
+from src.models.vgg16 import VGG16Model
+from src.models.vgg19 import VGG19Model
 from src.models.xception import XceptionModel
 from src.models.resnet import ResNet50Model
+from src.models.efficientnet import EfficientNetModel
 from src.data_handler.data_loader import DataLoader
 from src.data_handler.label_splitter import *
 from src.data_handler.pre_proc import PreProcess
@@ -38,13 +39,15 @@ class Engine:
 
     def choose_model(self, model: str):
         if model == VGG16:
-            self.model = Vgg16(input_shape=self.image_shape)
+            self.model = VGG16Model(input_shape=self.image_shape)
         elif model == VGG19:
-            self.model = Vgg19(input_shape=self.image_shape)
-        elif model == XCEPTION:
+            self.model = VGG19Model(input_shape=self.image_shape)
+        elif model == Xception:
             self.model = XceptionModel(input_shape=self.image_shape)
-        elif model == RESNET:
+        elif model == ResNet:
             self.model = ResNet50Model(input_shape=self.image_shape)
+        elif model == EfficientNet:
+            self.model = EfficientNetModel(input_shape=self.image_shape)
         else:
             print(f"No model found with the name={model}")
             raise KeyError
