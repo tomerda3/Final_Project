@@ -1,6 +1,6 @@
 from engine import *
 from pathlib import Path
-from models.model_names import *
+from models import model_names
 
 if __name__ == "__main__":
 
@@ -11,7 +11,7 @@ if __name__ == "__main__":
     )
 
     # Setting engine model
-    HHD_engine.choose_model(ResNet)
+    HHD_engine.set_model(model_names.ResNet)
 
     # Training model
     HHD_engine.train_model()
@@ -26,7 +26,7 @@ if __name__ == "__main__":
     # )
     #
     # # Setting engine model
-    # KHATT_engine.choose_model(Xception)
+    # KHATT_engine.set_model(Xception)
     #
     # # Training model
     # KHATT_engine.train_model()

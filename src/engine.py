@@ -37,7 +37,7 @@ class Engine:
     def set_test_data_path(self, path: str):
         self.test_data_path = path
 
-    def choose_model(self, model: str):
+    def set_model(self, model: str):
         if model == VGG16:
             self.model = VGG16Model(input_shape=self.image_shape)
         elif model == VGG19:
