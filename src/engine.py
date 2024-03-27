@@ -3,6 +3,7 @@ from typing import Tuple, Literal
 from src.models.vgg16 import Vgg16
 from src.models.vgg19 import Vgg19
 from src.models.xception import XceptionModel
+from src.models.resnet import ResNet50Model
 from src.data_handler.data_loader import DataLoader
 from src.data_handler.label_splitter import *
 from src.data_handler.pre_proc import PreProcess
@@ -42,6 +43,8 @@ class Engine:
             self.model = Vgg19(input_shape=self.image_shape)
         elif model == XCEPTION:
             self.model = XceptionModel(input_shape=self.image_shape)
+        elif model == RESNET:
+            self.model = ResNet50Model(input_shape=self.image_shape)
         else:
             print(f"No model found with the name={model}")
             raise KeyError
