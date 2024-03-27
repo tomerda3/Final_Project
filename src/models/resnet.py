@@ -27,3 +27,4 @@ class ResNet50Model(Model):
         bridge_layer_to_output = Dense(512, activation='relu')(base_model)
         output_layer = Dense(units=NUM_OF_CLASSES, activation='softmax')(bridge_layer_to_output)
         self.model = keras.Model(inputs=inputs, outputs=output_layer)
+

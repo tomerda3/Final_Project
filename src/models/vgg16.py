@@ -1,30 +1,30 @@
-from typing import Tuple, List
-from keras.optimizers import Adam
+from typing import Tuple
+from .abstract_model import Model
 from keras.applications import VGG16
-from sklearn.metrics import accuracy_score, precision_score, recall_score
+from keras.src.layers import Dense
+from keras import layers
+import keras
+import tensorflow as tf
+
+NUM_OF_CLASSES = 4
 
 
-class VGG16Model:
+class VGG16Model(Model):
 
     def __init__(self, weights: str = "imagenet", include_top: bool = True, input_shape: Tuple = (0, 0)):
-        self.model = VGG16(weights=None, include_top=False, input_shape=input_shape)
+        inputs = layers.Input(shape=input_shape)
 
-    def train_model(self, train_data: List, train_labels: List):
-        self.model.compile(loss='categorical_crossentropy',
-                           optimizer=Adam(learning_rate=0.001),
-                           metrics=['accuracy'])
+        if include_top:  # If using pre-trained top layers that expect RGB
+            gray_to_rgb = layers.Lambda(lambda x: tf.image.grayscale_to_rgb(x))(inputs)
+            optimal_layer = layers.Resizing(224, 224)(gray_to_rgb)  # Adjusted size for VGG16
+        else:  # If not using pre-trained top layers, keep as grayscale
+            optimal_layer = layers.Resizing(224, 224)(inputs)  # Adjusted size for VGG16
 
-        self.model.fit(train_data, train_labels,
-                       epochs=10,
-                       batch_size=32)
+        base_model = VGG16(weights=weights, include_top=include_top)
+        for layer in base_model.layers:
+            layer.trainable = False
+        base_model = base_model(optimal_layer)
+        bridge_layer_to_output = Dense(512, activation='relu')(base_model)
+        output_layer = Dense(units=NUM_OF_CLASSES, activation='softmax')(bridge_layer_to_output)
+        self.model = keras.Model(inputs=inputs, outputs=output_layer)
 
-    def evaluation(self, test_data, test_labels):
-        predictions = self.model.predict(test_data)
-
-        accuracy = accuracy_score(test_labels, predictions)
-        precision = precision_score(test_labels, predictions)
-        recall = recall_score(test_labels, predictions)
-
-        print("Accuracy:", accuracy)
-        print("Precision:", precision)
-        print("Recall:", recall)

@@ -11,7 +11,7 @@ if __name__ == "__main__":
     )
 
     # Setting engine model
-    HHD_engine.choose_model(EfficientNet)
+    HHD_engine.choose_model(VGG19)
 
     # Training model
     HHD_engine.train_model()
