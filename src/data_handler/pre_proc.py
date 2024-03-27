@@ -52,7 +52,7 @@ class PreProcess:
     def arrange_labels_indexing_from_0(self, labels: List) -> List:
         return [x-1 for x in labels if 0 not in labels]
 
-    def preprocess_and_binarize_images(self, images):
+    def grayscale_and_binarize_images(self, images):
         binarized_images = []
         for image in tqdm(images):
             # Convert to grayscale if necessary
