@@ -5,13 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="79925ffe-40dc-4e95-b7a9-483ace359046" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/models/abstract_model.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/resnet.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/engine.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/engine.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/model_names.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/model_names.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/resnet.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/resnet.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/models/xception.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/xception.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
