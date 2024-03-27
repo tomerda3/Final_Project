@@ -1,5 +1,10 @@
+import pickle
+import tensorflow as tf
 from typing import Tuple, Literal
 
+from matplotlib import pyplot as plt
+
+from src.confusion_matrix_generator import generate_confusion_matrix
 from src.models.vgg16 import Vgg16
 from src.models.vgg19 import Vgg19
 from src.models.xception import XceptionModel
@@ -22,6 +27,8 @@ class Engine:
         self.test_labels = None
         self.train_images = None
         self.test_images = None
+        self.accuracy = None
+        self.confusion_matrix = None
 
     def set_train_labels(self, df):
         self.train_labels = df
@@ -63,7 +70,7 @@ class Engine:
         return proc_images, proc_labels
 
     def load_images(self, data_type: Literal["test", "train"], image_filename_col: str, label_col: str,
-                    clean_method: Literal["HHD", "KHATT"]="HHD"):
+                    clean_method: Literal["HHD", "KHATT"] = "HHD"):
 
         data_path, dataframe = "", ""
 
@@ -112,21 +119,24 @@ class Engine:
             predictions.append(most_common_image_prediction)
 
         accuracy = accuracy_score(self.test_labels, predictions)
+        self.confusion_matrix = generate_confusion_matrix(self.test_labels, predictions)
+        self.accuracy = accuracy
         print(f"Accuracy: {accuracy}")
         print(f"Predictions: {predictions}")
         print(f"Real labels: {self.test_labels}")
 
     def save_model(self):
-        # TODO: SAVE MODEL TO DISC USING PICKLE
-        pass
+        uid = f"model_name-{type(self.model).__name__}-accuracy-{self.accuracy}.pickle"
+        tf.saved_model.save(self.model.model, f'saved_models/{uid}')
+        plt.savefig(f"saved_models/{uid}/'confusion_matrix.png")
 
-    def load_model(self):
-        # TODO: LOAD MODEL FROM DISC USING PICKLE
-        pass
+    def load_model(self, model_to_load):
+        load_options = tf.saved_model.LoadOptions(experimental_io_device='/job:localhost')
+        loaded_model = tf.saved_model.load(model_to_load, options=load_options)
+        self.model = loaded_model
 
 
 def construct_HHD_engine(base_dir, image_shape):
-
     # Setting file system
     train_path = base_dir / "train"
     test_path = base_dir / "test"
@@ -149,7 +159,6 @@ def construct_HHD_engine(base_dir, image_shape):
 
 
 def construct_KHATT_engine(base_dir, image_shape):
-
     # Setting file system
     train_path = base_dir / "Train"
     test_path = base_dir / "Test"

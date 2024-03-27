@@ -10,14 +10,18 @@ if __name__ == "__main__":
         image_shape=(400, 400, 1)
     )
 
-    # Setting engine model
-    HHD_engine.choose_model(XCEPTION)
+    # Setting engine model 3
+    HHD_engine.choose_model(VGG19)
 
     # Training model
     HHD_engine.train_model()
 
     # Test model
     HHD_engine.test_model()
+    HHD_engine.save_model()
+
+
+
 
     # # Construct KHATT engine
     # KHATT_engine = construct_KHATT_engine(

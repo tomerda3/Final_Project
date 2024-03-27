@@ -1,13 +1,12 @@
 import os
-import pandas as pd
 from pathlib import Path
 import cv2
 from typing import List
 from typing import Literal
 from tqdm import tqdm
 
-SHORT_RUN = True
-IMAGE_LIMIT = 10
+SHORT_RUN = False
+IMAGE_LIMIT = 3
 
 
 class DataLoader:

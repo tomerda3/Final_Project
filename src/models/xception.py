@@ -1,10 +1,8 @@
 from typing import Tuple, List
-
 import numpy as np
 from keras.optimizers import Adam
 from keras.applications import Xception
-from keras.src.layers import Dense
-from sklearn.metrics import accuracy_score, precision_score, recall_score
+from keras.layers import Dense
 from keras import layers
 from keras.utils import to_categorical
 import keras
@@ -51,21 +49,6 @@ class XceptionModel:
         self.model.fit(x=train_data, y=fittable_labels,
                        epochs=20,
                        batch_size=32)
-
-    # def evaluation(self, test_data, test_labels):  # TODO: Remove this after the whole team agrees
-    #     probabilities = self.model.predict(test_data)
-    #     predictions = np.argmax(probabilities, axis=1)
-    #
-    #     accuracy = accuracy_score(test_labels, predictions)
-    #     # precision = precision_score(test_labels, predictions, average=None)
-    #     # recall = recall_score(test_labels, predictions, average=None)
-    #
-    #     print("Accuracy:", accuracy)
-    #     # print("Precision:", precision)
-    #     # print("Recall:", recall)
-    #
-    #     print("Predictions: ", list(predictions))
-    #     print("Real labels: ", list(test_labels))
 
     def patch_evaluation(self, patches):
         probabilities = self.model.predict(patches)
