@@ -121,13 +121,15 @@ class Engine:
         print(f"Predictions: {predictions}")
         print(f"Real labels: {self.test_labels}")
 
-    def save_model(self):
-        # TODO: SAVE MODEL TO DISC USING PICKLE
-        pass
 
-    def load_model(self):
-        # TODO: LOAD MODEL FROM DISC USING PICKLE
-        pass
+def save_engine():
+    # TODO: SAVE ENGINE TO DISC USING PICKLE
+    pass
+
+
+def load_engine():
+    # TODO: LOAD ENGINE FROM DISC USING PICKLE
+    pass
 
 
 def construct_HHD_engine(base_dir, image_shape):
