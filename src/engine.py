@@ -97,7 +97,6 @@ class Engine:
 
     def test_model(self):
         print("Evaluating model...")
-        # self.model.evaluation(self.test_images, self.test_labels)
 
         predictions = []
         preprocessor = PreProcess(self.image_shape)
