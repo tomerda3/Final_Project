@@ -133,6 +133,7 @@ def save_engine():
         model.load_weights()
 
     So far I have tried:
+        Using Joblib instead of pickle,
         Not using Lambda layers manually,
         Save model using keras.saving.save_model() WHICH WORKED! Could not load the model because of Lambda layer
         The Lambda layer is apparently not removable because it is already in the base model layers.
