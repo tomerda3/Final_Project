@@ -26,7 +26,7 @@ if __name__ == "__main__":
     # )
     #
     # # Setting engine model
-    # KHATT_engine.set_model(Xception)
+    # KHATT_engine.set_model(model_names.Xception)
     #
     # # Training model
     # KHATT_engine.train_model()
