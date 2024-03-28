@@ -122,8 +122,7 @@ class Engine:
         print(f"Real labels: {self.test_labels}")
 
 
-def save_engine():
-    # TODO: SAVE ENGINE TO DISC USING PICKLE / JOBLIB
+def save_engine():  # TODO: SAVE ENGINE TO DISC USING PICKLE / JOBLIB
     """
     After lots of trials and errors,
     I figured that the best direction to tackle this is to only save weights directly after training:
@@ -141,8 +140,7 @@ def save_engine():
     pass
 
 
-def load_engine():
-    # TODO: LOAD ENGINE FROM DISC USING PICKLE / JOBLIB
+def load_engine():  # TODO: LOAD ENGINE FROM DISC USING PICKLE / JOBLIB
     pass
 
 
