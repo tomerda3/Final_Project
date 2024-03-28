@@ -124,6 +124,19 @@ class Engine:
 
 def save_engine():
     # TODO: SAVE ENGINE TO DISC USING PICKLE / JOBLIB
+    """
+    After lots of trials and errors,
+    I figured that the best direction to tackle this is to only save weights directly after training:
+        model.save_weights()
+
+    We can then load weights back using:
+        model.load_weights()
+
+    So far I have tried:
+        Not using Lambda layers manually,
+        Save model using keras.saving.save_model() WHICH WORKED! Could not load the model because of Lambda layer
+        The Lambda layer is apparently not removable because it is already in the base model layers.
+    """
     pass
 
 
