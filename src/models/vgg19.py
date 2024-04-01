@@ -1,7 +1,7 @@
 from typing import Tuple
 from .abstract_model import Model
 from keras.applications import VGG19
-from keras.src.layers import Dense
+from keras.layers import Dense
 from keras import layers
 import keras
 import tensorflow as tf

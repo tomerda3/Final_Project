@@ -1,7 +1,10 @@
 from typing import Tuple
+
+import cv2
+
 from .abstract_model import Model
 from keras.applications import ResNet50
-from keras.src.layers import Dense
+from keras.layers import Dense
 from keras import layers
 import keras
 import tensorflow as tf

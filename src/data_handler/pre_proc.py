@@ -55,13 +55,12 @@ class PreProcess:
     def grayscale_and_binarize_images(self, images):
         binarized_images = []
         for image in tqdm(images):
-            # Convert to grayscale if necessary
             if len(image.shape) == 3:
                 image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
-            # Apply Otsu's method for binarization
-            _, binary_image = cv2.threshold(image, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)
-            binarized_images.append(binary_image)
+            thresh = cv2.adaptiveThreshold(image, 255, cv2.ADAPTIVE_THRESH_MEAN_C,
+                                           cv2.THRESH_BINARY_INV, 11, 2)
+            binarized_images.append(thresh)
 
         return binarized_images
 
@@ -97,5 +96,4 @@ class PreProcess:
             # Crop the image
             cropped_image = image[top:bottom, left:right]
             cropped_images.append(cropped_image)
-
         return cropped_images

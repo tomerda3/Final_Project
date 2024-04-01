@@ -1,5 +1,4 @@
 import os
-import pandas as pd
 from pathlib import Path
 import cv2
 from typing import List
@@ -7,7 +6,7 @@ from typing import Literal
 from tqdm import tqdm
 
 SHORT_RUN = False
-IMAGE_LIMIT = 10
+IMAGE_LIMIT = 400
 
 
 class DataLoader:
@@ -47,7 +46,6 @@ class DataLoader:
 
             images.append(image)
             labels.append(lbl)
-
         return images, labels
 
     def _get_files_name(self) -> List[str]:

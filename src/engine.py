@@ -1,5 +1,7 @@
 from typing import Tuple, Literal
 
+import cv2
+
 from src.models.vgg16 import VGG16Model
 from src.models.vgg19 import VGG19Model
 from src.models.xception import XceptionModel
@@ -11,6 +13,7 @@ from src.data_handler.pre_proc import PreProcess
 from models.model_names import *
 from collections import Counter
 from sklearn.metrics import accuracy_score
+from src.confusion_matrix import ConfusionMatrixGenerator
 
 
 class Engine:
@@ -24,6 +27,9 @@ class Engine:
         self.test_labels = None
         self.train_images = None
         self.test_images = None
+        self.data_name = None
+        self.model_name = None
+        self.confusion_matrix_generator = ConfusionMatrixGenerator()
 
     def set_train_labels(self, df):
         self.train_labels = df
@@ -38,6 +44,8 @@ class Engine:
         self.test_data_path = path
 
     def set_model(self, model: str):
+        self.model_name = model
+
         if model == VGG16:
             self.model = VGG16Model(input_shape=self.image_shape)
         elif model == VGG19:
@@ -70,6 +78,7 @@ class Engine:
 
     def load_images(self, data_type: Literal["test", "train"], image_filename_col: str, label_col: str,
                     clean_method: Literal["HHD", "KHATT"]="HHD"):
+        self.data_name = clean_method
 
         data_path, dataframe = "", ""
 
@@ -83,7 +92,6 @@ class Engine:
 
         data_loader = DataLoader(dataframe, data_type, data_path, image_filename_col, label_col)
         images, labels = data_loader.load_data(clean_method)
-
         # Preprocessing:
         proc_images, proc_labels = self.preprocess_data(images, labels, data_type)
 
@@ -120,6 +128,10 @@ class Engine:
         print(f"Accuracy: {accuracy}")
         print(f"Predictions: {predictions}")
         print(f"Real labels: {self.test_labels}")
+        self.confusion_matrix_generator.build_confusion_matrix_plot(self.test_labels,predictions,
+                                                                    self.model_name,
+                                                                    self.data_name)
+
 
 
 def save_engine():  # TODO: SAVE ENGINE TO DISC USING PICKLE / JOBLIB
