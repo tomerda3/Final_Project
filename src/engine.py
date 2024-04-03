@@ -70,9 +70,9 @@ class Engine:
         cropped_images = preprocessor.crop_text_from_reversed_binary_images(reverse_binarize_images)
 
         proc_images = cropped_images
+
         if data_type == "train":
-            proc_images, proc_labels = preprocessor.patch_images(cropped_images, proc_labels, self.image_shape)
-        # proc_images = preprocessor.resize_images(proc_images)
+            proc_images, proc_labels = preprocessor.patch_images(proc_images, proc_labels, self.image_shape)
 
         return proc_images, proc_labels
 
@@ -120,7 +120,9 @@ class Engine:
             label = self.test_labels[i]
 
             patches, _ = preprocessor.patch_images([image], [label], self.image_shape)
+            print("label: ", label)  # TODO: Remove
             patch_predictions = self.model.patch_evaluation(patches)
+            print("predictions: ", patch_predictions)  # TODO: Remove
             most_common_image_prediction = self.most_common_number(patch_predictions)
             predictions.append(most_common_image_prediction)
 

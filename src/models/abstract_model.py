@@ -31,10 +31,10 @@ class Model:
                        batch_size=32)
 
     def patch_evaluation(self, patches):
-        try:
-            probabilities = self.model.predict(patches)
-            predictions = np.argmax(probabilities, axis=1)
-            return predictions
-        except BaseException as e:
-            print(e)
-            return [4, 4, 4, 4]
+        # try:
+        probabilities = self.model.predict(patches)
+        predictions = np.argmax(probabilities, axis=1)
+        return predictions
+        # except BaseException as e:
+        #     print(e)
+        #     return [4, 4, 4, 4]

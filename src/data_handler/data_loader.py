@@ -6,7 +6,7 @@ from typing import Literal
 from tqdm import tqdm
 
 SHORT_RUN = False
-IMAGE_LIMIT = 400
+IMAGE_LIMIT = 100
 
 
 class DataLoader:
@@ -24,16 +24,11 @@ class DataLoader:
         labels = []
 
         if SHORT_RUN:
-            cnt = 0
+            files = files[:IMAGE_LIMIT]
 
         for file_name in tqdm(files):
 
-            if SHORT_RUN:
-                cnt += 1
-                if cnt == IMAGE_LIMIT:
-                    return images, labels
-
-            image = cv2.imread(str(Path(self.path) / file_name))  # TODO: Read as greyscale -> remove from preprocess
+            image = cv2.imread(str(Path(self.path) / file_name))  # , cv2.IMREAD_GRAYSCALE
 
             if clean_method == "KHATT":
                 clean_name = file_name[5:10]

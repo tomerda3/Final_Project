@@ -1,7 +1,4 @@
 from typing import Tuple
-
-import cv2
-
 from .abstract_model import Model
 from keras.applications import ResNet50
 from keras.layers import Dense

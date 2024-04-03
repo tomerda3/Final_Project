@@ -64,36 +64,38 @@ class PreProcess:
 
         return binarized_images
 
-    def crop_text_from_reversed_binary_images(self, images, min_black_pixels=1):  # TODO: Fix, might not crop correctly
-        # print("Cropping text from images...")
+    def crop_text_from_reversed_binary_images(self, images, min_white_pixels=100):
+        WHITE = 255  # Assuming the images are in the range of 0 to 255
+
         cropped_images = []
         for image in tqdm(images):
-
             # Find top and bottom borders
             top = 0
             bottom = image.shape[0]
-            for row in image:
-                if sum(row) >= min_black_pixels:
-                    top = max(top, row.tolist().index(0))
+            for row in range(image.shape[0]):
+                if np.count_nonzero(image[row] == WHITE) >= min_white_pixels:
+                    top = max(top, row)
                     break
-            for row in image[::-1]:
-                if sum(row) >= min_black_pixels:
-                    bottom = min(bottom, image.shape[0] - row.tolist().index(0) - 1)
+            for row in range(image.shape[0] - 1, -1, -1):
+                if np.count_nonzero(image[row] == WHITE) >= min_white_pixels:
+                    bottom = min(bottom, row)
                     break
 
             # Find left and right borders
             left = 0
             right = image.shape[1]
-            for col in image.T:
-                if sum(col) >= min_black_pixels:
-                    left = max(left, col.tolist().index(0))
+            for col in range(image.shape[1]):
+                if np.count_nonzero(image[:, col] == WHITE) >= min_white_pixels:
+                    left = max(left, col)
                     break
-            for col in image.T[::-1]:
-                if sum(col) >= min_black_pixels:
-                    right = min(right, image.shape[1] - col.tolist().index(0) - 1)
+            for col in range(image.shape[1] - 1, -1, -1):
+                if np.count_nonzero(image[:, col] == WHITE) >= min_white_pixels:
+                    right = min(right, col)
                     break
 
             # Crop the image
             cropped_image = image[top:bottom, left:right]
             cropped_images.append(cropped_image)
+
         return cropped_images
+
