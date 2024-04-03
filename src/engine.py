@@ -1,7 +1,5 @@
 from typing import Tuple, Literal
-
-import cv2
-
+import numpy as np
 from src.models.vgg16 import VGG16Model
 from src.models.vgg19 import VGG19Model
 from src.models.xception import XceptionModel
@@ -120,9 +118,9 @@ class Engine:
             label = self.test_labels[i]
 
             patches, _ = preprocessor.patch_images([image], [label], self.image_shape)
-            print("label: ", label)  # TODO: Remove
+            if len(patches) == 0:
+                patches = np.array(preprocessor.resize_images([image]))  # TODO: check if fixes patch_evaluation
             patch_predictions = self.model.patch_evaluation(patches)
-            print("predictions: ", patch_predictions)  # TODO: Remove
             most_common_image_prediction = self.most_common_number(patch_predictions)
             predictions.append(most_common_image_prediction)
 

@@ -31,10 +31,6 @@ class Model:
                        batch_size=32)
 
     def patch_evaluation(self, patches):
-        # try:
-        probabilities = self.model.predict(patches)
+        probabilities = self.model.predict(patches)  # TODO: fix sometimes patches is an empty sequence
         predictions = np.argmax(probabilities, axis=1)
         return predictions
-        # except BaseException as e:
-        #     print(e)
-        #     return [4, 4, 4, 4]
