@@ -1,4 +1,6 @@
 from typing import Tuple, Literal
+
+import cv2
 import numpy as np
 from src.models.vgg16 import VGG16Model
 from src.models.vgg19 import VGG19Model
@@ -110,6 +112,7 @@ class Engine:
     def test_model(self):
         print("Evaluating model...")
 
+        real_labels = []  # TODO: remove after fixing empty patches sequence
         predictions = []
         preprocessor = PreProcess(self.image_shape)
 
@@ -118,17 +121,23 @@ class Engine:
             label = self.test_labels[i]
 
             patches, _ = preprocessor.patch_images([image], [label], self.image_shape)
-            if len(patches) == 0:
-                patches = np.array(preprocessor.resize_images([image]))  # TODO: check if fixes patch_evaluation
+            if len(patches) == 0:  # TODO: FIX PATCHES SOMETIMES BEING EMPTY
+                print(f"Image with shape {image.shape} skipped, real label {label}")
+                continue
             patch_predictions = self.model.patch_evaluation(patches)
             most_common_image_prediction = self.most_common_number(patch_predictions)
             predictions.append(most_common_image_prediction)
+            real_labels.append(label)  # TODO: remove after fixing empty patches sequence
 
-        accuracy = accuracy_score(self.test_labels, predictions)
+        # accuracy = accuracy_score(self.test_labels, predictions)
+        accuracy = accuracy_score(real_labels, predictions)
         print(f"Accuracy: {accuracy}")
         print(f"Predictions: {predictions}")
-        print(f"Real labels: {self.test_labels}")
-        self.confusion_matrix_generator.build_confusion_matrix_plot(self.test_labels,predictions,
+        # print(f"Real labels: {self.test_labels}")
+        print(f"Real labels: {real_labels}")
+        # self.confusion_matrix_generator.build_confusion_matrix_plot(self.test_labels,
+        self.confusion_matrix_generator.build_confusion_matrix_plot(real_labels,
+                                                                    predictions,
                                                                     self.model_name,
                                                                     self.data_name)
 
