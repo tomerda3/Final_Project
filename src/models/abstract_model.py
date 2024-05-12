@@ -10,7 +10,6 @@ NUM_OF_CLASSES = 4
 class Model:
 
     def train_model(self, train_data, train_labels: List):
-        cv2.imwrite("test.png", train_data[0])
         self.model.compile(loss='categorical_crossentropy',
                            optimizer=Adam(learning_rate=0.001),
                            metrics=['accuracy'])

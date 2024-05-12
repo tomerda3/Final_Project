@@ -8,6 +8,7 @@ from src.models.vgg19 import VGG19Model
 from src.models.xception import XceptionModel
 from src.models.resnet50 import ResNet50Model
 from src.models.efficientnet import EfficientNetModel
+from src.models.efficientnetv2 import EfficientNetV2LModel
 from src.models.mobilenet import MobileNetV2Model
 from src.models.resnet152v2 import ResNet152V2Model
 from src.data_handler.data_loader import DataLoader
@@ -63,6 +64,8 @@ class Engine:
             self.model = MobileNetV2Model(input_shape=self.image_shape)
         elif model == ResNet152v2:
             self.model = ResNet152V2Model(input_shape=self.image_shape)
+        elif model == EfficientNetV2:
+            self.model = EfficientNetV2LModel(input_shape=self.image_shape)
         else:
             print(f"No model found with the name={model}")
             raise KeyError
