@@ -1,3 +1,4 @@
+import os
 from typing import Tuple, Literal
 
 import cv2
@@ -5,9 +6,10 @@ import numpy as np
 from src.models.vgg16 import VGG16Model
 from src.models.vgg19 import VGG19Model
 from src.models.xception import XceptionModel
-from src.models.resnet import ResNet50Model
+from src.models.resnet50 import ResNet50Model
 from src.models.efficientnet import EfficientNetModel
 from src.models.mobilenet import MobileNetV2Model
+from src.models.resnet152v2 import ResNet152V2Model
 from src.data_handler.data_loader import DataLoader
 from src.data_handler.label_splitter import *
 from src.data_handler.pre_proc import PreProcess
@@ -53,12 +55,14 @@ class Engine:
             self.model = VGG19Model(input_shape=self.image_shape)
         elif model == Xception:
             self.model = XceptionModel(input_shape=self.image_shape)
-        elif model == ResNet:
+        elif model == ResNet50:
             self.model = ResNet50Model(input_shape=self.image_shape)
         elif model == EfficientNet:
             self.model = EfficientNetModel(input_shape=self.image_shape)
         elif model == MobileNet:
             self.model = MobileNetV2Model(input_shape=self.image_shape)
+        elif model == ResNet152v2:
+            self.model = ResNet152V2Model(input_shape=self.image_shape)
         else:
             print(f"No model found with the name={model}")
             raise KeyError
@@ -112,6 +116,22 @@ class Engine:
         most_common = number_counts.most_common(1)[0][0]
         return most_common
 
+    def save_run_txt(self, accuracy):
+        model_name = self.model_name
+        dataset_name = self.data_name
+        res_dir = f"./run_results/{dataset_name}"
+
+        # Ensure the directory exists, create if not
+        if not os.path.exists(res_dir):
+            os.makedirs(res_dir)
+
+        # Define the file path
+        file_path = os.path.join(res_dir, f"{model_name}_results.txt")
+
+        # Write the text to the file
+        with open(file_path, 'w') as f:
+            f.write(f"Accuracy: {accuracy}")
+
     def test_model(self):
         print("Evaluating model...")
 
@@ -143,6 +163,7 @@ class Engine:
                                                                     predictions,
                                                                     self.model_name,
                                                                     self.data_name)
+        self.save_run_txt(accuracy)
 
 
 
