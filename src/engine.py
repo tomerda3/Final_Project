@@ -11,10 +11,11 @@ from src.models.efficientnet import EfficientNetModel
 from src.models.efficientnetv2 import EfficientNetV2LModel
 from src.models.mobilenet import MobileNetV2Model
 from src.models.resnet152v2 import ResNet152V2Model
+from src.models.convnextxl import ConvNeXtXLargeModel
 from src.data_handler.data_loader import DataLoader
 from src.data_handler.label_splitter import *
 from src.data_handler.pre_proc import PreProcess
-from models.model_names import *
+from models import model_names
 from collections import Counter
 from sklearn.metrics import accuracy_score
 from src.confusion_matrix import ConfusionMatrixGenerator
@@ -50,22 +51,24 @@ class Engine:
     def set_model(self, model: str):
         self.model_name = model
 
-        if model == VGG16:
+        if model == model_names.VGG16:
             self.model = VGG16Model(input_shape=self.image_shape)
-        elif model == VGG19:
+        elif model == model_names.VGG19:
             self.model = VGG19Model(input_shape=self.image_shape)
-        elif model == Xception:
+        elif model == model_names.Xception:
             self.model = XceptionModel(input_shape=self.image_shape)
-        elif model == ResNet50:
+        elif model == model_names.ResNet50:
             self.model = ResNet50Model(input_shape=self.image_shape)
-        elif model == EfficientNet:
+        elif model == model_names.EfficientNet:
             self.model = EfficientNetModel(input_shape=self.image_shape)
-        elif model == MobileNet:
+        elif model == model_names.MobileNet:
             self.model = MobileNetV2Model(input_shape=self.image_shape)
-        elif model == ResNet152v2:
+        elif model == model_names.ResNet152v2:
             self.model = ResNet152V2Model(input_shape=self.image_shape)
-        elif model == EfficientNetV2:
+        elif model == model_names.EfficientNetV2:
             self.model = EfficientNetV2LModel(input_shape=self.image_shape)
+        elif model == model_names.ConvNeXtXLarge:
+            self.model = ConvNeXtXLargeModel(input_shape=self.image_shape)
         else:
             print(f"No model found with the name={model}")
             raise KeyError
