@@ -11,32 +11,32 @@ if __name__ == "__main__":
         gpus[0],
         [tf.config.experimental.VirtualDeviceConfiguration(memory_limit=5600)])
 
-    # Construct HHD engine
-    HHD_engine = construct_HHD_engine(
-        base_dir=Path.cwd() / DATA / HHD,
-        image_shape=(400, 400, 1)
-    )
-
-    # Setting engine model
-    HHD_engine.set_model(model_names.EfficientNetV2)
-
-    # Training model
-    HHD_engine.train_model()
-
-    # Test model
-    HHD_engine.test_model()
-
-    # # Construct KHATT engine
-    # KHATT_engine = construct_KHATT_engine(
-    #     base_dir=Path.cwd() / DATA / KHATT,
-    #     image_shape=(500, 500, 1)
+    # # Construct HHD engine
+    # HHD_engine = construct_HHD_engine(
+    #     base_dir=Path.cwd() / DATA / HHD,
+    #     image_shape=(400, 400, 1)
     # )
     #
     # # Setting engine model
-    # KHATT_engine.set_model(model_names.ResNet)
+    # HHD_engine.set_model(model_names.EfficientNetV2)
     #
     # # Training model
-    # KHATT_engine.train_model()
+    # HHD_engine.train_model()
     #
     # # Test model
-    # KHATT_engine.test_model()
+    # HHD_engine.test_model()
+
+    # Construct KHATT engine
+    KHATT_engine = construct_KHATT_engine(
+        base_dir=Path.cwd() / DATA / KHATT,
+        image_shape=(500, 500, 1)
+    )
+
+    # Setting engine model
+    KHATT_engine.set_model(model_names.ResNet152v2)
+
+    # Training model
+    KHATT_engine.train_model()
+
+    # Test model
+    KHATT_engine.test_model()
