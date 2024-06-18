@@ -18,7 +18,8 @@ class Model:
 
         print("Epochs excluding base layers...")
         self.model.fit(x=train_data, y=fittable_labels,
-                       epochs=30,
+                       # epochs=30,
+                       epochs=15,
                        batch_size=32)
 
         for layer in self.model.layers:
