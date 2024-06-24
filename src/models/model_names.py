@@ -8,3 +8,5 @@ EfficientNet = "EfficientNet"
 EfficientNetV2 = "EfficientNetV2"
 MobileNet = "MobileNet"
 ConvNeXtXLarge = "ConvNeXtXLarge"
+
+models_list = [VGG16, VGG19, Xception, ResNet50, ResNet152v2, EfficientNet, EfficientNetV2, MobileNet, ConvNeXtXLarge]
