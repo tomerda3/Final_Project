@@ -17,3 +17,4 @@ src/models/__pycache__/model_names.cpython-310.pyc
 *.pyc
 src/__pycache__/engine.cpython-310.pyc
 *.pyc
+.idea/workspace.xml
