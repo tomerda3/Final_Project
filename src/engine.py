@@ -1,26 +1,30 @@
 import os
 from typing import Tuple, Literal
-
 import cv2
 import numpy as np
-from src.models.vgg16 import VGG16Model
-from src.models.vgg19 import VGG19Model
-from src.models.xception import XceptionModel
-from src.models.resnet50 import ResNet50Model
-from src.models.efficientnet import EfficientNetModel
-from src.models.efficientnetv2 import EfficientNetV2LModel
-from src.models.mobilenet import MobileNetV2Model
-from src.models.resnet152v2 import ResNet152V2Model
-from src.models.convnextxl import ConvNeXtXLargeModel
-from src.data_handler.data_loader import DataLoader
-from src.data_handler.label_splitter import *
-from src.data_handler.pre_proc import PreProcess
+from models.vgg16 import VGG16Model
+from models.vgg19 import VGG19Model
+from models.xception import XceptionModel
+from models.resnet50 import ResNet50Model
+from models.efficientnet import EfficientNetModel
+from models.efficientnetv2 import EfficientNetV2LModel
+from models.mobilenet import MobileNetV2Model
+from models.resnet152v2 import ResNet152V2Model
+from models.convnextxl import ConvNeXtXLargeModel
+from data_handler.data_loader import DataLoader
+from data_handler.label_splitter import *
+from data_handler.pre_proc import PreProcess
 from models import model_names
 from collections import Counter
 from sklearn.metrics import accuracy_score
-from src.confusion_matrix import ConfusionMatrixGenerator
-
-
+from confusion_matrix import ConfusionMatrixGenerator
+#####   Tourch Libarys #####
+import torch
+from torchvision import transforms
+from torchvision.datasets import ImageFolder
+# from torch.utils.data import DataLoader
+from PIL import Image
+#####   Tourch Libarys #####
 class Engine:
 
     def __init__(self, image_shape: Tuple):
@@ -72,27 +76,30 @@ class Engine:
         else:
             print(f"No model found with the name={model}")
             raise KeyError
+    def get_pytorch_transforms(self,image_shape: Tuple[int, int]):
+        image_shape = (image_shape[0], image_shape[1])
+        return transforms.Compose([
+            transforms.Resize(image_shape),
+            transforms.Grayscale(num_output_channels=1),  # Convert to grayscale
+            transforms.ToTensor(),  # Convert image to PyTorch tensor
+            transforms.Normalize((0.5,), (0.5,))  # Normalize the tensor (example values)
+        ])
 
     def preprocess_data(self, images, labels, data_type):
         print(f"\nPreprocessing {data_type} images...")
-
         preprocessor = PreProcess(self.image_shape)
-
-        proc_labels = preprocessor.arrange_labels_indexing_from_0(labels)
-        reverse_binarize_images = preprocessor.grayscale_and_binarize_images(images)
-        cropped_images = preprocessor.crop_text_from_reversed_binary_images(reverse_binarize_images)
-
-        proc_images = cropped_images
-
         if data_type == "train":
-            proc_images, proc_labels = preprocessor.patch_images(proc_images, proc_labels, self.image_shape)
-
-        return proc_images, proc_labels
+            images, labels = preprocessor.patch_images(images, labels, self.image_shape)
+        transform = self.get_pytorch_transforms(self.image_shape)
+        proc_images = [transform(Image.fromarray(img)) for img in images]
+        proc_labels = [label - 1 for label in labels]  # Adjust label indexing if necessary
+        proc_images = [img.permute(1, 2, 0) for img in proc_images]
+        proc_images = [img.unsqueeze(-1) for img in proc_images]
+        return torch.stack(proc_images), torch.tensor(proc_labels)
 
     def load_images(self, data_type: Literal["test", "train"], image_filename_col: str, label_col: str,
                     clean_method: Literal["HHD", "KHATT"]="HHD"):
         self.data_name = clean_method
-
         data_path, dataframe = "", ""
 
         print(f"Loading {data_type} images...")

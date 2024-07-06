@@ -7,3 +7,13 @@
 *.rar
 *.pdf
 requirements.txt
+*.pyc
+*.pyc
+*.pyc
+*.pyc
+src/models/__pycache__/model_names.cpython-310.pyc
+*.pyc
+/src/models/__pycache__
+*.pyc
+src/__pycache__/engine.cpython-310.pyc
+*.pyc

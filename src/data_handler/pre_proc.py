@@ -47,7 +47,7 @@ class PreProcess:
                     patched_labels.append(label)
                 y += y_step
 
-        return np.array(patched_images), patched_labels
+        return patched_images, patched_labels
 
     def arrange_labels_indexing_from_0(self, labels: List) -> List:
         return [x-1 for x in labels if 0 not in labels]
