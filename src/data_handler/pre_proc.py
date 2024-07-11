@@ -2,6 +2,7 @@ import cv2
 import numpy as np
 from typing import Tuple, List
 from tqdm import tqdm
+import torch
 
 
 class PreProcess:
@@ -18,15 +19,19 @@ class PreProcess:
         # return np.array(processed_images)
 
     def patch_images(self, images, labels, segment_shape):
-        # print("Patching images...")
         patched_images = []
         patched_labels = []
 
         for i in range(len(images)):
             image = images[i]
             label = labels[i]
-            height = len(image)
-            width = len(image[0])
+
+            # Convert image tensor to numpy array if needed
+            if isinstance(image, torch.Tensor):
+                image = image.numpy()
+
+            height = image.shape[0]
+            width = image.shape[1]
             y = 0
 
             y_step = int(segment_shape[1] * 0.50)  # Overlap of 50% of the Y per patch
