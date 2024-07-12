@@ -5,11 +5,38 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="79925ffe-40dc-4e95-b7a9-483ace359046" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/writer-age-classification-ui/src/pages/Home.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/writer-age-classification-ui/src/pages/Results.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/writer-age-classification-ui/src/pages/Upload.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/writer-age-classification-ui/src/services/apiService.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/writer-age-classification-ui/public/projectlogo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/writer-age-classification-ui/src/assets/articleImage.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/writer-age-classification-ui/src/assets/efficientnet.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/writer-age-classification-ui/src/assets/handwriting.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/writer-age-classification-ui/src/assets/irina.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/writer-age-classification-ui/src/assets/maayan.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/writer-age-classification-ui/src/assets/marina.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/writer-age-classification-ui/src/assets/ofri.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/writer-age-classification-ui/src/assets/resnet.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/writer-age-classification-ui/src/assets/tomer.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/writer-age-classification-ui/src/assets/vgg16.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/writer-age-classification-ui/src/assets/vgg19.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/writer-age-classification-ui/src/assets/video1.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/writer-age-classification-ui/src/assets/video2.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/writer-age-classification-ui/src/assets/video3.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/writer-age-classification-ui/src/assets/xception.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/writer-age-classification-ui/src/components/Articale_en.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/writer-age-classification-ui/src/components/theme.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/writer-age-classification-ui/src/pages/About.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/writer-age-classification-ui/src/pages/Article.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/writer-age-classification-ui/src/pages/Home.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/writer-age-classification-ui/src/pages/Models.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/writer-age-classification-ui/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/writer-age-classification-ui/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/writer-age-classification-ui/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/writer-age-classification-ui/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/writer-age-classification-ui/public/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/writer-age-classification-ui/public/favicon.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/writer-age-classification-ui/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/writer-age-classification-ui/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/writer-age-classification-ui/public/logo192.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/writer-age-classification-ui/public/logo512.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/writer-age-classification-ui/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/writer-age-classification-ui/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/writer-age-classification-ui/src/pages/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/writer-age-classification-ui/src/pages/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/writer-age-classification-ui/src/pages/Results.js" beforeDir="false" afterPath="$PROJECT_DIR$/writer-age-classification-ui/src/pages/Results.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +47,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -38,25 +66,39 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2cloN0YKKUV52Kzkk3jwSI9BdBU" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/tomer/PycharmProjects/Final_Project/writer-age-classification-ui/src/assets",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
     "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm"
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pathVariables",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\PyCharm 2023.2\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\tomer\PycharmProjects\Final_Project\writer-age-classification-ui\src\assets" />
+      <recent name="C:\Users\tomer\PycharmProjects\Final_Project\writer-age-classification-ui\public" />
       <recent name="D:\Users\Maayan\Documents\GitHub\Final_Project\src\models" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\PC-User\Documents\GitHub\Final_Project_1" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.main">
+  <component name="RunManager" selected="npm.Start React App">
     <configuration name="Pre_Process_OLD" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Final_Project" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -110,7 +152,7 @@
       </envs>
       <option name="SDK_HOME" value="C:\Users\Maayan\AppData\Local\Programs\Python\Python39\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
@@ -167,7 +209,15 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="Start React App" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/writer-age-classification-ui/package.json" />
+      <command value="start" />
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <list>
+      <item itemvalue="npm.Start React App" />
       <item itemvalue="Python.engine" />
       <item itemvalue="Python.main" />
       <item itemvalue="Python.pre_proc" />
@@ -208,6 +258,7 @@
       <workItem from="1711447403566" duration="3646000" />
       <workItem from="1711559151004" duration="566000" />
       <workItem from="1715501691742" duration="1752000" />
+      <workItem from="1720767380341" duration="18007000" />
     </task>
     <servers />
   </component>
