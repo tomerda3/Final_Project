@@ -19,14 +19,14 @@ if __name__ == "__main__":
     run_all_configs()
 
     # # Construct engine
-    # # main_engine = construct_HHD_engine(
-    # #     base_dir=Path.cwd() / DATA / HHD,
-    # #     image_shape=(400, 400, 1)
-    # # )
-    # main_engine = construct_KHATT_engine(
-    #     base_dir=Path.cwd() / DATA / KHATT,
-    #     image_shape=(200, 200, 1)
+    # main_engine = construct_HHD_engine(
+    #     base_dir=Path.cwd() / DATA / HHD,
+    #     image_shape=(400, 400, 1)
     # )
+    # # main_engine = construct_KHATT_engine(
+    # #     base_dir=Path.cwd() / DATA / KHATT,
+    # #     image_shape=(200, 200, 1)
+    # # )
     #
     # # Setting engine model
     # main_engine.set_model(model_names.ConvNeXtXLarge)

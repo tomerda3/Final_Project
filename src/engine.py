@@ -115,7 +115,7 @@ class Engine:
 
     def train_model(self):
         print("Training model...")
-        self.model.train_model(self.train_images, self.train_labels)
+        self.model.train_model(self.train_images, self.train_labels, self.data_name)
 
     def most_common_number(self, number_list):
         number_counts = Counter(number_list)
