@@ -14,7 +14,8 @@ def run_all_configs():
         print(f"Run started for dataset: {dataset}")
         main_engine = construct_engine[dataset](
             base_dir=Path.cwd() / DATA / dataset,
-            image_shape=(200, 200, 1)
+            # image_shape=(200, 200, 1)
+            image_shape=(500, 500, 1)
         )
 
         for model in model_names.models_list:
