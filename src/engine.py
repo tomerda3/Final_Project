@@ -122,7 +122,7 @@ class Engine:
         most_common = number_counts.most_common(1)[0][0]
         return most_common
 
-    def save_run_txt(self, accuracy):
+    def save_run_txt(self, accuracy, predictions, real_labels):
         model_name = self.model_name
         dataset_name = self.data_name
         res_dir = f"./run_results/{dataset_name}"
@@ -136,12 +136,15 @@ class Engine:
 
         # Write the text to the file
         with open(file_path, 'w') as f:
-            f.write(f"Accuracy: {accuracy}")
+            f.write(f"Accuracy: {accuracy}\n")
+            f.write(f"Predictions: {predictions}\n")
+            f.write(f"Real labels: {real_labels}\n")
+            f.write(f"Image shape: {str(self.image_shape)}\n")
 
     def test_model(self):
         print("Evaluating model...")
 
-        real_labels = []  # TODO: remove after fixing empty patches sequence
+        real_labels = []
         predictions = []
         preprocessor = PreProcess(self.image_shape)
 
@@ -156,7 +159,7 @@ class Engine:
             patch_predictions = self.model.patch_evaluation(patches)
             most_common_image_prediction = self.most_common_number(patch_predictions)
             predictions.append(most_common_image_prediction)
-            real_labels.append(label)  # TODO: remove after fixing empty patches sequence
+            real_labels.append(label)
 
         # accuracy = accuracy_score(self.test_labels, predictions)
         accuracy = accuracy_score(real_labels, predictions)
@@ -169,7 +172,7 @@ class Engine:
                                                                     predictions,
                                                                     self.model_name,
                                                                     self.data_name)
-        self.save_run_txt(accuracy)
+        self.save_run_txt(accuracy, predictions, real_labels)
 
 
 

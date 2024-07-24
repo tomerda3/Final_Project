@@ -3,7 +3,7 @@ from pathlib import Path
 from models import model_names
 from data.path_variables import *
 import tensorflow as tf
-from run_all_configurations import run_all_configs
+from run_all_configurations import run_all_configs, run_HHD_convnextxl
 
 if __name__ == "__main__":
     # Setting up GPU:
@@ -11,21 +11,23 @@ if __name__ == "__main__":
     if gpus:
         tf.config.experimental.set_virtual_device_configuration(
             gpus[0],
-            [tf.config.experimental.VirtualDeviceConfiguration(memory_limit=5600)])
+            [tf.config.experimental.VirtualDeviceConfiguration(memory_limit=6400)])
         print("GPU detected.")
     else:
         print("No GPU detected.")
 
     run_all_configs()
 
+    # run_HHD_convnextxl()
+    #
     # # Construct engine
     # main_engine = construct_HHD_engine(
     #     base_dir=Path.cwd() / DATA / HHD,
-    #     image_shape=(400, 400, 1)
+    #     image_shape=(1000, 1000, 1)
     # )
     # # main_engine = construct_KHATT_engine(
     # #     base_dir=Path.cwd() / DATA / KHATT,
-    # #     image_shape=(200, 200, 1)
+    # #     image_shape=(500, 500, 1)
     # # )
     #
     # # Setting engine model

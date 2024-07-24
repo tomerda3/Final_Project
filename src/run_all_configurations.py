@@ -18,13 +18,52 @@ def run_all_configs():
             image_shape=(500, 500, 1)
         )
 
-        for model in model_names.models_list:
-            print(f"Running {model} model on {dataset} dataset.")
+        # for model in model_names.models_list:
+        i = 3  # 0
+        while i < len(model_names.models_list):
+            model = model_names.models_list[i]
+            try:
+                print(f"Running {model} model on {dataset} dataset.")
+                # Setting engine model
+                main_engine.set_model(model)
+
+                # Training model
+                main_engine.train_model()
+
+                # Test model
+                main_engine.test_model()
+
+                i += 1
+
+            except:
+                print("Run failed! Trying again...")
+
+def run_HHD_convnextxl():
+
+    sizes = [600]
+
+    for num in reversed(sorted(sizes)):
+
+        try:
+            model_name = model_names.ConvNeXtXLarge
+
+            print(f"Running {model_name} model on HHD dataset with size {num}x{num}.")
+
+            engine = construct_HHD_engine(
+                base_dir=Path.cwd() / DATA / HHD,
+                image_shape=(num, num, 1)
+            )
+
             # Setting engine model
-            main_engine.set_model(model)
+            engine.set_model(model_name)
 
             # Training model
-            main_engine.train_model()
+            engine.train_model()
 
             # Test model
-            main_engine.test_model()
+            engine.test_model()
+
+        except:
+            print("Run failed, jumping to the next one!")
+            continue
+

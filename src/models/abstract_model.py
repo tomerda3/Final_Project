@@ -12,7 +12,8 @@ class Model:
 
     def train_model(self, train_data, train_labels: List, database_name: str = "NULL"):
         self.model.compile(loss='categorical_crossentropy',
-                           optimizer=Adam(learning_rate=0.001),
+                           # optimizer=Adam(learning_rate=0.001),
+                           optimizer=Adam(learning_rate=0.0005),
                            metrics=['accuracy'])
 
         fittable_labels = to_categorical(train_labels, num_classes=NUM_OF_CLASSES)
@@ -25,7 +26,8 @@ class Model:
 
         print("Epochs excluding base layers...")
         self.model.fit(x=train_data, y=fittable_labels,
-                       epochs=15,
+                       # epochs=15,
+                       epochs=20,
                        batch_size=32,
                        class_weight=weights)
 
@@ -34,7 +36,8 @@ class Model:
 
         print("Epochs including base layers...")
         self.model.fit(x=train_data, y=fittable_labels,
-                       epochs=30,
+                       # epochs=30,
+                       epochs=40,
                        batch_size=32,
                        class_weight=weights)
 
