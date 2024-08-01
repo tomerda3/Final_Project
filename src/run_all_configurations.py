@@ -19,7 +19,7 @@ def run_all_configs():
         )
 
         # for model in model_names.models_list:
-        i = 3  # 0
+        i = 0
         while i < len(model_names.models_list):
             model = model_names.models_list[i]
             try:
