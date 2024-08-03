@@ -36,7 +36,6 @@ class Model:
 
         print("Epochs including base layers...")
         self.model.fit(x=train_data, y=fittable_labels,
-                       # epochs=30,
                        epochs=40,
                        batch_size=32,
                        class_weight=weights)

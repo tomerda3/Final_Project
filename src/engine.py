@@ -12,6 +12,7 @@ from src.models.efficientnetv2 import EfficientNetV2LModel
 from src.models.mobilenet import MobileNetV2Model
 from src.models.resnet152v2 import ResNet152V2Model
 from src.models.convnextxl import ConvNeXtXLargeModel
+from src.models.convnextxlregression import ConvNeXtXLargeRegressionModel
 from src.data_handler.data_loader import DataLoader
 from src.data_handler.label_splitter import *
 from src.data_handler.pre_proc import PreProcess
@@ -69,6 +70,8 @@ class Engine:
             self.model = EfficientNetV2LModel(input_shape=self.image_shape)
         elif model == model_names.ConvNeXtXLarge:
             self.model = ConvNeXtXLargeModel(input_shape=self.image_shape)
+        elif model == model_names.ConvNeXtXLargeRegression:
+            self.model = ConvNeXtXLargeRegressionModel(input_shape=self.image_shape)
         else:
             print(f"No model found with the name={model}")
             raise KeyError
