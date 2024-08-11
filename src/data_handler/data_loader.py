@@ -6,7 +6,7 @@ from typing import Literal
 from tqdm import tqdm
 
 SHORT_RUN = False
-IMAGE_LIMIT = 100
+IMAGE_LIMIT = 10
 
 
 class DataLoader:
@@ -24,6 +24,7 @@ class DataLoader:
         labels = []
 
         if SHORT_RUN:
+            print("\nSHOT RUN IS SELECTED! (in data_loader.py)")
             files = files[:IMAGE_LIMIT]
 
         for file_name in tqdm(files):

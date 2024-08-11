@@ -40,7 +40,7 @@ def run_all_configs():
 
 def run_HHD_convnextxl():
 
-    sizes = [600]
+    sizes = [1000, 600]
 
     for num in reversed(sorted(sizes)):
 

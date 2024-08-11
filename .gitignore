@@ -7,3 +7,4 @@
 *.rar
 *.pdf
 requirements.txt
+/src/model_weights

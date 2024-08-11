@@ -16,10 +16,10 @@ if __name__ == "__main__":
     else:
         print("No GPU detected.")
 
-    run_all_configs()
+    # run_all_configs()
 
-    # run_HHD_convnextxl()
-    #
+    run_HHD_convnextxl()
+
     # # Construct engine
     # main_engine = construct_HHD_engine(
     #     base_dir=Path.cwd() / DATA / HHD,
@@ -29,7 +29,7 @@ if __name__ == "__main__":
     # #     base_dir=Path.cwd() / DATA / KHATT,
     # #     image_shape=(500, 500, 1)
     # # )
-    #
+
     # # Setting engine model
     # main_engine.set_model(model_names.ConvNeXtXLarge)
     #
