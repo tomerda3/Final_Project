@@ -1,8 +1,6 @@
 import os
 from typing import Tuple, Literal
 
-import cv2
-import numpy as np
 from src.models.vgg16 import VGG16Model
 from src.models.vgg19 import VGG19Model
 from src.models.xception import XceptionModel
@@ -90,7 +88,7 @@ class Engine:
         return proc_images, proc_labels
 
     def load_images(self, data_type: Literal["test", "train"], image_filename_col: str, label_col: str,
-                    clean_method: Literal["HHD", "KHATT"]="HHD"):
+                    clean_method: Literal["HHD", "KHATT"] = "HHD"):
         self.data_name = clean_method
 
         data_path, dataframe = "", ""
@@ -141,7 +139,11 @@ class Engine:
             f.write(f"Real labels: {real_labels}\n")
             f.write(f"Image shape: {str(self.image_shape)}\n")
 
-    def test_model(self):
+    def test_model(self, request_from_server=False):
+
+        if request_from_server:
+            self.model.load_model_weights()
+
         print("Evaluating model...")
 
         real_labels = []
@@ -173,7 +175,7 @@ class Engine:
                                                                     self.model_name,
                                                                     self.data_name)
         self.save_run_txt(accuracy, predictions, real_labels)
-
+        return predictions
 
 
 def save_engine():  # TODO: SAVE ENGINE TO DISC USING PICKLE / JOBLIB
@@ -198,8 +200,7 @@ def load_engine():  # TODO: LOAD ENGINE FROM DISC USING PICKLE / JOBLIB
     pass
 
 
-def construct_HHD_engine(base_dir, image_shape):
-
+def construct_HHD_engine(base_dir, image_shape) -> Engine:
     # Setting file system
     train_path = base_dir / "train"
     test_path = base_dir / "test"
@@ -221,8 +222,7 @@ def construct_HHD_engine(base_dir, image_shape):
     return engine
 
 
-def construct_KHATT_engine(base_dir, image_shape):
-
+def construct_KHATT_engine(base_dir, image_shape) -> Engine:
     # Setting file system
     train_path = base_dir / "Train"
     test_path = base_dir / "Test"
