@@ -12,9 +12,10 @@ class BackendMiddleware:
         self.models = models_list
         self.config = {"HHD": construct_HHD_engine, "KHATT": construct_KHATT_engine}
 
-    def create_and_run_engine(self, data_set: str, model_name: str, image, image_shape=(500, 500, 1)):
+    def create_and_run_engine(self, data_set: str, model_name: str, image, image_shape=(50, 50, 1)):
         engine = self.config[data_set](image_shape=image_shape,
-                                       base_dir=Path.cwd() / SRC / DATA / data_set)
+                                       base_dir=Path.cwd() / SRC / DATA / data_set,
+                                       request_from_server=True)
         engine.set_model(model_name)
         proc_images, proc_labels = engine.preprocess_data(images=[image], labels=[1], data_type='test') # ignore the
         # label just to not break the api

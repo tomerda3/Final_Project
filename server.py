@@ -1,5 +1,8 @@
 import PIL
 import base64
+
+import cv2
+import numpy as np
 import uvicorn
 from PIL import Image
 from typing import List
@@ -34,10 +37,17 @@ def run_model(request: ModelRequest) -> Dict[str, Any]:
 
 
 def open_image_from_b64(image: base64) -> PIL.Image:
-    base64_string = image.split(',')[1]
-    image_data = base64.b64decode(base64_string)
+    if ',' in image:
+        image = image.split(',')[1]
+    image_data = base64.b64decode(image)
     image = Image.open(BytesIO(image_data))
-    return image
+    pillow_image = image.convert('RGB')
+    image_array = np.array(pillow_image)
+    print(image_array.shape)
+    image_bgr = cv2.cvtColor(image_array,cv2.COLOR_BGR2GRAY)
+    gray_image = image_bgr[:, :, np.newaxis]
+    print(gray_image.shape)
+    return image_bgr
 
 
 def get_results(data_set, model_name, image) -> Dict[str, Any]:

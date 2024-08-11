@@ -1,7 +1,6 @@
-import base64
 from pydantic import BaseModel
 from typing import Literal
-
+from typing import List
 
 class ModelRequest(BaseModel):
     model_name: str
@@ -12,4 +11,4 @@ class ModelRequest(BaseModel):
 class ModelResults(BaseModel):
     model_name: str
     data_set: str
-    predictions: str
+    predictions: List[int]
