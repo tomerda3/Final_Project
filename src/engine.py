@@ -13,7 +13,7 @@ from src.models.convnextxl import ConvNeXtXLargeModel
 from src.data_handler.data_loader import DataLoader
 from src.data_handler.label_splitter import *
 from src.data_handler.pre_proc import PreProcess
-from models import model_names
+from src.models import model_names
 from collections import Counter
 from sklearn.metrics import accuracy_score
 from src.confusion_matrix import ConfusionMatrixGenerator

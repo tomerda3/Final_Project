@@ -34,7 +34,8 @@ def run_model(request: ModelRequest) -> Dict[str, Any]:
 
 
 def open_image_from_b64(image: base64) -> PIL.Image:
-    image_data = base64.b64decode(image)
+    base64_string = image.split(',')[1]
+    image_data = base64.b64decode(base64_string)
     image = Image.open(BytesIO(image_data))
     return image
 

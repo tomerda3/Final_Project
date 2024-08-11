@@ -5,8 +5,8 @@ from typing import Literal
 
 class ModelRequest(BaseModel):
     model_name: str
-    image: base64
-    data_set: Literal['HDD', 'KHATT']
+    image: str
+    data_set: Literal['HHD', 'KHATT']
 
 
 class ModelResults(BaseModel):
