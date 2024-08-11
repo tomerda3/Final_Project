@@ -25,7 +25,7 @@ import vgg19Image from '../assets/vgg19.jpg';
 import efficientNetImage from '../assets/efficientnet.jpg';
 import xceptionImage from '../assets/xception.jpg';
 import resNetImage from '../assets/resnet.jpg';
-
+import convNextXLImage from '../assets/convNextXLImage.jpg';
 const FloatingCard = styled(Card)({
   transition: 'transform 0.3s, box-shadow 0.3s',
   '&:hover': {
@@ -70,6 +70,14 @@ const modelData = [
     layers: 'Convolutional layers with various widths and depths determined by the scaling method',
     image: efficientNetImage,
   },
+  {
+    name: 'ConvNeXT XL',
+    description: 'ConvNeXT XL is a large-scale convolutional neural network designed to be a general-purpose image classification model. It builds upon the design principles of ConvNeXT, focusing on optimizing performance and efficiency in image recognition tasks.',
+    parameters: 'Approximately 1 billion',
+    layers: 'Consists of a series of convolutional layers with varying kernel sizes, along with normalization and activation functions. It features an improved architecture compared to previous models, including enhanced depth and width.',
+    image: convNextXLImage,
+  }
+  
 ];
 
 const Models = () => {

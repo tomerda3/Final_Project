@@ -59,7 +59,7 @@ const Upload = () => {
     if (file) {
       try {
         const response = await uploadHandwriting(file);
-        console.log(response.data); // Handle response data
+        console.log(response.data); 
       } catch (error) {
         console.error('Error uploading file:', error);
       }

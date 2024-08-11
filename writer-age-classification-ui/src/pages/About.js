@@ -23,19 +23,19 @@ import marinaImage from '../assets/marina.jpg';
 const participants = [
   {
     name: 'Ofri Rom',
-    description: 'Ofri Rom plays a vital role in the project, with a focus on model optimization and evaluation.',
+    description: 'Ofri Rom plays a vital role in the project, focusing on model optimization and evaluation, B.Sc. in Software Engineering.',
     image: ofriImage,
   },
   {
     name: 'Tomer Damti',
-    description: 'Tomer Damti is a key participant in the project, contributing expertise in data science and deep learning.',
+    description: 'Tomer Damti contributes expertise in deep learning, specializing in preprocessing and UI development, B.Sc. in Software Engineering.',
     image: tomerImage,
   },
   {
     name: 'Maayan Rabinovitch',
-    description: 'Maayan Rabinovitch is a dedicated participant in the Writer Age Classification project, bringing strong analytical skills and a passion for machine learning.',
+    description: 'Maayan Rabinovitch brings strong analytical skills and a passion for machine learning, B.Sc. in Software Engineering.',
     image: maayanImage,
-  },
+  }  
 ];
 
 const advisors = [
