@@ -38,9 +38,9 @@ def run_all_configs():
             except:
                 print("Run failed! Trying again...")
 
-
 def run_HHD_convnextxl():
-    sizes = [600]
+
+    sizes = [1000, 600]
 
     for num in reversed(sorted(sizes)):
 
@@ -66,3 +66,4 @@ def run_HHD_convnextxl():
         except:
             print("Run failed, jumping to the next one!")
             continue
+

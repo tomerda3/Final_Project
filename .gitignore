@@ -6,4 +6,5 @@
 *.xlsx
 *.rar
 *.pdf
+*.h5
 requirements.txt
