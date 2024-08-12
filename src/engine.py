@@ -119,14 +119,16 @@ class Engine:
         print("Training model...")
         self.model.train_model(self.train_images, self.train_labels, self.data_name)
 
+    # def most_common_number(self, number_list):
+    #     number_counts = Counter(number_list)
+    #     most_common = number_counts.most_common(1)[0][0]
+    #     return most_common
+
     def most_common_number(self, number_list):
-        try:
-            number_counts = Counter(number_list)
-            most_common = number_counts.most_common(1)[0][0]
-        except:
-            number_array = np.array(number_list)
-            number_counts = Counter(number_array)
-            most_common = number_counts.most_common(1)[0][0]
+        # Convert each numpy array in the list to a tuple
+        hashable_number_list = [tuple(num) if isinstance(num, np.ndarray) else num for num in number_list]
+        number_counts = Counter(hashable_number_list)
+        most_common = number_counts.most_common(1)[0][0]  # Get the most common element
         return most_common
 
     def save_run_txt(self, accuracy, predictions, real_labels):
@@ -149,7 +151,7 @@ class Engine:
             f.write(f"Image shape: {str(self.image_shape)}\n")
 
     def test_model(self, request_from_server=False):
-        print(self.test_images)
+        # print(self.test_images)
         if request_from_server:
             self.model.load_model_weights()
 
@@ -162,7 +164,6 @@ class Engine:
         for i in range(len(self.test_images)):
             image = self.test_images[i]
             label = self.test_labels[i]
-
             patches, _ = preprocessor.patch_images([image], [label], self.image_shape)
             if len(patches) == 0:  # TODO: FIX PATCHES SOMETIMES BEING EMPTY
                 print(f"Image with shape {image.shape} skipped, real label {label}")
@@ -186,28 +187,6 @@ class Engine:
                                                                         self.data_name)
         self.save_run_txt(accuracy, predictions, real_labels)
         return predictions
-
-
-def save_engine():  # TODO: SAVE ENGINE TO DISC USING PICKLE / JOBLIB
-    """
-    After lots of trials and errors,
-    I figured that the best direction to tackle this is to only save weights directly after training:
-        model.save_weights()
-
-    We can then load weights back using:
-        model.load_weights()
-
-    So far I have tried:
-        Using Joblib instead of pickle,
-        Not using Lambda layers manually,
-        Save model using keras.saving.save_model() WHICH WORKED! Could not load the model because of Lambda layer
-        The Lambda layer is apparently not removable because it is already in the base model layers.
-    """
-    pass
-
-
-def load_engine():  # TODO: LOAD ENGINE FROM DISC USING PICKLE / JOBLIB
-    pass
 
 
 def construct_HHD_engine(base_dir, image_shape, request_from_server=False) -> Engine:
