@@ -38,8 +38,8 @@ def run_all_configs():
             except:
                 print("Run failed! Trying again...")
 
-def run_HHD_convnextxl():
 
+def run_HHD_convnextxl():
     sizes = [1000, 600]
 
     for num in reversed(sorted(sizes)):
@@ -67,3 +67,6 @@ def run_HHD_convnextxl():
             print("Run failed, jumping to the next one!")
             continue
 
+
+def run_HHD_regression():
+    pass

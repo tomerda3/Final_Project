@@ -55,7 +55,7 @@ class ConvNeXtXLargeRegressionModel(Model):
         continuous_predictions = self.model.predict(patches)  # Predict continuous age values
         # Map continuous age values to discrete age groups
         discrete_predictions = map_to_age_group(continuous_predictions,
-                                                bins=[15, 25, 50, 140])  # Our age groups
+                                                bins=[15, 25, 50])  # Our age groups
         return discrete_predictions
 
 

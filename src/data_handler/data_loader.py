@@ -5,7 +5,7 @@ from typing import List
 from typing import Literal
 from tqdm import tqdm
 
-SHORT_RUN = True
+SHORT_RUN = False
 IMAGE_LIMIT = 10
 
 
@@ -17,7 +17,7 @@ class DataLoader:
         self.name_col = name_col
         self.label_col = label_col
 
-    def load_data(self, clean_method: Literal["HHD", "KHATT"]="HHD"):
+    def load_data(self, clean_method: Literal["HHD", "KHATT"] = "HHD"):
 
         files = self._get_files_name()
         images = []
