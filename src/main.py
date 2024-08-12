@@ -31,7 +31,7 @@ if __name__ == "__main__":
     # # )
 
     # Setting engine model
-    main_engine.set_model(model_names.ConvNeXtXLarge)
+    main_engine.set_model(model_names.ConvNeXtXLargeRegression)
 
     # Training model
     main_engine.train_model()

@@ -5,7 +5,7 @@ from typing import List
 from typing import Literal
 from tqdm import tqdm
 
-SHORT_RUN = False
+SHORT_RUN = True
 IMAGE_LIMIT = 10
 
 
