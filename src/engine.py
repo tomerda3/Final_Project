@@ -1,5 +1,6 @@
 import os
 from typing import Tuple, Literal
+import numpy as np
 
 from src.models.vgg16 import VGG16Model
 from src.models.vgg19 import VGG19Model
@@ -119,8 +120,13 @@ class Engine:
         self.model.train_model(self.train_images, self.train_labels, self.data_name)
 
     def most_common_number(self, number_list):
-        number_counts = Counter(number_list)
-        most_common = number_counts.most_common(1)[0][0]
+        try:
+            number_counts = Counter(number_list)
+            most_common = number_counts.most_common(1)[0][0]
+        except:
+            number_array = np.array(number_list)
+            number_counts = Counter(number_array)
+            most_common = number_counts.most_common(1)[0][0]
         return most_common
 
     def save_run_txt(self, accuracy, predictions, real_labels):
