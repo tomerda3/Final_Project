@@ -6,5 +6,5 @@
 *.xlsx
 *.rar
 *.pdf
+*.h5
 requirements.txt
-/src/model_weights
