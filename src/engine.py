@@ -4,6 +4,7 @@ from typing import Tuple, Literal
 import numpy as np
 import pandas as pd
 from data.path_variables import *
+import statistics
 
 from src.models.vgg16 import VGG16Model
 from src.models.vgg19 import VGG19Model
@@ -20,7 +21,7 @@ from src.data_handler.label_splitter import *
 from src.data_handler.pre_proc import PreProcess
 from src.models import model_names
 from collections import Counter
-from sklearn.metrics import accuracy_score
+from sklearn.metrics import accuracy_score, mean_absolute_error
 from src.confusion_matrix import ConfusionMatrixGenerator
 
 
@@ -77,6 +78,9 @@ class Engine:
             self.model = ConvNeXtXLargeModel(input_shape=self.image_shape)
         elif model == model_names.ConvNeXtXLargeRegression:
             self.model = ConvNeXtXLargeRegressionModel(input_shape=self.image_shape)
+            if self.data_name != HHD:
+                print("Regression only works with HHD dataset.")
+                exit(0)
             self.is_regression = True
         else:
             print(f"No model found with the name={model}")
@@ -99,7 +103,7 @@ class Engine:
         return proc_images, proc_labels
 
     def load_images(self, data_type: Literal["test", "train"], image_filename_col: str, label_col: str,
-                    clean_method: Literal["HHD", "KHATT"] = "HHD"):
+                    clean_method: Literal[HHD, KHATT] = HHD):
         self.data_name = clean_method
 
         data_path, dataframe = "", ""
@@ -178,7 +182,8 @@ class Engine:
         most_common = number_counts.most_common(1)[0][0]  # Get the most common element
         return most_common
 
-    def save_run_txt(self, accuracy, predictions, real_labels):
+    def save_run_txt(self, accuracy, predictions, real_labels, continuous_predictions=None, continuous_labels=None,
+                     average_difference=None, std_dev=None):
         model_name = self.model_name
         dataset_name = self.data_name
         res_dir = f"./run_results/{dataset_name}"
@@ -195,6 +200,14 @@ class Engine:
             f.write(f"Accuracy: {accuracy}\n")
             f.write(f"Predictions: {predictions}\n")
             f.write(f"Real labels: {real_labels}\n")
+            if continuous_predictions:
+                f.write(f"Continuous Predictions: {continuous_predictions}\n")
+            if continuous_labels:
+                f.write(f"Continuous Labels: {continuous_labels}\n")
+            if average_difference:
+                f.write(f"Average Difference: {average_difference}\n")
+            if std_dev:
+                f.write(f"Standard Deviation: {std_dev}\n")
             f.write(f"Image shape: {str(self.image_shape)}\n")
 
     def test_model(self, request_from_server=False):
@@ -202,7 +215,6 @@ class Engine:
             self.test_filenames, self.test_labels, self.test_images = self.get_regression_values(
                 self.test_filenames, self.test_labels, self.test_images)
 
-        # print(self.test_images)
         if request_from_server:
             self.model.load_model_weights()
 
@@ -210,7 +222,6 @@ class Engine:
 
         real_labels = []
         predictions = []
-        regression_predictions = []
         preprocessor = PreProcess(self.image_shape)
 
         for i in range(len(self.test_images)):
@@ -221,17 +232,25 @@ class Engine:
                 print(f"Image with shape {image.shape} skipped, real label {label}")
                 continue
             patch_predictions = self.model.patch_evaluation(patches)
-            most_common_image_prediction = self.most_common_number(patch_predictions)
+            if self.is_regression:
+                most_common_image_prediction = statistics.mean(patch_predictions)
+            else:
+                most_common_image_prediction = self.most_common_number(patch_predictions)
             predictions.append(most_common_image_prediction)
             real_labels.append(label)
 
         if self.is_regression:
             continuous_predictions = predictions.copy()
             predictions = map_to_age_group(np.array(predictions))
-            print(f"Continuous Predictions: {continuous_predictions}")
+            print(f"Continuous Predictions: {[round(num) for num in continuous_predictions]}")
             continuous_labels = real_labels.copy()
             real_labels = map_to_age_group(real_labels)
-            print(f"Continuous Labels: {continuous_labels}")
+            print(f"Continuous Labels:      {continuous_labels}")
+            average_difference = mean_absolute_error(continuous_labels, continuous_predictions)
+            print(f"Average Difference: {average_difference}")
+            std_dev = np.std(continuous_predictions)
+            print(f"Standard Deviation: {std_dev}")
+
         accuracy = accuracy_score(real_labels, predictions)
         print(f"Accuracy: {accuracy}")
         print(f"Predictions: {predictions}")
@@ -241,7 +260,11 @@ class Engine:
                                                                         predictions,
                                                                         self.model_name,
                                                                         self.data_name)
-        self.save_run_txt(accuracy, predictions, real_labels)
+        if self.is_regression:
+            self.save_run_txt(accuracy, predictions, real_labels, continuous_predictions, continuous_labels,
+                              average_difference, std_dev)
+        else:
+            self.save_run_txt(accuracy, predictions, real_labels)
 
         return predictions
 
@@ -301,8 +324,8 @@ def construct_KHATT_engine(base_dir, image_shape, request_from_server=False) -> 
         engine.set_train_data_path(str(train_path))
 
         engine.load_images(data_type='train', image_filename_col='Form Number',
-                           label_col='Age (1,2,3,or 4 from right to left)', clean_method="KHATT")
+                           label_col='Age (1,2,3,or 4 from right to left)', clean_method=KHATT)
         engine.load_images(data_type='test', image_filename_col='Form Number',
-                           label_col='Age (1,2,3,or 4 from right to left)', clean_method="KHATT")
+                           label_col='Age (1,2,3,or 4 from right to left)', clean_method=KHATT)
 
     return engine

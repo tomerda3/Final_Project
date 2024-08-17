@@ -4,8 +4,9 @@ import cv2
 from typing import List
 from typing import Literal
 from tqdm import tqdm
+from ..data.path_variables import *
 
-SHORT_RUN = False
+SHORT_RUN = True
 IMAGE_LIMIT = 15
 
 
@@ -17,7 +18,7 @@ class DataLoader:
         self.name_col = name_col
         self.label_col = label_col
 
-    def load_data(self, clean_method: Literal["HHD", "KHATT"] = "HHD"):
+    def load_data(self, clean_method: Literal[HHD, KHATT] = HHD):
 
         files = self._get_files_name()
         images = []
@@ -32,7 +33,7 @@ class DataLoader:
 
             image = cv2.imread(str(Path(self.path) / file_name))  # , cv2.IMREAD_GRAYSCALE
 
-            if clean_method == "KHATT":
+            if clean_method == KHATT:
                 clean_name = file_name[5:10]
                 row_of_file = self.df[self.df[self.name_col] == clean_name]
                 if len(row_of_file) == 0:  # if filename not in labels database
