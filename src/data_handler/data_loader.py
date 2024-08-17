@@ -6,7 +6,7 @@ from typing import Literal
 from tqdm import tqdm
 
 SHORT_RUN = False
-IMAGE_LIMIT = 10
+IMAGE_LIMIT = 15
 
 
 class DataLoader:

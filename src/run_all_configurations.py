@@ -14,7 +14,6 @@ def run_all_configs():
         print(f"Run started for dataset: {dataset}")
         main_engine = construct_engine[dataset](
             base_dir=Path.cwd() / DATA / dataset,
-            # image_shape=(200, 200, 1)
             image_shape=(500, 500, 1)
         )
 
@@ -68,9 +67,8 @@ def run_HHD_convnextxl():
             continue
 
 
-def run_HHD_regression():
+def run_HHD_regression(size=600):
     model_name = model_names.ConvNeXtXLargeRegression
-    size = 600
 
     print(f"Running {model_name} model on HHD dataset with size {size}x{size}.")
 

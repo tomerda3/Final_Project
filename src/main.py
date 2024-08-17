@@ -16,7 +16,7 @@ if __name__ == "__main__":
     else:
         print("No GPU detected.")
 
-    run_HHD_regression()
+    run_HHD_regression(size=600)
 
     # # Construct engine
     # main_engine = construct_HHD_engine(

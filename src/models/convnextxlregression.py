@@ -20,8 +20,8 @@ class ConvNeXtXLargeRegressionModel(Model):
         else:  # If not using pre-trained top layers, keep as grayscale
             optimal_layer = layers.Resizing(224, 224)(inputs)  # Adjusted size for ConvNeXtXLarge
 
-        base_model = ConvNeXtXLarge(weights=weights, include_top=False,
-                                    input_shape=(224, 224, 3))  # Use ConvNeXtXLarge model
+        self.x_large = ConvNeXtXLarge(weights=weights, include_top=False, input_shape=(224, 224, 3))
+        base_model = self.x_large  # Use ConvNeXtXLarge model
         for layer in base_model.layers:
             layer.trainable = False
         base_model_output = base_model(optimal_layer)
@@ -53,25 +53,4 @@ class ConvNeXtXLargeRegressionModel(Model):
 
     def patch_evaluation(self, patches):
         continuous_predictions = self.model.predict(patches)  # Predict continuous age values
-        # Map continuous age values to discrete age groups
-        discrete_predictions = map_to_age_group(continuous_predictions,
-                                                bins=[15, 25, 50])  # Our age groups
-        return discrete_predictions
-
-
-def map_to_age_group(predictions, bins):
-    # Initialize an array to hold the age group assignments
-    age_groups = np.zeros(predictions.shape)
-
-    # Assign age groups based on the bins
-    for i, prediction in enumerate(predictions):
-        if prediction <= bins[0]:
-            age_groups[i] = 0
-        elif bins[0] < prediction <= bins[1]:
-            age_groups[i] = 1
-        elif bins[1] < prediction <= bins[2]:
-            age_groups[i] = 2
-        else:
-            age_groups[i] = 3
-
-    return age_groups
+        return [elem[0] for elem in continuous_predictions]

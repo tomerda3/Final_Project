@@ -9,13 +9,7 @@ class PreProcess:
         self.image_shape = shape
 
     def resize_images(self, images):
-        # print("Resizing images...")
-        # processed_images = [cv2.resize(im.image_data, (self.image_shape[0], self.image_shape[1])) for im in images]
         return [cv2.resize(im, (self.image_shape[0], self.image_shape[1])) for im in images]
-        # for row in tqdm(processed_images):
-        #     for i in range(len(row)):
-        #         row[i] = row[i] / 255
-        # return np.array(processed_images)
 
     def patch_images(self, images, labels, segment_shape):
         # print("Patching images...")

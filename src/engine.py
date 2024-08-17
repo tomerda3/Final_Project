@@ -129,36 +129,42 @@ class Engine:
 
     def train_model(self):
         if self.is_regression:
-            name_mapping = pd.read_csv(Path.cwd() / DATA / HHD / "NameMapping.csv", header=None)
-            real_ages = pd.read_csv(Path.cwd() / DATA / HHD / "RealAges.csv")
-
-            print("REGRESSION MODEL DETECTED")
-            # Initialize the lists
-            keep_indices = []
-            for i in range(len(self.train_filenames)):
-                file_name = self.train_filenames[i]
-                name_in_real_ages_data = name_mapping[name_mapping[1] == file_name][0].values[0][:-4] + ".jpg"
-
-                real_age = real_ages[real_ages['name'] == name_in_real_ages_data]['age'].values
-                if len(real_age) == 0:
-                    # Skip this index if real_age is not found
-                    continue
-                keep_indices.append(i)
-
-                # Set the label to the correct age
-                real_age = real_age[0]
-                self.train_labels[i] = real_age
-
-            # Convert list to numpy array for indexing
-            keep_indices = np.array(keep_indices)
-
-            # Apply mask to filter out the valid entries
-            self.train_images = self.train_images[keep_indices]
-            self.train_labels = [self.train_labels[i] for i in keep_indices]
-            self.train_filenames = [self.train_filenames[i] for i in keep_indices]
+            self.train_filenames, self.train_labels, self.train_images = self.get_regression_values(
+                self.train_filenames, self.train_labels, self.train_images)
 
         print("Training model...")
         self.model.train_model(self.train_images, self.train_labels, self.data_name)
+
+    def get_regression_values(self, filenames, labels, images):
+        name_mapping = pd.read_csv(Path.cwd() / DATA / HHD / "NameMapping.csv", header=None)
+        real_ages = pd.read_csv(Path.cwd() / DATA / HHD / "RealAges.csv")
+        print("SETTING UP REAL AGES FOR REGRESSION MODEL")
+        # Initialize the lists
+        keep_indices = []
+        for i in range(len(filenames)):
+            file_name = filenames[i]
+            name_in_real_ages_data = name_mapping[name_mapping[1] == file_name][0].values[0][:-4] + ".jpg"
+
+            real_age = real_ages[real_ages['name'] == name_in_real_ages_data]['age'].values
+            if len(real_age) == 0:
+                # Skip this index if real_age is not found
+                continue
+            keep_indices.append(i)
+
+            # Set the label to the correct age
+            real_age = real_age[0]
+            labels[i] = real_age
+        # Convert list to numpy array for indexing
+        keep_indices = np.array(keep_indices)
+        # Apply mask to filter out the valid entries
+        try:
+            images = images[keep_indices]
+        except:
+            images = [images[i] for i in keep_indices]
+        labels = [labels[i] for i in keep_indices]
+        filenames = [filenames[i] for i in keep_indices]
+
+        return filenames, labels, images
 
     # def most_common_number(self, number_list):
     #     number_counts = Counter(number_list)
@@ -192,6 +198,10 @@ class Engine:
             f.write(f"Image shape: {str(self.image_shape)}\n")
 
     def test_model(self, request_from_server=False):
+        if self.is_regression:
+            self.test_filenames, self.test_labels, self.test_images = self.get_regression_values(
+                self.test_filenames, self.test_labels, self.test_images)
+
         # print(self.test_images)
         if request_from_server:
             self.model.load_model_weights()
@@ -200,6 +210,7 @@ class Engine:
 
         real_labels = []
         predictions = []
+        regression_predictions = []
         preprocessor = PreProcess(self.image_shape)
 
         for i in range(len(self.test_images)):
@@ -214,20 +225,41 @@ class Engine:
             predictions.append(most_common_image_prediction)
             real_labels.append(label)
 
-        # accuracy = accuracy_score(self.test_labels, predictions)
+        if self.is_regression:
+            continuous_predictions = predictions.copy()
+            predictions = map_to_age_group(np.array(predictions))
+            print(f"Continuous Predictions: {continuous_predictions}")
+            continuous_labels = real_labels.copy()
+            real_labels = map_to_age_group(real_labels)
+            print(f"Continuous Labels: {continuous_labels}")
         accuracy = accuracy_score(real_labels, predictions)
         print(f"Accuracy: {accuracy}")
         print(f"Predictions: {predictions}")
-        # print(f"Real labels: {self.test_labels}")
         print(f"Real labels: {real_labels}")
-        # self.confusion_matrix_generator.build_confusion_matrix_plot(self.test_labels,
         if not request_from_server:
             self.confusion_matrix_generator.build_confusion_matrix_plot(real_labels,
                                                                         predictions,
                                                                         self.model_name,
                                                                         self.data_name)
         self.save_run_txt(accuracy, predictions, real_labels)
+
         return predictions
+
+
+def map_to_age_group(predictions, bins=(15, 25, 50)):
+    res = []
+    for prediction in predictions:
+        # Initialize group index
+        group = len(bins)  # Default to the last group if prediction exceeds all bins
+
+        # Determine the correct bin for the prediction
+        for i in range(len(bins)):
+            if prediction <= bins[i]:
+                group = i
+                break
+
+        res.append(group)
+    return res
 
 
 def construct_HHD_engine(base_dir, image_shape, request_from_server=False) -> Engine:
