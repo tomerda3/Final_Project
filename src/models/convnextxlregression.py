@@ -48,7 +48,7 @@ class ConvNeXtXLargeRegressionModel(Model):
 
         print("Epochs including base layers...")
         self.model.fit(x=train_data, y=train_labels,
-                       epochs=40,
+                       epochs=80,
                        batch_size=32)
 
     def patch_evaluation(self, patches):
