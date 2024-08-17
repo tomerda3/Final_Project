@@ -69,4 +69,21 @@ def run_HHD_convnextxl():
 
 
 def run_HHD_regression():
-    pass
+    model_name = model_names.ConvNeXtXLargeRegression
+    size = 600
+
+    print(f"Running {model_name} model on HHD dataset with size {size}x{size}.")
+
+    engine = construct_HHD_engine(
+        base_dir=Path.cwd() / DATA / HHD,
+        image_shape=(size, size, 1)
+    )
+
+    # Setting engine model
+    engine.set_model(model_name)
+
+    # Training model
+    engine.train_model()
+
+    # Test model
+    engine.test_model()

@@ -1,6 +1,9 @@
 import os
+from pathlib import Path
 from typing import Tuple, Literal
 import numpy as np
+import pandas as pd
+from data.path_variables import *
 
 from src.models.vgg16 import VGG16Model
 from src.models.vgg19 import VGG19Model
@@ -34,6 +37,9 @@ class Engine:
         self.test_images = None
         self.data_name = None
         self.model_name = None
+        self.is_regression = False
+        self.train_filenames = None
+        self.test_filenames = None
         self.confusion_matrix_generator = ConfusionMatrixGenerator()
 
     def set_train_labels(self, df):
@@ -71,6 +77,7 @@ class Engine:
             self.model = ConvNeXtXLargeModel(input_shape=self.image_shape)
         elif model == model_names.ConvNeXtXLargeRegression:
             self.model = ConvNeXtXLargeRegressionModel(input_shape=self.image_shape)
+            self.is_regression = True
         else:
             print(f"No model found with the name={model}")
             raise KeyError
@@ -106,9 +113,14 @@ class Engine:
             dataframe = self.train_labels
 
         data_loader = DataLoader(dataframe, data_type, data_path, image_filename_col, label_col)
-        images, labels = data_loader.load_data(clean_method)
+        images, labels, filenames = data_loader.load_data(clean_method)
         # Preprocessing:
         proc_images, proc_labels = self.preprocess_data(images, labels, data_type)
+
+        if data_type == "test":
+            self.test_filenames = filenames
+        elif data_type == "train":
+            self.train_filenames = filenames
 
         if data_type == "train":
             self.train_images, self.train_labels = proc_images, proc_labels
@@ -116,6 +128,35 @@ class Engine:
             self.test_images, self.test_labels = proc_images, proc_labels
 
     def train_model(self):
+        if self.is_regression:
+            name_mapping = pd.read_csv(Path.cwd() / DATA / HHD / "NameMapping.csv", header=None)
+            real_ages = pd.read_csv(Path.cwd() / DATA / HHD / "RealAges.csv")
+
+            print("REGRESSION MODEL DETECTED")
+            # Initialize the lists
+            keep_indices = []
+            for i in range(len(self.train_filenames)):
+                file_name = self.train_filenames[i]
+                name_in_real_ages_data = name_mapping[name_mapping[1] == file_name][0].values[0][:-4] + ".jpg"
+
+                real_age = real_ages[real_ages['name'] == name_in_real_ages_data]['age'].values
+                if len(real_age) == 0:
+                    # Skip this index if real_age is not found
+                    continue
+                keep_indices.append(i)
+
+                # Set the label to the correct age
+                real_age = real_age[0]
+                self.train_labels[i] = real_age
+
+            # Convert list to numpy array for indexing
+            keep_indices = np.array(keep_indices)
+
+            # Apply mask to filter out the valid entries
+            self.train_images = self.train_images[keep_indices]
+            self.train_labels = [self.train_labels[i] for i in keep_indices]
+            self.train_filenames = [self.train_filenames[i] for i in keep_indices]
+
         print("Training model...")
         self.model.train_model(self.train_images, self.train_labels, self.data_name)
 

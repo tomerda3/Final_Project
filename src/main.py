@@ -3,7 +3,7 @@ from pathlib import Path
 from models import model_names
 from data.path_variables import *
 import tensorflow as tf
-from run_all_configurations import run_all_configs, run_HHD_convnextxl
+from run_all_configurations import run_all_configs, run_HHD_convnextxl, run_HHD_regression
 
 if __name__ == "__main__":
     # Setting up GPU:
@@ -16,21 +16,23 @@ if __name__ == "__main__":
     else:
         print("No GPU detected.")
 
-    # Construct engine
-    main_engine = construct_HHD_engine(
-        base_dir=Path.cwd() / DATA / HHD,
-        image_shape=(1000, 1000, 1)
-    )
-    # # main_engine = construct_KHATT_engine(
-    # #     base_dir=Path.cwd() / DATA / KHATT,
-    # #     image_shape=(500, 500, 1)
-    # # )
+    run_HHD_regression()
 
-    # Setting engine model
-    main_engine.set_model(model_names.ConvNeXtXLargeRegression)
-
-    # Training model
-    main_engine.train_model()
-
-    # Test model
-    main_engine.test_model()
+    # # Construct engine
+    # main_engine = construct_HHD_engine(
+    #     base_dir=Path.cwd() / DATA / HHD,
+    #     image_shape=(1000, 1000, 1)
+    # )
+    # # # main_engine = construct_KHATT_engine(
+    # # #     base_dir=Path.cwd() / DATA / KHATT,
+    # # #     image_shape=(500, 500, 1)
+    # # # )
+    #
+    # # Setting engine model
+    # main_engine.set_model(model_names.ConvNeXtXLargeRegression)
+    #
+    # # Training model
+    # main_engine.train_model()
+    #
+    # # Test model
+    # main_engine.test_model()

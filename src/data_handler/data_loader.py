@@ -22,6 +22,7 @@ class DataLoader:
         files = self._get_files_name()
         images = []
         labels = []
+        filenames = []
 
         if SHORT_RUN:
             print("\nSHOT RUN IS SELECTED! (in data_loader.py)")
@@ -42,7 +43,8 @@ class DataLoader:
 
             images.append(image)
             labels.append(lbl)
-        return images, labels
+            filenames.append(file_name)  # ADDED FOR REGRESSION
+        return images, labels, filenames
 
     def _get_files_name(self) -> List[str]:
         file_names = []
