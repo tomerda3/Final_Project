@@ -1,6 +1,7 @@
 import os
+import numpy as np
 from typing import Tuple, Literal
-
+from typing import List
 from src.models.vgg16 import VGG16Model
 from src.models.vgg19 import VGG19Model
 from src.models.xception import XceptionModel
@@ -13,7 +14,7 @@ from src.models.convnextxl import ConvNeXtXLargeModel
 from src.data_handler.data_loader import DataLoader
 from src.data_handler.label_splitter import *
 from src.data_handler.pre_proc import PreProcess
-from src.models import model_names
+from src.models import models_metadata
 from collections import Counter
 from sklearn.metrics import accuracy_score
 from src.confusion_matrix import ConfusionMatrixGenerator
@@ -49,29 +50,29 @@ class Engine:
     def set_model(self, model: str):
         self.model_name = model
 
-        if model == model_names.VGG16:
+        if model == models_metadata.VGG16:
             self.model = VGG16Model(input_shape=self.image_shape)
-        elif model == model_names.VGG19:
+        elif model == models_metadata.VGG19:
             self.model = VGG19Model(input_shape=self.image_shape)
-        elif model == model_names.Xception:
+        elif model == models_metadata.Xception:
             self.model = XceptionModel(input_shape=self.image_shape)
-        elif model == model_names.ResNet50:
+        elif model == models_metadata.ResNet50:
             self.model = ResNet50Model(input_shape=self.image_shape)
-        elif model == model_names.EfficientNet:
+        elif model == models_metadata.EfficientNet:
             self.model = EfficientNetModel(input_shape=self.image_shape)
-        elif model == model_names.MobileNet:
+        elif model == models_metadata.MobileNet:
             self.model = MobileNetV2Model(input_shape=self.image_shape)
-        elif model == model_names.ResNet152v2:
+        elif model == models_metadata.ResNet152v2:
             self.model = ResNet152V2Model(input_shape=self.image_shape)
-        elif model == model_names.EfficientNetV2:
+        elif model == models_metadata.EfficientNetV2:
             self.model = EfficientNetV2LModel(input_shape=self.image_shape)
-        elif model == model_names.ConvNeXtXLarge:
+        elif model == models_metadata.ConvNeXtXLarge:
             self.model = ConvNeXtXLargeModel(input_shape=self.image_shape)
         else:
             print(f"No model found with the name={model}")
             raise KeyError
 
-    def preprocess_data(self, images, labels, data_type):
+    def preprocess_data(self, images, labels, data_type) -> Tuple[List[np.array],List[np.array]]:
         print(f"\nPreprocessing {data_type} images...")
 
         preprocessor = PreProcess(self.image_shape)
@@ -115,7 +116,7 @@ class Engine:
         print("Training model...")
         self.model.train_model(self.train_images, self.train_labels, self.data_name)
 
-    def most_common_number(self, number_list):
+    def most_common_number(self, number_list) -> str:
         number_counts = Counter(number_list)
         most_common = number_counts.most_common(1)[0][0]
         return most_common
@@ -139,7 +140,7 @@ class Engine:
             f.write(f"Real labels: {real_labels}\n")
             f.write(f"Image shape: {str(self.image_shape)}\n")
 
-    def test_model(self, request_from_server=False):
+    def test_model(self, request_from_server=False) -> List[str]:
         print(self.test_images)
         if request_from_server:
             self.model.load_model_weights()
@@ -179,29 +180,7 @@ class Engine:
         return predictions
 
 
-def save_engine():  # TODO: SAVE ENGINE TO DISC USING PICKLE / JOBLIB
-    """
-    After lots of trials and errors,
-    I figured that the best direction to tackle this is to only save weights directly after training:
-        model.save_weights()
-
-    We can then load weights back using:
-        model.load_weights()
-
-    So far I have tried:
-        Using Joblib instead of pickle,
-        Not using Lambda layers manually,
-        Save model using keras.saving.save_model() WHICH WORKED! Could not load the model because of Lambda layer
-        The Lambda layer is apparently not removable because it is already in the base model layers.
-    """
-    pass
-
-
-def load_engine():  # TODO: LOAD ENGINE FROM DISC USING PICKLE / JOBLIB
-    pass
-
-
-def construct_HHD_engine(base_dir, image_shape, request_from_server=False) -> Engine:
+def construct_hhd_engine(base_dir, image_shape, request_from_server=False) -> Engine:
     # Setting file system
     train_path = base_dir / "train"
     test_path = base_dir / "test"
@@ -223,7 +202,7 @@ def construct_HHD_engine(base_dir, image_shape, request_from_server=False) -> En
     return engine
 
 
-def construct_KHATT_engine(base_dir, image_shape, request_from_server=False) -> Engine:
+def construct_khatt_engine(base_dir, image_shape, request_from_server=False) -> Engine:
     # Setting file system
     train_path = base_dir / "Train"
     test_path = base_dir / "Test"

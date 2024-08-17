@@ -1,6 +1,5 @@
 import PIL
 import base64
-
 import cv2
 import numpy as np
 import uvicorn
@@ -12,7 +11,7 @@ from io import BytesIO
 from fastapi import FastAPI
 from api_models import ModelRequest
 from backend_middleware import BackendMiddleware
-from src.models.model_names import models_list
+from src.models.models_metadata import models_list
 
 app = FastAPI()
 

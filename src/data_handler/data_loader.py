@@ -1,8 +1,11 @@
 import os
 from pathlib import Path
 import cv2
-from typing import List
+from typing import List, Tuple, Any
 from typing import Literal
+
+from cv2 import Mat
+from numpy import ndarray, dtype
 from tqdm import tqdm
 
 SHORT_RUN = False
@@ -17,7 +20,9 @@ class DataLoader:
         self.name_col = name_col
         self.label_col = label_col
 
-    def load_data(self, clean_method: Literal["HHD", "KHATT"]="HHD"):
+    def load_data(self, clean_method: Literal["HHD", "KHATT"] = "HHD") -> Tuple[
+        List[Mat | ndarray[Any, dtype] | ndarray]
+        , List[str]]:
 
         files = self._get_files_name()
         images = []

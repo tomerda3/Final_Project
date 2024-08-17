@@ -12,13 +12,13 @@ class LabelSplitter:
         self._val_df = df[df[set_name] == val_id].drop(set_name, axis=1)
 
     @property
-    def train(self):
+    def train(self) -> pd.DataFrame:
         return self._train_df
 
     @property
-    def test(self):
+    def test(self) -> pd.DataFrame:
         return self._test_df
 
     @property
-    def val(self):
+    def val(self) -> pd.DataFrame:
         return self._val_df

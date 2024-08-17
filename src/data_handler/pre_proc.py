@@ -1,6 +1,8 @@
 import cv2
 import numpy as np
-from typing import Tuple, List
+from typing import Tuple, List, Any
+
+from cv2 import Mat
 from tqdm import tqdm
 
 
@@ -8,17 +10,10 @@ class PreProcess:
     def __init__(self, shape: Tuple):
         self.image_shape = shape
 
-    def resize_images(self, images):
-        # print("Resizing images...")
-        # processed_images = [cv2.resize(im.image_data, (self.image_shape[0], self.image_shape[1])) for im in images]
+    def resize_images(self, images) -> List[np.array]:
         return [cv2.resize(im, (self.image_shape[0], self.image_shape[1])) for im in images]
-        # for row in tqdm(processed_images):
-        #     for i in range(len(row)):
-        #         row[i] = row[i] / 255
-        # return np.array(processed_images)
 
-
-    def patch_images(self, images, labels, segment_shape):
+    def patch_images(self, images, labels, segment_shape) -> np.array:
         patched_images = []
         patched_labels = []
 
@@ -36,10 +31,10 @@ class PreProcess:
 
         return np.array(patched_images), patched_labels
 
-    def arrange_labels_indexing_from_0(self, labels: List) -> List:
-        return [x-1 for x in labels if 0 not in labels]
+    def arrange_labels_indexing_from_0(self, labels: List) -> List[int]:
+        return [x - 1 for x in labels if 0 not in labels]
 
-    def grayscale_and_binarize_images(self, images):
+    def grayscale_and_binarize_images(self, images) -> List[Mat | np.ndarray[Any, np.dtype] | np.ndarray]:
         binarized_images = []
         for image in tqdm(images):
             if len(image.shape) == 3:
@@ -51,7 +46,7 @@ class PreProcess:
 
         return binarized_images
 
-    def crop_text_from_reversed_binary_images(self, images, min_white_pixels=100):
+    def crop_text_from_reversed_binary_images(self, images, min_white_pixels=100) -> List[Mat | np.ndarray[Any, np.dtype] | np.ndarray]:
         WHITE = 255  # Assuming the images are in the range of 0 to 255
 
         cropped_images = []
@@ -85,4 +80,3 @@ class PreProcess:
             cropped_images.append(cropped_image)
 
         return cropped_images
-

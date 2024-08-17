@@ -8,6 +8,7 @@ import tensorflow as tf
 
 NUM_OF_CLASSES = 4
 
+
 class ConvNeXtXLargeModel(Model):
 
     def __init__(self, weights: str = "imagenet", include_top: bool = True, input_shape: Tuple = (0, 0)):

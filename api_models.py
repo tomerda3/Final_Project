@@ -2,6 +2,7 @@ from pydantic import BaseModel
 from typing import Literal
 from typing import List
 
+
 class ModelRequest(BaseModel):
     model_name: str
     image: str

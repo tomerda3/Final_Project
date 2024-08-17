@@ -1,6 +1,6 @@
 from engine import *
 from pathlib import Path
-from models import model_names
+from models import models_metadata
 from data.path_variables import *
 import tensorflow as tf
 from run_all_configurations import run_all_configs, run_HHD_convnextxl

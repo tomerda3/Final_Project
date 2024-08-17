@@ -2,15 +2,15 @@ from pathlib import Path
 
 from api_models import ModelResults
 from src.data.path_variables import DATA, SRC
-from src.models.model_names import models_list
-from src.engine import construct_HHD_engine, construct_KHATT_engine
+from src.models.models_metadata import models_list
+from src.engine import construct_hhd_engine, construct_khatt_engine
 
 
 class BackendMiddleware:
 
     def __init__(self):
         self.models = models_list
-        self.config = {"HHD": construct_HHD_engine, "KHATT": construct_KHATT_engine}
+        self.config = {"HHD": construct_hhd_engine, "KHATT": construct_khatt_engine}
 
     def create_and_run_engine(self, data_set: str, model_name: str, image, image_shape=(50, 50, 1)):
         engine = self.config[data_set](image_shape=image_shape,
