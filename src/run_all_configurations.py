@@ -1,13 +1,13 @@
 from engine import *
 from pathlib import Path
-from models import model_names
+from models import models_metadata
 from data.path_variables import *
 
 
 def run_all_configs():
     construct_engine = {
-        HHD: construct_HHD_engine,
-        KHATT: construct_KHATT_engine
+        HHD: construct_hhd_engine,
+        KHATT: construct_khatt_engine
     }
 
     for dataset in [HHD, KHATT]:
@@ -19,8 +19,8 @@ def run_all_configs():
 
         # for model in model_names.models_list:
         i = 0
-        while i < len(model_names.models_list):
-            model = model_names.models_list[i]
+        while i < len(models_metadata.models_list):
+            model = models_metadata.models_list[i]
             try:
                 print(f"Running {model} model on {dataset} dataset.")
                 # Setting engine model
@@ -44,11 +44,11 @@ def run_HHD_convnextxl():
     for num in reversed(sorted(sizes)):
 
         try:
-            model_name = model_names.ConvNeXtXLarge
+            model_name = models_metadata.ConvNeXtXLarge
 
             print(f"Running {model_name} model on HHD dataset with size {num}x{num}.")
 
-            engine = construct_HHD_engine(
+            engine = construct_hhd_engine(
                 base_dir=Path.cwd() / DATA / HHD,
                 image_shape=(num, num, 1)
             )

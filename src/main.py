@@ -1,5 +1,5 @@
 from pathlib import Path
-from models import model_names
+from models import models_metadata
 from data.path_variables import *
 import tensorflow as tf
 from data_handler.datasets_constructors import constructors

@@ -1,4 +1,4 @@
-from typing import List
+from typing import List, Any
 import numpy as np
 from keras.optimizers import Adam
 from keras.utils import to_categorical
@@ -40,7 +40,7 @@ class Model:
                        class_weight=weights)
         self.save_model_weights()
 
-    def patch_evaluation(self, patches):
+    def patch_evaluation(self, patches) -> Any:
         probabilities = self.model.predict(patches)  # TODO: fix sometimes patches is an empty sequence
         predictions = np.argmax(probabilities, axis=1)
         return predictions
@@ -52,4 +52,4 @@ class Model:
         self.model.compile(loss='categorical_crossentropy',
                            optimizer=Adam(learning_rate=0.0005),
                            metrics=['accuracy'])
-        self.model.load_weights(f"/Users/ofri/Documents/GitHub/Final_Project/src/models/model_weights/ConvNeXtXLargeModel.h5")
+        self.model.load_weights(f"C:\\Users\\tomer\\PycharmProjects\\Final_Project\\src\\models\\model_weights\\{self.__class__.__name__}.h5")

@@ -1,10 +1,10 @@
 import os
 from pathlib import Path
-from typing import Tuple, Literal
-import numpy as np
-import pandas as pd
 from data.path_variables import *
 import statistics
+import numpy as np
+from typing import Tuple, Literal
+from typing import List
 
 from src.models.vgg16 import VGG16Model
 from src.models.vgg19 import VGG19Model
@@ -19,7 +19,7 @@ from src.models.convnextxlregression import ConvNeXtXLargeRegressionModel
 from src.data_handler.data_loader import DataLoader
 from src.data_handler.label_splitter import *
 from src.data_handler.pre_proc import PreProcess
-from src.models import model_names
+from src.models import models_metadata
 from collections import Counter
 from sklearn.metrics import accuracy_score, mean_absolute_error
 from src.confusion_matrix import ConfusionMatrixGenerator
@@ -58,25 +58,25 @@ class Engine:
     def set_model(self, model: str):
         self.model_name = model
 
-        if model == model_names.VGG16:
+        if model == models_metadata.VGG16:
             self.model = VGG16Model(input_shape=self.image_shape)
-        elif model == model_names.VGG19:
+        elif model == models_metadata.VGG19:
             self.model = VGG19Model(input_shape=self.image_shape)
-        elif model == model_names.Xception:
+        elif model == models_metadata.Xception:
             self.model = XceptionModel(input_shape=self.image_shape)
-        elif model == model_names.ResNet50:
+        elif model == models_metadata.ResNet50:
             self.model = ResNet50Model(input_shape=self.image_shape)
-        elif model == model_names.EfficientNet:
+        elif model == models_metadata.EfficientNet:
             self.model = EfficientNetModel(input_shape=self.image_shape)
-        elif model == model_names.MobileNet:
+        elif model == models_metadata.MobileNet:
             self.model = MobileNetV2Model(input_shape=self.image_shape)
-        elif model == model_names.ResNet152v2:
+        elif model == models_metadata.ResNet152v2:
             self.model = ResNet152V2Model(input_shape=self.image_shape)
-        elif model == model_names.EfficientNetV2:
+        elif model == models_metadata.EfficientNetV2:
             self.model = EfficientNetV2LModel(input_shape=self.image_shape)
-        elif model == model_names.ConvNeXtXLarge:
+        elif model == models_metadata.ConvNeXtXLarge:
             self.model = ConvNeXtXLargeModel(input_shape=self.image_shape)
-        elif model == model_names.ConvNeXtXLargeRegression:
+        elif model == models_metadata.ConvNeXtXLargeRegression:
             self.model = ConvNeXtXLargeRegressionModel(input_shape=self.image_shape)
             if self.data_name != HHD:
                 print("Regression only works with HHD dataset.")
@@ -86,7 +86,7 @@ class Engine:
             print(f"No model found with the name={model}")
             raise KeyError
 
-    def preprocess_data(self, images, labels, data_type):
+    def preprocess_data(self, images, labels, data_type) -> Tuple[List[np.array],List[np.array]]:
         print(f"\nPreprocessing {data_type} images...")
 
         preprocessor = PreProcess(self.image_shape)
@@ -210,7 +210,7 @@ class Engine:
                 f.write(f"Standard Deviation: {std_dev}\n")
             f.write(f"Image shape: {str(self.image_shape)}\n")
 
-    def test_model(self, request_from_server=False):
+    def test_model(self, request_from_server=False) -> List[str]:
         if self.is_regression:
             self.test_filenames, self.test_labels, self.test_images = self.get_regression_values(
                 self.test_filenames, self.test_labels, self.test_images)
@@ -268,7 +268,6 @@ class Engine:
 
         return predictions
 
-
 def map_to_age_group(predictions, bins=(15, 25, 50)):
     res = []
     for prediction in predictions:
@@ -307,7 +306,7 @@ def construct_HHD_engine(base_dir, image_shape, request_from_server=False) -> En
     return engine
 
 
-def construct_KHATT_engine(base_dir, image_shape, request_from_server=False) -> Engine:
+def construct_khatt_engine(base_dir, image_shape, request_from_server=False) -> Engine:
     # Setting file system
     train_path = base_dir / "Train"
     test_path = base_dir / "Test"
