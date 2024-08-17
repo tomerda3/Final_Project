@@ -1,15 +1,12 @@
 import os
 from pathlib import Path
 import cv2
-from typing import List, Tuple, Any
+from typing import List
 from typing import Literal
-
-from cv2 import Mat
-from numpy import ndarray, dtype
 from tqdm import tqdm
 from ..data.path_variables import *
 
-SHORT_RUN = True
+SHORT_RUN = False
 IMAGE_LIMIT = 15
 
 
@@ -21,8 +18,7 @@ class DataLoader:
         self.name_col = name_col
         self.label_col = label_col
 
-    def load_data(self, clean_method: Literal[HHD, KHATT] = HHD) -> Tuple[
-        List[Mat | ndarray[Any, dtype] | ndarray], List[str]]:
+    def load_data(self, clean_method: Literal[HHD, KHATT] = HHD):
 
         files = self._get_files_name()
         images = []

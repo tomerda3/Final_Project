@@ -170,11 +170,6 @@ class Engine:
 
         return filenames, labels, images
 
-    # def most_common_number(self, number_list):
-    #     number_counts = Counter(number_list)
-    #     most_common = number_counts.most_common(1)[0][0]
-    #     return most_common
-
     def most_common_number(self, number_list):
         # Convert each numpy array in the list to a tuple
         hashable_number_list = [tuple(num) if isinstance(num, np.ndarray) else num for num in number_list]
@@ -284,7 +279,7 @@ def map_to_age_group(predictions, bins=(15, 25, 50)):
     return res
 
 
-def construct_HHD_engine(base_dir, image_shape, request_from_server=False) -> Engine:
+def construct_hhd_engine(base_dir, image_shape, request_from_server=False) -> Engine:
     # Setting file system
     train_path = base_dir / "train"
     test_path = base_dir / "test"
