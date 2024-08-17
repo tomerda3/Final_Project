@@ -6,7 +6,7 @@ from typing import Literal
 from tqdm import tqdm
 from ..data.path_variables import *
 
-SHORT_RUN = True
+SHORT_RUN = False
 IMAGE_LIMIT = 15
 
 
