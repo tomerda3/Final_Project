@@ -5,11 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="79925ffe-40dc-4e95-b7a9-483ace359046" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/writer-age-classification-ui/src/components/UploadAnimation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Final_Project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Final_Project.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/writer-age-classification-ui/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/writer-age-classification-ui/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/writer-age-classification-ui/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/writer-age-classification-ui/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server.py" beforeDir="false" afterPath="$PROJECT_DIR$/server.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data_handler/pre_proc.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/data_handler/pre_proc.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/abstract_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/abstract_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/model_names.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/models_metadata.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/writer-age-classification-ui/src/components/UploadAnimation.js" beforeDir="false" afterPath="$PROJECT_DIR$/writer-age-classification-ui/src/components/UploadAnimation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/writer-age-classification-ui/src/components/theme.js" beforeDir="false" afterPath="$PROJECT_DIR$/writer-age-classification-ui/src/components/theme.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/writer-age-classification-ui/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/writer-age-classification-ui/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/writer-age-classification-ui/src/pages/Models.js" beforeDir="false" afterPath="$PROJECT_DIR$/writer-age-classification-ui/src/pages/Models.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/writer-age-classification-ui/src/pages/Upload.js" beforeDir="false" afterPath="$PROJECT_DIR$/writer-age-classification-ui/src/pages/Upload.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/writer-age-classification-ui/src/services/apiService.js" beforeDir="false" afterPath="$PROJECT_DIR$/writer-age-classification-ui/src/services/apiService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/writer-age-classification-ui/src/setupTests.js" beforeDir="false" afterPath="$PROJECT_DIR$/writer-age-classification-ui/src/setupTests.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/writer-age-classification-ui/src/utils/fileUtils.js" beforeDir="false" afterPath="$PROJECT_DIR$/writer-age-classification-ui/src/utils/fileUtils.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,12 +37,12 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "tomerda3"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;tomerda3&quot;
   }
-}]]></component>
+}</component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
       <filtered-out-file-type name="LOCAL_BRANCH" />
@@ -41,18 +51,18 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/tomerda3/Final_Project.git",
-    "accountId": "daeea338-6da7-45e4-adc9-dc788b8f9335"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/tomerda3/Final_Project.git&quot;,
+    &quot;accountId&quot;: &quot;daeea338-6da7-45e4-adc9-dc788b8f9335&quot;
   }
-}]]></component>
+}</component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 4
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="2cloN0YKKUV52Kzkk3jwSI9BdBU" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -63,11 +73,13 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Python.engine.executor": "Run",
+    "Python.server.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "final__project__ui",
+    "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/tomer/PycharmProjects/Final_Project/writer-age-classification-ui/src/assets",
+    "last_opened_file_path": "C:/Users/tomer/PycharmProjects/Final_Project/src/models/model_weights",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.standard": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -81,6 +93,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\tomer\PycharmProjects\Final_Project\src\models\model_weights" />
       <recent name="C:\Users\tomer\PycharmProjects\Final_Project\writer-age-classification-ui\src\assets" />
       <recent name="C:\Users\tomer\PycharmProjects\Final_Project\writer-age-classification-ui\public" />
       <recent name="D:\Users\Maayan\Documents\GitHub\Final_Project\src\models" />
@@ -89,30 +102,7 @@
       <recent name="C:\Users\PC-User\Documents\GitHub\Final_Project_1" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.engine">
-    <configuration name="Pre_Process_OLD" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Final_Project" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/data_handler" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="D:\Users\Maayan\Documents\GitHub\Final_Project\src\data_handler\Pre_Process_OLD.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Python.server">
     <configuration name="engine" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Final_Project" />
       <option name="ENV_FILES" value="" />
@@ -205,6 +195,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="server" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Final_Project" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/server.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="Start React App" type="js.build_tools.npm">
       <package-json value="$PROJECT_DIR$/writer-age-classification-ui/package.json" />
       <command value="start" />
@@ -213,19 +225,19 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Python.server" />
       <item itemvalue="Python.engine" />
       <item itemvalue="Python.main" />
       <item itemvalue="Python.pre_proc" />
-      <item itemvalue="Python.Pre_Process_OLD" />
       <item itemvalue="Python.run_all_configurations" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.server" />
+        <item itemvalue="Python.engine" />
         <item itemvalue="Python.main" />
         <item itemvalue="Python.run_all_configurations" />
-        <item itemvalue="Python.engine" />
         <item itemvalue="Python.pre_proc" />
-        <item itemvalue="Python.Pre_Process_OLD" />
       </list>
     </recent_temporary>
   </component>

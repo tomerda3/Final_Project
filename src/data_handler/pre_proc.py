@@ -13,21 +13,35 @@ class PreProcess:
     def resize_images(self, images) -> List[np.array]:
         return [cv2.resize(im, (self.image_shape[0], self.image_shape[1])) for im in images]
 
-    def patch_images(self, images, labels, segment_shape) -> np.array:
+    def patch_images(self, images, labels, segment_shape):
+        # print("Patching images...")
         patched_images = []
         patched_labels = []
 
-        y_step = int(segment_shape[1] * 0.50)  # Overlap of 50% in Y
-        x_step = int(segment_shape[0] * 0.50)  # Overlap of 50% in X
+        for i in range(len(images)):
+            image = images[i]
+            label = labels[i]
+            height = len(image)
+            width = len(image[0])
+            y = 0
 
-        for image, label in zip(images, labels):
-            height, width = len(image), len(image[0])
+            y_step = int(segment_shape[1] * 0.50)  # Overlap of 50% of the Y per patch
+            x_step = int(segment_shape[0] * 0.50)  # Overlap of 50% of the X per patch
 
-            for y in range(0, height - segment_shape[1] + 1, y_step):
-                for x in range(0, width - segment_shape[0] + 1, x_step):
+            while y <= height - y_step:
+                if segment_shape[1] - y < y_step:
+                    break
+                x = 0
+                while x < width - x_step:
+                    if segment_shape[0] - x < x_step:
+                        break
                     segment = image[y: y + segment_shape[1], x: x + segment_shape[0]].copy()
+                    x += x_step
+                    if segment.shape[0] < segment_shape[0] or segment.shape[1] < segment_shape[1]:
+                        continue
                     patched_images.append(segment)
                     patched_labels.append(label)
+                y += y_step
 
         return np.array(patched_images), patched_labels
 

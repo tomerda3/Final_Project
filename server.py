@@ -9,11 +9,19 @@ from typing import Dict
 from typing import Any
 from io import BytesIO
 from fastapi import FastAPI
+from starlette.middleware.cors import CORSMiddleware
 from api_models import ModelRequest
 from backend_middleware import BackendMiddleware
 from src.models.models_metadata import models_list
 
 app = FastAPI()
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 
 @app.get("/")
@@ -43,7 +51,7 @@ def open_image_from_b64(image: base64) -> PIL.Image:
     pillow_image = image.convert('RGB')
     image_array = np.array(pillow_image)
     print(image_array.shape)
-    image_bgr = cv2.cvtColor(image_array,cv2.COLOR_BGR2GRAY)
+    image_bgr = cv2.cvtColor(image_array, cv2.COLOR_BGR2GRAY)
     gray_image = image_bgr[:, :, np.newaxis]
     print(gray_image.shape)
     return image_bgr

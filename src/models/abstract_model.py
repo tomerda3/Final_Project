@@ -53,4 +53,4 @@ class Model:
         self.model.compile(loss='categorical_crossentropy',
                            optimizer=Adam(learning_rate=0.0005),
                            metrics=['accuracy'])
-        self.model.load_weights(f"/Users/ofri/Documents/GitHub/Final_Project/src/models/model_weights/{self.__class__.__name__}.h5")
+        self.model.load_weights(f"C:\\Users\\tomer\\PycharmProjects\\Final_Project\\src\\models\\model_weights\\{self.__class__.__name__}.h5")

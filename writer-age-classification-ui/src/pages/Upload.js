@@ -56,8 +56,8 @@ const Upload = () => {
     if (file) {
       setLoading(true);
       try {
-        const response = await uploadHandwriting(file, dataSet, 'defaultModel');
-        setResult(response.data); 
+        const response = await uploadHandwriting(file, dataSet, 'ConvNeXtXLarge');
+        setResult(response); 
       } catch (error) {
         console.error('Error uploading file:', error);
       } finally {

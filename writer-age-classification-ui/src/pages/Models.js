@@ -20,7 +20,7 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { useNavigate } from 'react-router-dom';
 import { styled } from '@mui/system';
 
-import vgg16Image from '../assets/vgg16.jpg'; // Adjust the paths as needed
+import vgg16Image from '../assets/vgg16.jpg'; 
 import vgg19Image from '../assets/vgg19.jpg';
 import efficientNetImage from '../assets/efficientnet.jpg';
 import xceptionImage from '../assets/xception.jpg';
