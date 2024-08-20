@@ -21,6 +21,6 @@ if __name__ == "__main__":
     image_size = 600  # Typically 200~1000
 
     # Choose model:
-    chosen_model = models_metadata.ConvNeXtXLargeRegression
+    chosen_model = models_metadata.ConvNeXtXLarge
 
     run_engine(dataset, image_size, chosen_model)

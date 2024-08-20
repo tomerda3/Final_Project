@@ -48,8 +48,10 @@ class ConvNeXtXLargeRegressionModel(Model):
 
         print("Epochs including base layers...")
         self.model.fit(x=train_data, y=train_labels,
-                       epochs=80,
+                       epochs=100,
                        batch_size=32)
+
+        self.save_model_weights()
 
     def patch_evaluation(self, patches):
         continuous_predictions = self.model.predict(patches)  # Predict continuous age values
