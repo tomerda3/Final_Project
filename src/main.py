@@ -1,8 +1,7 @@
 from models import models_metadata
 from data.path_variables import *
 import tensorflow as tf
-from engine_runner import run_engine
-from engine_runner import run_all_configs
+from engine_runner import run_engine, run_all_configs
 
 if __name__ == "__main__":
     # Setting up GPU:
@@ -24,6 +23,6 @@ if __name__ == "__main__":
     # Choose model:
     chosen_model = models_metadata.ConvNeXtXLarge
 
-    # run_engine(dataset, image_size, chosen_model)
+    run_engine(dataset, image_size, chosen_model)
 
-    run_all_configs()
+    # run_all_configs()
