@@ -11,7 +11,9 @@ class PreProcess:
         self.image_shape = shape
 
     def resize_images(self, images) -> List[np.array]:
-        return [cv2.resize(im, (self.image_shape[0], self.image_shape[1])) for im in images]
+        resized_images = [cv2.resize(im, (self.image_shape[0], self.image_shape[1])) for im in images]
+        expand_images = [image.reshape(224, 224, 1) for image in resized_images]
+        return expand_images
 
     def patch_images(self, images, labels, segment_shape):
         # print("Patching images...")
@@ -60,7 +62,8 @@ class PreProcess:
 
         return binarized_images
 
-    def crop_text_from_reversed_binary_images(self, images, min_white_pixels=100) -> List[Union[Mat, np.ndarray]]:
+    def crop_text_from_reversed_binary_images(self, images, min_white_pixels=100) -> List[
+        Mat | np.ndarray[Any, np.dtype] | np.ndarray]:
         WHITE = 255  # Assuming the images are in the range of 0 to 255
 
         cropped_images = []

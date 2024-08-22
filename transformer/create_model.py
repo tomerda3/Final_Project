@@ -8,7 +8,7 @@ from transformer.patch_extract_layer import PatchExtractor
 from transformer.transformer_encoder import TransformerEncoder
 
 
-def create_vit_model(num_classes, num_patches=196, projection_dim=768, input_shape=(224, 224, 3)):
+def create_vit_model(num_classes, num_patches=196, projection_dim=768, input_shape=(224, 224, 1)):
     inputs = Input(shape=input_shape)
     # Patch extractor
     patches = PatchExtractor()(inputs)

@@ -1,6 +1,6 @@
 import os
 from pathlib import Path
-from data.path_variables import *
+from src.data.path_variables import *
 import statistics
 import numpy as np
 from typing import Tuple, Literal
@@ -27,7 +27,7 @@ from src.confusion_matrix import ConfusionMatrixGenerator
 
 class Engine:
 
-    def __init__(self, image_shape: Tuple):
+    def __init__(self, image_shape: Tuple, is_transformer=None):
         self.model = None
         self.image_shape = image_shape
         self.train_data_path = None
@@ -41,6 +41,8 @@ class Engine:
         self.is_regression = False
         self.train_filenames = None
         self.test_filenames = None
+
+        self.is_transformer = is_transformer
         self.confusion_matrix_generator = ConfusionMatrixGenerator()
 
     def set_train_labels(self, df):
@@ -87,7 +89,7 @@ class Engine:
             print(f"No model found with the name={model}")
             raise KeyError
 
-    def preprocess_data(self, images, labels, data_type) -> Tuple[List[np.array],List[np.array]]:
+    def preprocess_data(self, images, labels, data_type) -> Tuple[List[np.array], List[np.array]]:
         print(f"\nPreprocessing {data_type} images...")
 
         preprocessor = PreProcess(self.image_shape)
@@ -98,8 +100,10 @@ class Engine:
 
         proc_images = cropped_images
 
-        if data_type == "train":
+        if data_type == "train" and self.is_transformer is None:
             proc_images, proc_labels = preprocessor.patch_images(proc_images, proc_labels, self.image_shape)
+        if self.is_transformer:
+            proc_images = preprocessor.resize_images(proc_images)
 
         return proc_images, proc_labels
 
@@ -280,14 +284,14 @@ def map_to_age_group(predictions, bins=(15, 25, 50)):
     return res
 
 
-def construct_hhd_engine(base_dir, image_shape, request_from_server=False) -> Engine:
+def construct_hhd_engine(base_dir, image_shape, request_from_server=False,is_transformer=None) -> Engine:
     # Setting file system
     train_path = base_dir / "train"
     test_path = base_dir / "test"
     csv_label_path = str(base_dir / "AgeSplit.csv")
 
     # Initializing engine
-    engine = Engine(image_shape)
+    engine = Engine(image_shape,is_transformer)
     if not request_from_server:
         # Setting engine labels & paths
         HHD_labels = LabelSplitter(csv_label_path)  # returns object with 'train', 'test', 'val' attributes
@@ -302,14 +306,14 @@ def construct_hhd_engine(base_dir, image_shape, request_from_server=False) -> En
     return engine
 
 
-def construct_khatt_engine(base_dir, image_shape, request_from_server=False) -> Engine:
+def construct_khatt_engine(base_dir, image_shape, request_from_server=False,is_transformer=None) -> Engine:
     # Setting file system
     train_path = base_dir / "Train"
     test_path = base_dir / "Test"
     csv_label_path = str(base_dir / "DatabaseStatistics-v1.0-NN.csv")
 
     # Initializing engine
-    engine = Engine(image_shape)
+    engine = Engine(image_shape,is_transformer)
     if not request_from_server:
         # Setting engine labels & paths
         KHATT_labels = LabelSplitter(csv_label_path, "Group", "R", "T", "V")  # gets 'train', 'test', 'val' attributes
