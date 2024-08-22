@@ -51,4 +51,8 @@ def run_all_configs():
                 i += 1
 
             except:
-                print("Run failed! Trying again...")
+                if model == models_metadata.ConvNeXtXLargeRegression:
+                    i += 1
+                    print("Regression model skipped.")
+                else:
+                    print("Run failed! Trying again...")

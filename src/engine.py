@@ -57,6 +57,7 @@ class Engine:
 
     def set_model(self, model: str):
         self.model_name = model
+        self.is_regression = False
 
         if model == models_metadata.VGG16:
             self.model = VGG16Model(input_shape=self.image_shape)
