@@ -62,8 +62,7 @@ class PreProcess:
 
         return binarized_images
 
-    def crop_text_from_reversed_binary_images(self, images, min_white_pixels=100) -> List[
-        Mat | np.ndarray[Any, np.dtype] | np.ndarray]:
+    def crop_text_from_reversed_binary_images(self, images, min_white_pixels=100) -> List[Union[Mat, np.ndarray]]:
         WHITE = 255  # Assuming the images are in the range of 0 to 255
 
         cropped_images = []
