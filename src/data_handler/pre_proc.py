@@ -1,7 +1,6 @@
 import cv2
 import numpy as np
-from typing import Tuple, List, Any, Union
-
+from typing import Tuple, List, Union
 from cv2 import Mat
 from tqdm import tqdm
 
