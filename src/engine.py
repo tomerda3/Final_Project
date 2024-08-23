@@ -82,8 +82,8 @@ class Engine:
         elif model == models_metadata.ConvNeXtXLargeRegression:
             self.model = ConvNeXtXLargeRegressionModel(input_shape=self.image_shape)
             if self.data_name != HHD:
-                print("Regression only works with HHD dataset.")
-                exit(0)
+                raise Exception(f"Regression only works with HHD dataset, " +
+                                "but engine received {self.data_name} dataset.")
             self.is_regression = True
         else:
             print(f"No model found with the name={model}")
