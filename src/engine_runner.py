@@ -27,12 +27,17 @@ def run_all_configs():
         KHATT: construct_khatt_engine
     }
 
-    for dataset in [HHD, KHATT]:
-        print(f"Run started for dataset: {dataset}")
+    def get_data(dataset):
         main_engine = construct_engine[dataset](
             base_dir=Path.cwd() / DATA / dataset,
             image_shape=(500, 500, 1)
         )
+
+        return main_engine
+
+    for dataset in [HHD, KHATT]:
+        print(f"Run started for dataset: {dataset}")
+        main_engine = get_data(dataset)
 
         i = 0
         while i < len(models_metadata.models_list):
@@ -50,9 +55,10 @@ def run_all_configs():
 
                 i += 1
 
-            except:
+            except Exception as e:
                 if model == models_metadata.ConvNeXtXLargeRegression:
                     i += 1
                     print("Regression model skipped.")
                 else:
                     print("Run failed! Trying again...")
+                    main_engine = get_data(dataset)
