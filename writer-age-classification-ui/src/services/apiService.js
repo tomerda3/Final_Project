@@ -15,9 +15,22 @@ export const uploadHandwriting = async (file, dataSet, modelName = 'ConvNeXtXLar
       },
     );
     const result = response.data.predictions[0]
-    console.log('Response from server:', result);
+    let range;
+    if (result === 1) {
+      range = '0-15';
+    } else if (result === 2) {
+      range = '16-25';
+    } else if (result === 3) {
+      range = '26-50';
+    } else if (result === 4) {
+      range = '51+';
+    } else {
+      range = 'Unknown'; 
+    }
+    console.log('Response from server:', range);
+    return range;
     
-    return result;
+    
   } catch (error) {
     console.error('Error converting file to base64:', error);
     throw error;
