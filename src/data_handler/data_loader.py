@@ -1,15 +1,13 @@
 import os
 from pathlib import Path
 import cv2
-from typing import List, Tuple, Any
+from typing import List
 from typing import Literal
-
-from cv2 import Mat
-from numpy import ndarray, dtype
 from tqdm import tqdm
+from ..data.path_variables import *
 
 SHORT_RUN = False
-IMAGE_LIMIT = 10
+IMAGE_LIMIT = 15
 
 
 class DataLoader:
@@ -20,13 +18,12 @@ class DataLoader:
         self.name_col = name_col
         self.label_col = label_col
 
-    def load_data(self, clean_method: Literal["HHD", "KHATT"] = "HHD") -> Tuple[
-        List[Mat | ndarray[Any, dtype] | ndarray]
-        , List[str]]:
+    def load_data(self, clean_method: Literal[HHD, KHATT] = HHD):
 
         files = self._get_files_name()
         images = []
         labels = []
+        filenames = []
 
         if SHORT_RUN:
             print("\nSHOT RUN IS SELECTED! (in data_loader.py)")
@@ -36,7 +33,7 @@ class DataLoader:
 
             image = cv2.imread(str(Path(self.path) / file_name))  # , cv2.IMREAD_GRAYSCALE
 
-            if clean_method == "KHATT":
+            if clean_method == KHATT:
                 clean_name = file_name[5:10]
                 row_of_file = self.df[self.df[self.name_col] == clean_name]
                 if len(row_of_file) == 0:  # if filename not in labels database
@@ -47,7 +44,8 @@ class DataLoader:
 
             images.append(image)
             labels.append(lbl)
-        return images, labels
+            filenames.append(file_name)  # ADDED FOR REGRESSION
+        return images, labels, filenames
 
     def _get_files_name(self) -> List[str]:
         file_names = []

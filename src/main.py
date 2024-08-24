@@ -1,9 +1,7 @@
-from engine import *
-from pathlib import Path
 from models import models_metadata
 from data.path_variables import *
 import tensorflow as tf
-from run_all_configurations import run_all_configs, run_HHD_convnextxl
+from engine_runner import run_engine, run_all_configs
 
 if __name__ == "__main__":
     # Setting up GPU:
@@ -16,25 +14,15 @@ if __name__ == "__main__":
     else:
         print("No GPU detected.")
 
-    # run_all_configs()
+    # Choose dataset
+    dataset = HHD  # Options are: HHD / KHATT
 
-    run_HHD_convnextxl()
+    # Choose image size
+    image_size = 600  # Typically 200~1000
 
-    # # Construct engine
-    # main_engine = construct_HHD_engine(
-    #     base_dir=Path.cwd() / DATA / HHD,
-    #     image_shape=(1000, 1000, 1)
-    # )
-    # # main_engine = construct_KHATT_engine(
-    # #     base_dir=Path.cwd() / DATA / KHATT,
-    # #     image_shape=(500, 500, 1)
-    # # )
+    # Choose model:
+    chosen_model = models_metadata.ConvNeXtXLarge
 
-    # # Setting engine model
-    # main_engine.set_model(model_names.ConvNeXtXLarge)
-    #
-    # # Training model
-    # main_engine.train_model()
-    #
-    # # Test model
-    # main_engine.test_model()
+    # run_engine(dataset, image_size, chosen_model)
+
+    run_all_configs()
