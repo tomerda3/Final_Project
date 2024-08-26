@@ -81,9 +81,6 @@ class Engine:
             self.model = ConvNeXtXLargeModel(input_shape=self.image_shape)
         elif model == models_metadata.ConvNeXtXLargeRegression:
             self.model = ConvNeXtXLargeRegressionModel(input_shape=self.image_shape)
-            if self.data_name != HHD:
-                raise Exception(f"Regression only works with HHD dataset, " +
-                                "but engine received {self.data_name} dataset.")
             self.is_regression = True
         else:
             print(f"No model found with the name={model}")
@@ -145,8 +142,8 @@ class Engine:
         self.model.train_model(self.train_images, self.train_labels, self.data_name)
 
     def get_regression_values(self, filenames, labels, images):
-        name_mapping = pd.read_csv(Path.cwd() / DATA / HHD / "NameMapping.csv", header=None)
-        real_ages = pd.read_csv(Path.cwd() / DATA / HHD / "RealAges.csv")
+        name_mapping = pd.read_csv(Path.cwd() / SRC / DATA / HHD / "NameMapping.csv", header=None)
+        real_ages = pd.read_csv(Path.cwd() / SRC / DATA / HHD / "RealAges.csv")
         print("SETTING UP REAL AGES FOR REGRESSION MODEL")
         # Initialize the lists
         keep_indices = []
@@ -211,7 +208,7 @@ class Engine:
             f.write(f"Image shape: {str(self.image_shape)}\n")
 
     def test_model(self, request_from_server=False) -> List[str]:
-        if self.is_regression:
+        if self.is_regression and not request_from_server:
             self.test_filenames, self.test_labels, self.test_images = self.get_regression_values(
                 self.test_filenames, self.test_labels, self.test_images)
 
@@ -241,6 +238,8 @@ class Engine:
 
         if self.is_regression:
             continuous_predictions = predictions.copy()
+            if request_from_server:
+                return [prediction for prediction in continuous_predictions]
             predictions = map_to_age_group(np.array(predictions))
             print(f"Continuous Predictions: {[round(num) for num in continuous_predictions]}")
             continuous_labels = real_labels.copy()
@@ -268,6 +267,7 @@ class Engine:
 
         return predictions
 
+
 def map_to_age_group(predictions, bins=(15, 25, 50)):
     res = []
     for prediction in predictions:
@@ -284,14 +284,14 @@ def map_to_age_group(predictions, bins=(15, 25, 50)):
     return res
 
 
-def construct_hhd_engine(base_dir, image_shape, request_from_server=False,is_transformer=None) -> Engine:
+def construct_hhd_engine(base_dir, image_shape, request_from_server=False, is_transformer=None) -> Engine:
     # Setting file system
     train_path = base_dir / "train"
     test_path = base_dir / "test"
     csv_label_path = str(base_dir / "AgeSplit.csv")
 
     # Initializing engine
-    engine = Engine(image_shape,is_transformer)
+    engine = Engine(image_shape, is_transformer)
     if not request_from_server:
         # Setting engine labels & paths
         HHD_labels = LabelSplitter(csv_label_path)  # returns object with 'train', 'test', 'val' attributes
@@ -306,14 +306,14 @@ def construct_hhd_engine(base_dir, image_shape, request_from_server=False,is_tra
     return engine
 
 
-def construct_khatt_engine(base_dir, image_shape, request_from_server=False,is_transformer=None) -> Engine:
+def construct_khatt_engine(base_dir, image_shape, request_from_server=False, is_transformer=None) -> Engine:
     # Setting file system
     train_path = base_dir / "Train"
     test_path = base_dir / "Test"
     csv_label_path = str(base_dir / "DatabaseStatistics-v1.0-NN.csv")
 
     # Initializing engine
-    engine = Engine(image_shape,is_transformer)
+    engine = Engine(image_shape, is_transformer)
     if not request_from_server:
         # Setting engine labels & paths
         KHATT_labels = LabelSplitter(csv_label_path, "Group", "R", "T", "V")  # gets 'train', 'test', 'val' attributes

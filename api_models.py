@@ -1,6 +1,6 @@
 from pydantic import BaseModel
 from typing import Literal
-from typing import List
+from typing import List, Union
 
 
 class ModelRequest(BaseModel):
@@ -12,4 +12,4 @@ class ModelRequest(BaseModel):
 class ModelResults(BaseModel):
     model_name: str
     data_set: str
-    predictions: List[int]
+    predictions: Union[List[int], List[float]]

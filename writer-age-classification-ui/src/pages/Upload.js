@@ -57,7 +57,7 @@ const modelData = [
     image: convNeXtXLargeImage, // Ensure this image is imported or defined
   },
   {
-    name: 'Regression',
+    name: 'ConvNeXtXLargeRegression',
     description: 'ConvNeXtXLargeRegression is a variation of ConvNeXtXLarge tailored for regression tasks. Instead of classifying age into discrete categories, it predicts the age as a continuous variable, allowing for more precise age estimation based on handwriting analysis.',
     parameters: 'Over 350 million',
     layers: 'Convolutional layers with batch normalization and ReLU activation, followed by regression layers to output a continuous age value',
