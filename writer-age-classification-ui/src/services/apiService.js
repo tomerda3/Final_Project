@@ -3,7 +3,7 @@ import { fileToBase64 } from '../utils/fileUtils';
 
 const API_URL = 'http://localhost:8080'; 
 
-export const uploadHandwriting = async (file, dataSet, modelName) => {
+export const uploadHandwriting = async (file, dataSet, modelName = 'ConvNeXtXLarge') => {
   try {
     const base64 = await fileToBase64(file);
 
@@ -15,9 +15,6 @@ export const uploadHandwriting = async (file, dataSet, modelName) => {
       },
     );
     const result = response.data.predictions[0]
-    if (modelName === 'ConvNeXtXLargeRegression'){
-      return result;
-    }
     let range;
     if (result === 1) {
       range = '0-15';

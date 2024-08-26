@@ -1,4 +1,4 @@
-from keras.layers import GlobalAveragePooling1D
+from keras.src.layers import GlobalAveragePooling1D
 from tensorflow.keras.layers import Input
 from tensorflow.keras.models import Model
 

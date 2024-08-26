@@ -4,7 +4,6 @@ from api_models import ModelResults
 from src.data.path_variables import DATA, SRC
 from src.models.models_metadata import models_list
 from src.engine import construct_hhd_engine, construct_khatt_engine
-from transformer.transformer_predict import transform_predict
 
 
 class BackendMiddleware:
@@ -14,9 +13,6 @@ class BackendMiddleware:
         self.config = {"HHD": construct_hhd_engine, "KHATT": construct_khatt_engine}
 
     def create_and_run_engine(self, data_set: str, model_name: str, image, image_shape=(50, 50, 1)):
-        if model_name == "Transformer":
-            return transform_predict(image)
-
         engine = self.config[data_set](image_shape=image_shape,
                                        base_dir=Path.cwd() / SRC / DATA / data_set,
                                        request_from_server=True)
