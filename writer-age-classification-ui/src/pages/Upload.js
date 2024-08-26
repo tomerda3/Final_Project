@@ -5,6 +5,8 @@ import video1 from '../assets/video1.mp4';
 import video2 from '../assets/video2.mp4';
 import video3 from '../assets/video3.mp4';
 import convNeXtXLargeImage from '../assets/ConvNeXtXLargeimage.jpg';
+import convNeXtXLargeRegressionImage from '../assets/convNeXtXLargeRegressionImage.jpg';
+import transformerImage from '../assets/transformerImage.jpg';
 import backGroundVideo from '../assets/net.mp4';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { useNavigate } from 'react-router-dom';
@@ -61,14 +63,14 @@ const modelData = [
     description: 'ConvNeXtXLargeRegression is a variation of ConvNeXtXLarge tailored for regression tasks. Instead of classifying age into discrete categories, it predicts the age as a continuous variable, allowing for more precise age estimation based on handwriting analysis.',
     parameters: 'Over 350 million',
     layers: 'Convolutional layers with batch normalization and ReLU activation, followed by regression layers to output a continuous age value',
-    // image: convNeXtXLargeRegressionImage,
+    image: convNeXtXLargeRegressionImage,
   },
   {
     name: 'Transformer',
     description: 'Transformers are a type of neural network architecture known for their ability to handle sequential data. In the context of handwriting analysis, Transformers excel at capturing temporal dependencies and the sequential nature of handwriting strokes, making them suitable for age classification tasks.',
     parameters: 'Varies depending on implementation, typically hundreds of millions',
     layers: 'Self-attention layers followed by feedforward neural networks, capable of capturing long-range dependencies in data',
-    // image: transformerImage,
+    image: transformerImage,
   },
 ];
 

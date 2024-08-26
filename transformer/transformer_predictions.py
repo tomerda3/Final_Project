@@ -20,7 +20,7 @@ def transform_predict(image) -> ModelResults:
         request_from_server=True
     )
     proc_images, proc_labels = engine.preprocess_data(images=[image], labels=[1], data_type='test')
-    model.load_weights("/Users/ofri/Documents/GitHub/Final_Project/src/models/model_weights/transformer.weights.h5")
+    model.load_weights("C:\\Users\\tomer\\PycharmProjects\\Final_Project\\src\\models\\model_weights\\transformer.weights.h5")
     probability = model.predict(np.array(proc_images))
     predictions = np.argmax(probability, axis=1)
     return ModelResults(model_name="transformer",
