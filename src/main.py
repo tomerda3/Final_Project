@@ -23,6 +23,6 @@ if __name__ == "__main__":
     # Choose model:
     chosen_model = models_metadata.ConvNeXtXLarge
 
-    # run_engine(dataset, image_size, chosen_model)
+    run_engine(dataset, image_size, chosen_model)
 
-    run_all_configs()
+    # run_all_configs()

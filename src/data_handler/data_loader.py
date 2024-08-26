@@ -7,7 +7,7 @@ from tqdm import tqdm
 from ..data.path_variables import *
 
 SHORT_RUN = False
-IMAGE_LIMIT = 15
+IMAGE_LIMIT = 100
 
 
 class DataLoader:
@@ -25,6 +25,7 @@ class DataLoader:
         labels = []
         filenames = []
 
+
         if SHORT_RUN:
             print("\nSHOT RUN IS SELECTED! (in data_loader.py)")
             files = files[:IMAGE_LIMIT]
@@ -32,7 +33,6 @@ class DataLoader:
         for file_name in tqdm(files):
 
             image = cv2.imread(str(Path(self.path) / file_name))  # , cv2.IMREAD_GRAYSCALE
-
             if clean_method == KHATT:
                 clean_name = file_name[5:10]
                 row_of_file = self.df[self.df[self.name_col] == clean_name]
