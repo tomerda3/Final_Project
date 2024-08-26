@@ -28,7 +28,7 @@ export const uploadHandwriting = async (file, dataSet, modelName) => {
     } else if (result === 4) {
       range = '51+';
     } else {
-      range = 'Unknown'; 
+      range = String(result);
     }
     console.log('Response from server:', range);
     return range;
