@@ -18,11 +18,11 @@ if __name__ == "__main__":
     dataset = HHD  # Options are: HHD / KHATT
 
     # Choose image size
-    image_size = 600  # Typically 200~1000
+    image_size = 500  # Typically 200~1000
 
     # Choose model:
     chosen_model = models_metadata.ConvNeXtXLarge
 
-    # run_engine(dataset, image_size, chosen_model)
+    run_engine(dataset, image_size, chosen_model)
 
-    run_all_configs()
+    # run_all_configs()

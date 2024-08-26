@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="79925ffe-40dc-4e95-b7a9-483ace359046" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/Final_Project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Final_Project.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/writer-age-classification-ui/src/pages/Upload.js" beforeDir="false" afterPath="$PROJECT_DIR$/writer-age-classification-ui/src/pages/Upload.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/writer-age-classification-ui/src/services/apiService.js" beforeDir="false" afterPath="$PROJECT_DIR$/writer-age-classification-ui/src/services/apiService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -214,11 +212,11 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.server" />
       <item itemvalue="Python.engine" />
       <item itemvalue="Python.main" />
       <item itemvalue="Python.pre_proc" />
       <item itemvalue="Python.run_all_configurations" />
+      <item itemvalue="Python.server" />
     </list>
     <recent_temporary>
       <list>
